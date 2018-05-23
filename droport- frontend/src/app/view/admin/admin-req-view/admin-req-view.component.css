@@ -1,0 +1,12 @@
+.form-group{
+    margin-left:10px;
+    margin-top: 20px
+}
+.form-control{
+    height: 25px;
+}
+/* Map styles */
+
+.agm-map{
+    height: 400px;
+}
