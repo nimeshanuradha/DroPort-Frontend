@@ -21,6 +21,8 @@ import { OwnMainPageComponent } from './view/owner/own-main-page/own-main-page.c
 import { PilMainPageComponent } from './view/pilot/pil-main-page/pil-main-page.component';
 import { OwnRegComponent } from './view/owner/own-reg/own-reg.component';
 import { SidebarPilotComponent } from './components/sidebar-pilot/sidebar-pilot.component';
+import { PilReqDetailComponent } from './view/pilot/pil-req-detail/pil-req-detail.component';
+import { PilFlyHistoryComponent } from './view/pilot/pil-fly-history/pil-fly-history.component';
 
 
 const appRoutes: Routes = [
@@ -34,9 +36,11 @@ const appRoutes: Routes = [
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
   { path: 'cus_req_view', component: CusReqViewComponent },
-  { path: 'pli_main_page', component: PilMainPageComponent },
+  { path: 'pil_main_page', component: PilMainPageComponent },
   { path: 'own_main_page', component: OwnMainPageComponent },
-  { path: 'own_reg', component:OwnRegComponent}
+  { path: 'own_reg', component:OwnRegComponent},
+  { path: 'req_detail', component: PilReqDetailComponent},
+  { path: 'pil_fly_history', component: PilFlyHistoryComponent}
  
 
 ]
@@ -60,6 +64,8 @@ const appRoutes: Routes = [
     PilMainPageComponent,
     OwnRegComponent,
     SidebarPilotComponent,
+    PilReqDetailComponent,
+    PilFlyHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
