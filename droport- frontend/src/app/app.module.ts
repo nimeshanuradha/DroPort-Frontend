@@ -21,6 +21,10 @@ import { OwnMainPageComponent } from './view/owner/own-main-page/own-main-page.c
 import { PilMainPageComponent } from './view/pilot/pil-main-page/pil-main-page.component';
 import { OwnRegComponent } from './view/owner/own-reg/own-reg.component';
 import { SidebarPilotComponent } from './components/sidebar-pilot/sidebar-pilot.component';
+import { HomeComponent } from './view/landing/home/home.component';
+import { AboutComponent } from './view/landing/about/about.component';
+import { ServicesComponent } from './view/landing/services/services.component';
+import { ContactusComponent } from './view/landing/contactus/contactus.component';
 
 
 const appRoutes: Routes = [
@@ -60,6 +64,11 @@ const appRoutes: Routes = [
     PilMainPageComponent,
     OwnRegComponent,
     SidebarPilotComponent,
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactusComponent,
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
