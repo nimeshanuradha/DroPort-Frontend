@@ -20,6 +20,7 @@ import { CusReqViewComponent } from './view/customer/cus-req-view/cus-req-view.c
 import { OwnMainPageComponent } from './view/owner/own-main-page/own-main-page.component';
 import { PilMainPageComponent } from './view/pilot/pil-main-page/pil-main-page.component';
 import { OwnRegComponent } from './view/owner/own-reg/own-reg.component';
+import { SidebarPilotComponent } from './components/sidebar-pilot/sidebar-pilot.component';
 
 
 const appRoutes: Routes = [
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     OwnMainPageComponent,
     PilMainPageComponent,
     OwnRegComponent,
+    SidebarPilotComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
