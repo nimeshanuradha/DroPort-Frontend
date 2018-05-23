@@ -1,8 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { $ } from 'protractor';
 import { HttpClient} from '@angular/common/http'
-import {  } from "@angular/core";
 
 @Component({
   selector: 'app-own-reg',
@@ -20,8 +18,14 @@ export class OwnRegComponent implements OnInit {
   }
   
   
-  get_owner_data():void {
+  get_owner_data(own_reg: NgForm):void {
     
+    const from_data = own_reg.value
+    console.log(from_data.fname)
+
+    
+
+
   } 
 
  
