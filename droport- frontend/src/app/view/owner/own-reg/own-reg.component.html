@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div ng-app="DroPort">
-  <form #own_reg="ngForm" (ngSubmit)=get_owner_data(own_reg) ng-controller="own_reg_ctrl">
+  <form #own_reg="ngForm" (ngSubmit)=get_owner_data(own_reg)>
     <div class="container">
       <div class="col-xs-12">
         <div class="col-xs-3">
@@ -147,11 +147,11 @@
 </div>
 
 <script>
-  var app = angular.module('myApp', []);
+  var app = angular.module('DroPort', []);
   app.controller('own_reg_ctrl', function($scope, $http) {
       $http.get("http://localhost:3000/req/asd")
       .then(function(response) {
-          $scope.myWelcome = response.data;
+          console.log($scope.fname)
       });
   });
   </script>
