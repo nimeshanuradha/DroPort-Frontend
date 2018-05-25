@@ -10,11 +10,6 @@
 
     <form id="send_new_req" #new_req_data = 'ngForm' (ngSubmit)="send_new_req(new_req_data)">
 
-      <div class="col-xm-4">
-        <label for="req_id" class="lable">Flying Request ID</label>
-        <input type="text" class="form-control" name="id" required="" ng-model="req_id">
-      </div>
-
       <div class="form-group">
           <label for="district" class="lable">District</label>
           <input type="text" class="form-control" name="district" required=""  [(ngModel)]="district">
@@ -38,13 +33,6 @@
       <div class="form-group">
         <label for="time" class="lable">Time</label>
         <input type="text" class="form-control" name="time" required="" [(ngModel)]="time" >
-      </div>
-
-    
-
-      <div class="form-group">
-          <label for="cus_id" class="lable">Customer ID</label>
-          <input type="text" class="form-control" name="cus_id" required="" [(ngModel)]="cus_id">
       </div>
 
     </form>
