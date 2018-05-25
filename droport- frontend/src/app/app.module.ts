@@ -47,8 +47,12 @@ const appRoutes: Routes = [
   { path: 'own_main_page', component: OwnMainPageComponent },
   { path: 'own_reg', component:OwnRegComponent},
   { path: 'req_detail', component: PilReqDetailComponent},
-  { path: 'pil_fly_history', component: PilFlyHistoryComponent}
- 
+  { path: 'pil_fly_history', component: PilFlyHistoryComponent},
+  { path: 'land_about', component: AboutComponent },
+  { path: 'land_home', component: HomeComponent },
+  { path: 'land_services', component: ServicesComponent },
+  { path: 'land_contactus', component: ContactusComponent }
+
 
 ]
 
@@ -73,6 +77,10 @@ const appRoutes: Routes = [
     SidebarPilotComponent,
     PilReqDetailComponent,
     PilFlyHistoryComponent,
+    AboutComponent,
+    HomeComponent,
+    ServicesComponent,
+    ContactusComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
