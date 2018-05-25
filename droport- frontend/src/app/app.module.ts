@@ -21,19 +21,17 @@ import { OwnMainPageComponent } from './view/owner/own-main-page/own-main-page.c
 import { PilMainPageComponent } from './view/pilot/pil-main-page/pil-main-page.component';
 import { OwnRegComponent } from './view/owner/own-reg/own-reg.component';
 import { SidebarPilotComponent } from './components/sidebar-pilot/sidebar-pilot.component';
-<<<<<<< HEAD
 import { PilReqDetailComponent } from './view/pilot/pil-req-detail/pil-req-detail.component';
 import { PilFlyHistoryComponent } from './view/pilot/pil-fly-history/pil-fly-history.component';
-=======
 import { HomeComponent } from './view/landing/home/home.component';
 import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
->>>>>>> 8f49e37cf3e0b1e0e89af4511840c1d13fe51b66
 
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_phi', component: AdminRegPhiComponent },
@@ -71,16 +69,13 @@ const appRoutes: Routes = [
     PilMainPageComponent,
     OwnRegComponent,
     SidebarPilotComponent,
-<<<<<<< HEAD
     PilReqDetailComponent,
     PilFlyHistoryComponent,
-=======
     HomeComponent,
     AboutComponent,
     ServicesComponent,
     ContactusComponent,
 
->>>>>>> 8f49e37cf3e0b1e0e89af4511840c1d13fe51b66
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
