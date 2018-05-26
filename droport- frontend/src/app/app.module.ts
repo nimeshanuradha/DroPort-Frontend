@@ -28,6 +28,7 @@ import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 
 
 
@@ -81,10 +82,8 @@ const appRoutes: Routes = [
     AboutComponent,
     ServicesComponent,
     ContactusComponent,
-<<<<<<< HEAD
-=======
-    FooterComponent
->>>>>>> ad7517efd9f923f6c1c629f05cb3113d0f184322
+    FooterComponent,
+    SidebarAdminComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

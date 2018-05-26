@@ -8,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminMainPanelComponent implements OnInit {
 
+  user = "Nimesh"
+
   constructor() { }
 
   ngOnInit() {
   }
 
+
+
+
+
+
 }
 
-(function showContent() {
-  console.log("Content");
-});
