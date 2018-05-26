@@ -29,6 +29,7 @@ import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
+import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
 
 
 
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
   { path: 'land_about', component: AboutComponent },
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
-  { path: 'land_contactus', component: ContactusComponent }
+  { path: 'land_contactus', component: ContactusComponent },
+  { path: 'admin_profile',component: AdminProfileComponent}
 
 
 ]
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     ServicesComponent,
     ContactusComponent,
     FooterComponent,
-    SidebarAdminComponent
+    SidebarAdminComponent,
+    AdminProfileComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
