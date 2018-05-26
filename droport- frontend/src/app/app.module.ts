@@ -29,6 +29,7 @@ import { HomeComponent } from './view/landing/home/home.component';
 import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -80,7 +81,8 @@ const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     ServicesComponent,
-    ContactusComponent
+    ContactusComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
