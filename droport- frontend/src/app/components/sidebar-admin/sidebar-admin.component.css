@@ -1,0 +1,30 @@
+
+sidebarcanves{
+  height: 100%;
+  background-color: #1c3e5c;
+  margin-top: 500px;
+}
+ul {
+  list-style : none;
+  margin: 0;
+  padding-left:10px;
+  height: 100%; 
+}
+
+ul a {
+  padding: 10px;
+  display: block;
+  width: 50px;
+  border-style:hidden;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(200, 226, 218, 0.938);
+  font : arial;
+  color: #000;
+}
+
+ul a:hover{
+  background-color: #337ab7;
+  color: #FFF
+
+}

@@ -30,6 +30,8 @@ import { ContactusComponent } from './view/landing/contactus/contactus.component
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
+import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
+import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 
 
 
@@ -54,7 +56,9 @@ const appRoutes: Routes = [
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
   { path: 'land_contactus', component: ContactusComponent },
-  { path: 'admin_profile',component: AdminProfileComponent}
+  { path: 'admin_profile',component: AdminProfileComponent},
+  { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
+  { path: 'pil_profile',component:   PilProfileComponent}
 
 
 ]
@@ -86,7 +90,9 @@ const appRoutes: Routes = [
     ContactusComponent,
     FooterComponent,
     SidebarAdminComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    PilFlyHistDetailComponent,
+    PilProfileComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
