@@ -1,13 +1,13 @@
-
+<div class="container-fluid">
   <div class="row">
-    <app-navbar></app-navbar>
-</div>
-<div class="row">
-  <div class="col-md-2">
-    <app-sidebar-owner></app-sidebar-owner>
-  </div>
+     <div class="col-xs-2">
+      <app-sidebar-owner></app-sidebar-owner>
+    </div> 
   <div class="col-md-10">
-
+     
+          <div class="panel panel-primary">
+            <div class="panel-heading">Drone registration Details</div>
+            <div class="panel-body">
             
             <div class="form-group col-xs-12">
                 <div class="col-xs-2">Drone ID :</div>
@@ -64,169 +64,213 @@
         </div>
       </div>
     
-      <div class="form-group col-xs-12">
+      <div class="form-group col-xs-10">
           <div class="col-xs-2">GPS Positioning :</div>
-          <div class="col-xs-10"></div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">No</label>
-            </div>
-            
-          
-            <div class="col-xs-2">Vision System :</div>
-            <div class="form-group col-xs-12">
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="iname" name="iname" [(ngModel)]="iname" placeholder="Flight Time">
+          <div class="col-xs-12"></div>
+         
+          <div class="col-sm-10">
+              <div class="col-xs-3"></div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Male
+                </label>
+              </div>
+              <div class="col-sm-10">
+                  <div class="col-xs-3"></div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Female
+                </label>
               </div>
             </div>
-          
-            
-            <div>Sensor:</div>
+          </div>
+      </div>
+           
             <div class="form-group col-xs-12">
+                <div class="col-xs-3">Vision System :</div>
+                <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">Foward</option>
+                      <option value="2">Backward</option>
+                      <option value="3">Downward</option>
+                    </select>
+                  </div>
+
+                  
+
+                  <div class="form-group col-xs-12">
+                      <div class="col-xs-2">Attitude Range:</div>
+                    <div class="col-xs-10">
+                      <input type="text" class="form-control" id="aname" name="aname" [(ngModel)]="aname" placeholder="Attitude  Name">
+                    </div>
+                  </div>
+                  <div class="form-group col-xs-12">
+                      <div class="col-xs-2">Obstracle Sensor Range:</div>
+                    <div class="col-xs-10">
+                      <input type="text" class="form-control" id="aname" name="aname" [(ngModel)]="aname" placeholder="Attitude  Name">
+                    </div>
+                  </div>
+            
+            <div class="form-group col-xs-12">
+                <div class="col-xs-2">Sensor:</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="sname" name="sname" [(ngModel)]="sname" placeholder="Sensor">
               </div>
             </div>
           
-            <div>Lense:</div>
+           
             <div class="form-group col-xs-12">
+                <div class="col-xs-2">Lense:</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname" placeholder="Lense Type">
               </div>
             </div>
+      </div>
+          
+              
+      <div class="form-group col-xs-12">
+          <div class="col-xs-3">Image Size:</div>
+          <div class="col-auto my-1">
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option selected>Choose...</option>
+                <option value="1">3:2</option>
+                <option value="2">4:3</option>
+                <option value="3">16:9</option>
+              </select>
+            </div>
+      
+              
+            <div class="form-group col-xs-12">
+                <div class="col-xs-3">Video Range:</div>
+                <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">HD</option>
+                      <option value="2">FULL HD</option>
+                      <option value="3">C4K</option>
+                    </select>
+                  </div>
             
           
-              <div>Image Size:</div>
-              <div class="form-row align-items-center">
-                <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">3:2</option>
-                    <option value="2">4:3</option>
-                    <option value="3">16:9</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div>Video Range:</div>
-              <div class="form-row align-items-center">
-                <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">Full HD</option>
-                    <option value="2">HD</option>
-                    <option value="3">C4k</option>
-                  </select>
-                </div>
-              </div>
-          
-            <div>Storage Type :</div>
+            
             <div class="form-group col-xs-12">
+                <div class="col-xs-2">Storage Type :</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="tname" name="tname" [(ngModel)]="tname" placeholder="Storage Type">
               </div>
             </div>
          
-            <div>Capacity:</div>
             <div class="form-group col-xs-12">
+            <div class="col-xs-2">Capacity:</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="vname" name="vname" [(ngModel)]="vname" placeholder="Capacity">
               </div>
             </div>
           
-              <div>Voltage:</div>
+              
               <div class="form-group col-xs-12">
+                  <div class="col-xs-2">Voltage:</div>
                 <div class="col-xs-10">
                   <input type="text" class="form-control" id="oname" name="oname" [(ngModel)]="oname" placeholder="Voltage">
                 </div>
               </div>
               
-              <div>Rated Power:</div>
+              
               <div class="form-group col-xs-12">
+                  <div class="col-xs-2">Rated Power:</div>
                 <div class="col-xs-10">
                   <input type="text" class="form-control" id="rname" name="rname" [(ngModel)]="rname" placeholder="Rated Power">
                 </div>
               </div>
             
-              <div>Operating System :</div>
-              <div class="form-row align-items-center">
-                <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">ios</option>
-                    <option value="2">Anroid</option>
-                  </select>
-                </div>
-              </div>
-           
-           
-            <div>Operating Frequency :</div>
+              
+                 
             <div class="form-group col-xs-12">
+                <div class="col-xs-3">Operating System:</div>
+                <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">ios</option>
+                      <option value="2">Anroid</option>
+                      
+                    </select>
+                  </div>
+           
+           
+            
+            <div class="form-group col-xs-12">
+                <div class="col-xs-2">Operating Frequency :</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="ename" name="ename" [(ngModel)]="ename" placeholder="Operating Frequency">
               </div>
             </div>
          
-            <div>Max Transmission :</div>
+            
             <div class="form-group col-xs-12">
+                <div class="col-xs-2">Max Transmission :</div>
               <div class="col-xs-10">
                 <input type="text" class="form-control" id="xname" name="xname" [(ngModel)]="xname" placeholder="Max Transmission">
               </div>
             </div>
          
-              <div>Battery :</div>
-              <div class="form-row align-items-center">
+              
+            <div class="form-group col-xs-12">
+                <div class="col-xs-3">Battery:</div>
                 <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">6000mghz</option>
-                    <option value="2">Lipo 25</option>
-                  </select>
-                </div>
-              </div>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">6000mghz</option>
+                      <option value="2">Lipo 25</option>
+                      
+                    </select>
+                  </div>
             
-              <div>Ports :</div>
-              <div class="form-row align-items-center">
+             
+              
+            <div class="form-group col-xs-12">
+                <div class="col-xs-3">Ports:</div>
                 <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">USB</option>
-                    <option value="2">HDMI</option>
-                  </select>
-                </div>
-              </div>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">USB</option>
+                      <option value="2">HDMI</option>
+                      
+                    </select>
+                  </div>
             
-              <div>Camera Quality:</div>
-              <div class="form-row align-items-center">
+              
+                 
+            <div class="form-group col-xs-12">
+                <div class="col-xs-3">Camera Quality:</div>
                 <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                  </select>
-                </div>
-              </div>
-            
-              <div>Battery Time:</div>
-              <div class="form-row align-items-center">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">6000mghz</option>
+                      <option value="2">Lipo 25</option>
+                      
+                    </select>
+                  </div>
+             
+                
+            <div class="form-group col-xs-12">
+                <div class="col-xs-3">Battery Time:</div>
                 <div class="col-auto my-1">
-                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
-                    <option value="1">Low</option>
-                    <option value="2">Medium</option>
-                  </select>
-                </div>
-              </div>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Choose...</option>
+                      <option value="1">6000mghz</option>
+                      <option value="2">Lipo 25</option>
+                      
+                    </select>
+                  </div>
             
-        
-        <a class="btn btn-primary" href="#" role="button">SUBMIT</a >
-
+                  <div class="panel-footer">
+                      <a class="btn btn-primary btn-lg button" routerLink="" role="button">Submit</a>
+                    </div>
+            </div>
 
 </div>
-<div class="row">
-  Footer goes here!
-</div>
+
+  </div>

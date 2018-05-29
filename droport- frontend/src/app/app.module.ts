@@ -28,13 +28,14 @@ import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
-
+import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
-
+import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
+import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 
 
 const appRoutes: Routes = [
@@ -60,7 +61,10 @@ const appRoutes: Routes = [
   { path: 'land_contactus', component: ContactusComponent },
   { path: 'admin_profile',component: AdminProfileComponent},
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
-  { path: 'pil_profile',component:   PilProfileComponent}
+  { path: 'pil_profile',component:   PilProfileComponent},
+  { path: 'own_prof',component:   OwnProfComponent},
+  { path: 'owner_hist',component:   OwnerHistComponent},
+  
 
 
 ]
@@ -86,7 +90,9 @@ const appRoutes: Routes = [
     SidebarPilotComponent,
     PilReqDetailComponent,
     PilFlyHistoryComponent,
-
+    OwnProfComponent,
+    DroneRegComponent,
+    OwnerHistComponent,
     HomeComponent,
     AboutComponent,
     ServicesComponent,
@@ -96,6 +102,7 @@ const appRoutes: Routes = [
     AdminProfileComponent,
     PilFlyHistDetailComponent,
     PilProfileComponent,
+    SidebarOwnerComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
