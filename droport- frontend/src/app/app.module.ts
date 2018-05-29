@@ -27,6 +27,8 @@ import { HomeComponent } from './view/landing/home/home.component';
 import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
+import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
@@ -84,6 +86,7 @@ const appRoutes: Routes = [
     SidebarPilotComponent,
     PilReqDetailComponent,
     PilFlyHistoryComponent,
+
     HomeComponent,
     AboutComponent,
     ServicesComponent,
@@ -92,7 +95,7 @@ const appRoutes: Routes = [
     SidebarAdminComponent,
     AdminProfileComponent,
     PilFlyHistDetailComponent,
-    PilProfileComponent
+    PilProfileComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
