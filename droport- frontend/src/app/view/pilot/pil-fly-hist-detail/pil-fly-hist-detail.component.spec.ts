@@ -1,20 +1,20 @@
-
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdminRegReqComponent } from './admin-reg-req.component';
 
-describe('AdminRegReqComponent', () => {
-  let component: AdminRegReqComponent;
-  let fixture: ComponentFixture<AdminRegReqComponent>;
+import { PilFlyHistDetailComponent } from './pil-fly-hist-detail.component';
+
+describe('PilFlyHistDetailComponent', () => {
+  let component: PilFlyHistDetailComponent;
+  let fixture: ComponentFixture<PilFlyHistDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminRegReqComponent ]
+      declarations: [ PilFlyHistDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminRegReqComponent);
+    fixture = TestBed.createComponent(PilFlyHistDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
