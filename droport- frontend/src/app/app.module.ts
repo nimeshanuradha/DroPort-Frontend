@@ -52,7 +52,8 @@ const appRoutes: Routes = [
   { path: 'land_about', component: AboutComponent },
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
-  { path: 'land_contactus', component: ContactusComponent }
+  { path: 'land_contactus', component: ContactusComponent },
+  { path: 'login', component: LoginComponent}
 
 
 ]
