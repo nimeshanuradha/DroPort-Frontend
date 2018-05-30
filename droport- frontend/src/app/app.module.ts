@@ -36,7 +36,7 @@ import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
-
+import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -64,8 +64,8 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
-  
-
+  { path: 'owner_req',component:   OwnerReqComponent},
+  { path: 'drone_reg',component:   DroneRegComponent},
 
 ]
 
@@ -103,6 +103,8 @@ const appRoutes: Routes = [
     PilFlyHistDetailComponent,
     PilProfileComponent,
     SidebarOwnerComponent,
+    OwnerReqComponent,
+   
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
