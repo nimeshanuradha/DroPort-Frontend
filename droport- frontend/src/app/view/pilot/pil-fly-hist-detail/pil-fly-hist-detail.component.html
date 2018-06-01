@@ -1,20 +1,22 @@
 <div class="container-fluid">
     <div class="col-md-3">
-      <app-sidebar-owner></app-sidebar-owner>
+      <app-sidebar-pilot></app-sidebar-pilot>
     </div>
     <div class="col-md-9">
        <div class="alert alert-info" role="alert">
-          <h2 class="alert-heading">Flying Request</h2>
+          <h2 class="alert-heading">Hello {{pilot}} !</h2>
+          <hr>
+          <h4>You have received a request to complete a flying job by owner. Below are more details.</h4>
        </div>
        <div class="panel panel-primary">
          <div class="panel-heading">
            <h4><b>FLYING JOB</b></h4>
          </div>
          <div class="panel-body">
-           <fieldset>
+           <fieldset disabled>
                <div class="form-group col-xs-12">
                  <!-- request details -->
-                 <div class="col-xs-2"><label for="req_type">Request ID :</label></div>
+                 <div class="col-xs-2"><label for="req_type">Request Type :</label></div>
                  <div class="col-xs-10">
                    <input type="text" class="form-control" id="req_type" name="req_type" [(ngModel)]="req_type" >
                  </div>
@@ -63,7 +65,7 @@
                <h4><b>CUSTOMER DETAILS</b></h4>
                </div>
                <div class="panel-body">
-               <fieldset> 
+               <fieldset disabled> 
                <div class="form-group col-xs-12">
                  <div class="col-xs-2"><label for="name">Name :</label></div>
                  <div class="col-xs-10">
@@ -94,32 +96,19 @@
            <h4><b>FLYING JOB DETAILS</b></h4>
          </div>
          <div class="panel-body">
-            <fieldset >
+            <fieldset disabled>
                 <div class="form-group col-xs-12">
                     <div class="col-xs-2"><label for="droneId">Used Drone :</label></div>
                     <div class="col-xs-10">
                       <input type="text" class="form-control" id="droneId" name="droneId" [(ngModel)]="droneId">
                     </div>
                   </div>
-                   <div class="form-group col-xs-12"> 
+                  <div class="form-group col-xs-12">
                       <div class="col-xs-2"><label for="date">Date :</label></div>
                       <div class="col-xs-10">
-                          <form class="form-inline">
-                              <div class="form-group">
-                                <div class="input-group">
-                                  <input class="form-control" placeholder="yyyy-mm-dd"
-                                         name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                                  <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                                      <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
+                        <input type="text" class="form-control" id="date" name="date" [(ngModel)]="date">
                       </div>
-                     </div>  
-                  
+                    </div> 
                 <div class="form-group col-xs-12">
                   <div class="col-xs-2"><label for="stime">Started Time :</label></div>
                   <div class="col-xs-4">
@@ -142,79 +131,10 @@
                       <input type="text" class="form-control" id="payment" name="payment" [(ngModel)]="payment">
                     </div>
                   </div> 
-                
-                    
                 </fieldset>
          </div>
        </div>
-
-
-       <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4><b>PILOT DETAILS</b></h4>
-          </div>
-          <div class="panel-body">
-             <fieldset >
-                 <div class="form-group col-xs-12">
-                     <div class="col-xs-2"><label for="droneId">Pilot ID :</label></div>
-                     <div class="col-xs-10">
-                       <input type="text" class="form-control" id="pilotId" name="droneId" [(ngModel)]="pilotId">
-                     </div>
-                   </div>
-                    <div class="form-group col-xs-12"> 
-                       <div class="col-xs-2"><label for="date">Date :</label></div>
-                       <div class="col-xs-10">
-                           <form class="form-inline">
-                               <div class="form-group">
-                                 <div class="input-group">
-                                   <input class="form-control" placeholder="yyyy-mm-dd"
-                                          name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                                   <div class="input-group-append">
-                                     <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                                       <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                                     </button>
-                                   </div>
-                                 </div>
-                               </div>
-                             </form>
-                       </div>
-                      </div>  
-                   
-                 <div class="form-group col-xs-12">
-                   <div class="col-xs-2"><label for="stime">Started Time :</label></div>
-                   <div class="col-xs-4">
-                     <input type="text" class="form-control" id="stime" name="stime" [(ngModel)]="stime">
-                   </div>
-                     <div class="col-xs-2"><label for="etime">Ended Time :</label></div>
-                     <div class="col-xs-4">
-                       <input type="text" class="form-control" id="etime" name="etime" [(ngModel)]="etime">
-                     </div>
-                   </div>
-                 <div class="form-group col-xs-12">
-                   <div class="col-xs-2"><label for="period">Fly Period :</label></div>
-                   <div class="col-xs-10">
-                     <input type="text" class="form-control" id="period" name="period" [(ngModel)]="period">
-                   </div>
-                 </div>
-                 <div class="form-group col-xs-12">
-                     <div class="col-xs-2"><label for="payment">Payment :</label></div>
-                     <div class="col-xs-10">
-                       <input type="text" class="form-control" id="payment" name="payment" [(ngModel)]="payment">
-                     </div>
-                   </div> 
-                 
-                     <div class="form-check">
-                         <input class="form-check-input" class="col-xs-2" type="checkbox" value="" id="defaultCheck1">
-                         <label class="form-check-label" class="col-xs-2" for="defaultCheck1">
-                           Fly by me
-                         </label>
-                       </div>
-                 </fieldset>
-          </div>
-        </div>
-       
-       <a class="btn btn-primary" routerLink="owner_hist" role="button">Back</a>
-       
+       <a class="btn btn-primary" routerLink="/pil_fly_history" role="button">Back</a>
     </div>
    </div>
    
