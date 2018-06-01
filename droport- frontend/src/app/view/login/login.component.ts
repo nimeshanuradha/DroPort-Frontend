@@ -2,7 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { send } from 'q';
+import { Http, Response, Headers} from "@angular/http";
+
 
 
 
@@ -13,7 +14,7 @@ import { send } from 'q';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _http:Http) { }
   option_preview = false;
 
   
@@ -24,20 +25,25 @@ export class LoginComponent implements OnInit {
     this.option_preview = !this.option_preview
   };
 
-  post_login_data(login: NgForm):void{
-    console.log('login')
-    const data_arr = login.value;
-    const username = data_arr.username
-    const password = data_arr.password
+  // post_login_data(login: NgForm):void{
+  //   console.log('login')
+  //   const data_arr = login.value;
+  //   const username = data_arr.username
+  //   const password = data_arr.password
 
-    if (username=="nimesh" && password=="123") {
-      console.log('login using '+ username)
-      console.log('login using '+ password)
-    }
-  };
+  //   if (username=="nimesh" && password=="123") {
+  //     console.log('login using '+ username)
+  //     console.log('login using '+ password)
+  //   }
+  // };
 
-  
+  add_to_db(login: NgForm){
+    console.log("add_to_db called")
+    this._http.post("/req/zxc",(req,res)=>{
+    })
  
+  }
+    
 
 };
 
