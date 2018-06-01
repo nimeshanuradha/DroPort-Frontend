@@ -7,3 +7,13 @@
     padding-top: 8px;
     padding-right: 5px;
 }
+
+a{
+    color: #FFF;
+}
+
+ul a:hover{
+    background-color:  rgba(200, 226, 218, 0.938);
+    color: #000;
+  
+  }

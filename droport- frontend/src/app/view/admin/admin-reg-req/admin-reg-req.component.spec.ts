@@ -1,5 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminRegReqComponent } from './admin-reg-req.component';
 
 describe('AdminRegReqComponent', () => {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule} from '@angular/forms'
 import { HttpClientModule} from '@angular/common/http'
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -21,20 +22,28 @@ import { OwnMainPageComponent } from './view/owner/own-main-page/own-main-page.c
 import { PilMainPageComponent } from './view/pilot/pil-main-page/pil-main-page.component';
 import { OwnRegComponent } from './view/owner/own-reg/own-reg.component';
 import { SidebarPilotComponent } from './components/sidebar-pilot/sidebar-pilot.component';
-
 import { PilReqDetailComponent } from './view/pilot/pil-req-detail/pil-req-detail.component';
 import { PilFlyHistoryComponent } from './view/pilot/pil-fly-history/pil-fly-history.component';
-
 import { HomeComponent } from './view/landing/home/home.component';
 import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
+import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
+import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
-
-
+import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
+import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
+import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
+import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
+import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
+import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
+import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
+import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
+import { MapComponent } from './components/map/map.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_phi', component: AdminRegPhiComponent },
@@ -53,7 +62,18 @@ const appRoutes: Routes = [
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
   { path: 'land_contactus', component: ContactusComponent },
-  { path: 'login', component: LoginComponent}
+
+  { path: 'login', component: LoginComponent},
+
+
+  { path: 'admin_profile',component: AdminProfileComponent},
+  { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
+  { path: 'pil_profile',component:   PilProfileComponent},
+  { path: 'own_prof',component:   OwnProfComponent},
+  { path: 'owner_hist',component:   OwnerHistComponent},
+  { path: 'owner_req',component:   OwnerReqComponent},
+  { path: 'drone_reg',component:   DroneRegComponent},
+  { path: 'map',component: MapComponent}
 
 
 ]
@@ -79,17 +99,32 @@ const appRoutes: Routes = [
     SidebarPilotComponent,
     PilReqDetailComponent,
     PilFlyHistoryComponent,
-    AboutComponent,
+    OwnProfComponent,
+    DroneRegComponent,
+    OwnerHistComponent,
     HomeComponent,
+    AboutComponent,
     ServicesComponent,
     ContactusComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarAdminComponent,
+    AdminProfileComponent,
+    PilFlyHistDetailComponent,
+    PilProfileComponent,
+    SidebarOwnerComponent,
+    OwnerReqComponent,
+    SidebarCustomerComponent,
+    MapComponent,
+   
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc'
+    })
     
   ],
   providers: [],

@@ -1,9 +1,42 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
 
-<div class="col-xs-offset-2">
-    <h2> Main Admin Panel</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+            <app-sidebar-admin></app-sidebar-admin>
+        </div>
+        <div class="col-xs-9">
+            <div class="page-header"><h3>Admin Main Panel - {{user}}</h3></div>
+            <div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Req ID</th>
+                            <th>Town</th>
+                            <th>Customer ID</th>
+                            <th>Owner ID</th>
+                            <th>Pilot ID</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>123</td>
+                            <td>Piliyandala</td>
+                            <td><a routerLink="">{{cus_id}}</a></td>
+                            <td><a routerLink="">{{own_id}}</a></td>
+                            <td><a routerLink="">{{pil_id}}</a></td>
+                            <td>2018-05-04</td>
+                            <td>13:45</td>
+                            <td><button class="btn btn-success">View More</button></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-<a href="/admin_req_view" class="btn btn default btn-success" target="_blank"> view request page</a>
-<a href="/admin_reg_phi" class="btn btn default btn-success" target="_blank"> view registered PHIs</a>
-
