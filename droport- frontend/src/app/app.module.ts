@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule} from '@angular/forms'
-<<<<<<< HEAD
-import { HttpClientModule} from '@angular/common/http'
+import { FormsModule} from '@angular/forms';
+
+import { HttpClientModule} from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
-=======
-import { HttpModule} from '@angular/http'
+
+import { HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
->>>>>>> 261ca588b7e35e33dd4cc6827be14fd1045b80ff
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,24 +37,20 @@ import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
-<<<<<<< HEAD
+
 import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/admin-reg-customers.component';
-import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { CommonModule } from '@angular/common';
 
 
-=======
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
-<<<<<<< HEAD
+
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
-=======
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
->>>>>>> 261ca588b7e35e33dd4cc6827be14fd1045b80ff
+
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -81,23 +77,18 @@ const appRoutes: Routes = [
 
 
   { path: 'admin_profile',component: AdminProfileComponent},
-<<<<<<< HEAD
-  { path: 'drone_reg',component: DroneRegComponent},
-  { path: 'admin_reg_customer', component:AdminRegCustomersComponent}
 
-=======
+  { path: 'drone_reg',component: DroneRegComponent},
+  { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
+
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
-<<<<<<< HEAD
   { path: 'map',component: MapComponent}
 
-=======
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
->>>>>>> 261ca588b7e35e33dd4cc6827be14fd1045b80ff
 
 ]
 
@@ -131,10 +122,8 @@ const appRoutes: Routes = [
     FooterComponent,
     SidebarAdminComponent,
     AdminProfileComponent,
-<<<<<<< HEAD
     AdminRegCustomersComponent,
-    DroneRegComponent
-=======
+    DroneRegComponent,
     PilFlyHistDetailComponent,
     PilProfileComponent,
     SidebarOwnerComponent,
@@ -142,23 +131,21 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
    
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-<<<<<<< HEAD
     HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc'
-    })
-=======
+    }),
+
     HttpModule,
     FormsModule,
     CommonModule,
     
->>>>>>> 261ca588b7e35e33dd4cc6827be14fd1045b80ff
     
   ],
   providers: [],
