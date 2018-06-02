@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from '@angular/forms'
 import { HttpClientModule} from '@angular/common/http'
 
@@ -37,6 +38,7 @@ import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.compon
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
+import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -66,7 +68,7 @@ const appRoutes: Routes = [
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
-
+  { path: 'my_drones',component:   MyDronesComponent},
 ]
 
 @NgModule({
@@ -104,10 +106,12 @@ const appRoutes: Routes = [
     PilProfileComponent,
     SidebarOwnerComponent,
     OwnerReqComponent,
+    MyDronesComponent,
    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     FormsModule
