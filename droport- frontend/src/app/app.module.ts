@@ -50,6 +50,7 @@ import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
+import { DroneComponent } from './view/landing/drone/drone.component';
 
 
 const appRoutes: Routes = [
@@ -77,17 +78,15 @@ const appRoutes: Routes = [
 
 
   { path: 'admin_profile',component: AdminProfileComponent},
-
-  { path: 'drone_reg',component: DroneRegComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
-
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
-  { path: 'map',component: MapComponent}
+  { path: 'map',component: MapComponent},
+  { path: 'drone',component:DroneComponent}
 
 
 ]
@@ -130,6 +129,7 @@ const appRoutes: Routes = [
     OwnerReqComponent,
     SidebarCustomerComponent,
     MapComponent,
+    DroneComponent,
    
 
   ],
