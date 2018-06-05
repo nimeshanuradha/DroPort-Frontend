@@ -10,6 +10,7 @@ export class AdminReqViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

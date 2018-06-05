@@ -145,14 +145,3 @@
   </form>
 </div>
 
-<script>
-  var app = angular.module('DroPort', []);
-  app.controller('own_reg_ctrl', function($scope, $http) {
-      $http.get("http://localhost:3000/req/asd")
-      .then(function(response) {
-          console.log($scope.fname)
-      });
-  });
-  </script>
-
-

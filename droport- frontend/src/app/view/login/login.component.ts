@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   constructor(private _http:Http) { }
   option_preview = false;
 
-  
   ngOnInit(){
   };
 
@@ -38,11 +37,18 @@ export class LoginComponent implements OnInit {
   // };
 
   add_to_db(login: NgForm){
-    console.log("add_to_db called")
-    this._http.post("/req/zxc",(req,res)=>{
+    console.log("add_to_db called on client")
+    var username = login.value.username
+    var password = login.value.password
+    //var formData = JSON.stringify({"username": username,"password": password})
+    //var data = JSON.stringify({"username": username,"password": password})
+    //console.log("this is from client ",data)
+    this._http.post("/req/zxc",{
+      "username": username,
+      "password": password
     })
- 
-  }
+      .subscribe(res=>{console.log(res.status)})
+  };
     
 
 };
