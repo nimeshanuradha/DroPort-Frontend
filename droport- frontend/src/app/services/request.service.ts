@@ -1,24 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers} from "@angular/http";
 import 'rxjs/add/operator/map'; // solved using installing "rxjs-compat" 
-import { HttpHeaders } from '@angular/common/http';
-
-
 
 @Injectable()
 export class RequestService {
 
-  private _url : string = '/req/'
+  constructor(private http: Http) { }  
 
-
-  constructor(private _http: Http) { }  
-
-
-  getRequests(){
+//GET all requests
+  getAll_Requests(){
     console.log("getRequest called")
-    return this._http.get(this._url+"asd")
-    .map((res: Response)=> res.json())
-  }
+    return this.http.get("/api/req/all").map((res: Response)=> res.json())
+  };
+
+//GET All pending Requests
+  getAll_PendingRequests(){
+    console.log("getAll_PendingRequests called")
+    return this.http.get("/api/req/all-pending").map((res: Response)=> res.json())
+  };
+
+//GET All completed Requests
+  getAll_CompletedRequests(){
+    console.log("getAll_CompletedRequests called")
+    return this.http.get("/api/req/all-completed").map((res: Response)=> res.json())
+  };
+
+
+//GET request by id
+  getRequest_byID(id:number){
+    console.log("getRequest_byID called")
+    return this.http.get("/api/req/:id").map((res: Response)=>res.json())
+  };
+
+
   
     
 

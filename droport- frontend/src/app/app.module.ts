@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from '@angular/forms'
 import { HttpModule} from '@angular/http'
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -29,17 +32,10 @@ import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
-import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
 import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/admin-reg-customers.component';
-import { CommonModule } from '@angular/common';
-import { AgmCoreModule } from '@agm/core';
-import { HttpClientModule} from '@angular/common/http';
-
-
-
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
@@ -48,7 +44,6 @@ import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
-
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -70,10 +65,7 @@ const appRoutes: Routes = [
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
   { path: 'land_contactus', component: ContactusComponent },
-
   { path: 'login', component: LoginComponent},
-
-
   { path: 'admin_profile',component: AdminProfileComponent},
   { path: 'drone_reg',component: DroneRegComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
@@ -83,7 +75,6 @@ const appRoutes: Routes = [
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
-
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent}
 
@@ -128,7 +119,7 @@ const appRoutes: Routes = [
     MyDronesComponent,
     SidebarCustomerComponent,
     MapComponent,
-  
+ 
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

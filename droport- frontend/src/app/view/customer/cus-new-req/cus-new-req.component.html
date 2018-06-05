@@ -1,3 +1,47 @@
+
+
+<div class="row">
+  <div class="col-xs-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-xs-9">
+      <div class="page-header">
+        <h2>DroPort System - New Flying Request </h2>
+      </div>
+      <form #cus_new_req ="ngForm" (ngSubmit)=get_req_data(cus_new_req)>
+                <div class="form-group col-xs-12">
+                    <label for="district" class="lable col-xs-3">District</label>
+                    <input type="text" class="form-control col-xs-8" name="district" required=""  [(ngModel)]="district">
+                </div>
+          
+                <div class="form-group col-xs-12">
+                    <label for="town" class="lable col-xs-3">Town</label>
+                    <input type="text" class="form-control col-xs-8" name="town" required="" [(ngModel)]="town" >
+                </div>
+                
+                <div class="form-group col-xs-12">
+                    <label for="area" class="lable col-xs-3">Area</label>
+                    <input type="text" class="form-control col-xs-8" name="area" required="" [(ngModel)]="area" >
+                </div>
+                
+                <div class="form-group col-xs-12">
+                    <label for="date" class="lable col-xs-3">Date</label>
+                    <input type="text" class="form-control col-xs-8" name="date" required="" [(ngModel)]="date" >
+                </div>
+          
+                <div class="form-group col-xs-12">
+                  <label for="time" class="lable col-xs-3">Time</label>
+                  <input type="text" class="form-control col-xs-8" name="time" required="" [(ngModel)]="time" >
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit' >
+                </div>
+                
+          
+              </form>
+</div>
+
 <div class="container-fluid">
   
   <div class="row">
@@ -74,7 +118,7 @@
           </div>
         </form>
     </div>
-
   </div>
  
 </div>
+
