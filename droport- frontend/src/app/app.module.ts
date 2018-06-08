@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule} from '@angular/forms'
 import { HttpModule} from '@angular/http'
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -46,7 +45,7 @@ import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-
 import { MapComponent } from './components/map/map.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '',component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
@@ -67,14 +66,13 @@ const appRoutes: Routes = [
   { path: 'land_contactus', component: ContactusComponent },
   { path: 'login', component: LoginComponent},
   { path: 'admin_profile',component: AdminProfileComponent},
-  { path: 'drone_reg',component: DroneRegComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
-  { path: 'drone_reg',component:   DroneRegComponent},
+  //{ path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent}
 
@@ -101,7 +99,6 @@ const appRoutes: Routes = [
     PilReqDetailComponent,
     PilFlyHistoryComponent,
     OwnProfComponent,
-    DroneRegComponent,
     OwnerHistComponent,
     HomeComponent,
     AboutComponent,
@@ -111,7 +108,7 @@ const appRoutes: Routes = [
     SidebarAdminComponent,
     AdminProfileComponent,
     AdminRegCustomersComponent,
-    DroneRegComponent,
+    //DroneRegComponent,
     PilFlyHistDetailComponent,
     PilProfileComponent,
     SidebarOwnerComponent,

@@ -36,6 +36,11 @@ app.use('/api/user',user_routes);
 
 
 port = 3000;
-app.listen(port ,()=>{
-    console.log('LIstning On ' + port)
+app.listen(port ,(err)=>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log('LIstning On ' + port)
+    }
+    
 })
