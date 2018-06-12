@@ -25,9 +25,9 @@ var user_routes = require('./routes/user_routes')
 //     next();
 // });
 
-app.set('views', path.join(__dirname, '../droport- frontend/src/app/view'));
-app.engine('html', cons.swig);
-app.set('view engine', 'html');
+// app.set('views', path.join(__dirname, '../droport- frontend/src/app/view'));
+// app.engine('html', cons.swig);
+// app.set('view engine', 'html');
 
 app.use('/api/req',request_routes);
 app.use('/api/user',user_routes);

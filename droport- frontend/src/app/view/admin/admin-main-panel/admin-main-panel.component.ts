@@ -31,16 +31,12 @@ export class AdminMainPanelComponent implements OnInit {
     // //LOAD completed Requests
     this.RequestService.getAll_Requests().subscribe(res=>this.all_req_arr=res)
     console.log("printing all")
-    console.log(this.all_req_arr)
+    console.log(this.all_req_arr)   
   }
-  
+
 
 // 
-  getRequest(id:number){
-    console.log("get data function called")
-    this.RequestService.getRequest_byID(id).subscribe(res=>this.all_req_arr=res)
-    console.log(this.all_req_arr)
-  }
+ 
   
     
 
