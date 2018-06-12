@@ -20,28 +20,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr>
-                                <!-- <td>{{req.req_id}}</td>
-                                <td>{{req.district}}</td>
-                                <td>{{req.town}}</td>
-                                <td>{{req.date}}</td>
-                                <td>{{req.time}}</td>
-                                <td>{{req.cus_id}}</td> -->
-                                <td><button class="btn btn-success" (click)=getdata()>View More</button></td>
-                                <td><button class="btn btn-success" (click)=getRequests()>View More</button></td>
+                            <tr *ngFor="let request of all_req_arr ">
+                                <td> {{ request.req_id}} </td>
+                                <td> {{ request.town}} </td>
+                                <td> {{ request.cus_id}} </td>
+                                <td> {{ request.own_id}} </td>
+                                <td> {{ request.date}} </td>
+                                <td> {{ request.time}} </td>
+                                <td><button class="btn btn-success" routerLink="/admin_req_view/{{request.req_id}}"   >View More</button></td>
+                                
                             </tr>
+                           
                     </tbody>
                 </table>
+                
             </div>
-
-            <ul>
-                <li>{{requests[0].req_id}}</li>
-                <li>{{requests[0].district}}</li>
-                <li>{{requests[0].time}}</li>
-            </ul>
-            
-
-
 
         </div>
     </div>

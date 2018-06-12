@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
@@ -29,12 +30,13 @@ import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
-import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
 import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/admin-reg-customers.component';
+
 import { CommonModule } from '@angular/common';
+
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
@@ -42,18 +44,24 @@ import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
+
 import { DroneComponent } from './view/landing/drone/drone.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
 
 
 
-const appRoutes: Routes = [
+
   
+
+import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
+
+const appRoutes: Routes = [
+  { path: '',component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
-  { path: 'admin_req_view', component: AdminReqViewComponent },
+  { path: 'admin_req_view/:req_id', component: AdminReqViewComponent },
   { path: 'admin_reg_req', component: AdminRegReqComponent },
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -70,7 +78,6 @@ const appRoutes: Routes = [
   { path: 'land_contactus', component: ContactusComponent },
   { path: 'login', component: LoginComponent},
   { path: 'admin_profile',component: AdminProfileComponent},
-  { path: 'drone_reg',component: DroneRegComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
@@ -78,8 +85,10 @@ const appRoutes: Routes = [
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
+
   { path: 'map',component: MapComponent},
   { path: 'drone',component:DroneComponent},
+
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent}
 
@@ -107,7 +116,6 @@ const appRoutes: Routes = [
     PilReqDetailComponent,
     PilFlyHistoryComponent,
     OwnProfComponent,
-    DroneRegComponent,
     OwnerHistComponent,
     HomeComponent,
     AboutComponent,
@@ -125,8 +133,10 @@ const appRoutes: Routes = [
     MyDronesComponent,
     SidebarCustomerComponent,
     MapComponent,
+
     DroneComponent,
    
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
