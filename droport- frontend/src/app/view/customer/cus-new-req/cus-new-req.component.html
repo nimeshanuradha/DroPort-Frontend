@@ -7,10 +7,10 @@
     <div class="col-md-8">
       <div class="panel panel-primary">
         <div class="panel-heading">DroPort System - New Flying Request </div>
-        <form #cus_new_req ="ngForm" (ngSubmit)=get_req_data(cus_new_req)>
+        <form #cus_new_req ="ngForm" (ngSubmit)=get_req_data(cus_new_req) style=" padding-bottom: 50px;">
           <div class="container">
             <form id="send_new_req" #new_req_data = 'ngForm' (ngSubmit)="send_new_req(new_req_data)">
-                <div class="form-group col-xs-12">
+                <div class="form-group col-xs-12" style="padding-top: 50px;">
                     <!-- request details -->
                     <div class="col-xs-2">
                       <label for="req_type">Request Type :</label>
@@ -25,16 +25,7 @@
                       </select>
                     </div>
                 </div>
-                <div class="form-group col-xs-12">
-                    <div class="col-xs-2"><label for="district">District :</label></div>
-                    <div class="col-xs-2">
-                      <input type="text" class="form-control" id="district" name="district" [(ngModel)]="district">
-                    </div>
-                    <div class="col-xs-2"><label for="town">Town :</label></div>
-                    <div class="col-xs-2">
-                      <input type="text" class="form-control" id="town" name="town" [(ngModel)]="town">
-                    </div>
-                </div>
+                
 
                 <div class="form-group col-xs-12">
                     <div class="col-xs-2"><label for="map-area" class="lable">Date :</label></div>
@@ -59,6 +50,17 @@
                   <div class="col-xs-2"><label for="drone" class="lable">Drone :</label></div>
                   <input type='submit' class='btn btn-success' value='Select Drone' id='submit' >
                </div>
+
+               <div class="form-group col-xs-12">
+                  <div class="col-xs-2"><label for="district">District :</label></div>
+                  <div class="col-xs-2">
+                    <input type="text" class="form-control" id="district" name="district" [(ngModel)]="district">
+                  </div>
+                  <div class="col-xs-2"><label for="town">Town :</label></div>
+                  <div class="col-xs-2">
+                    <input type="text" class="form-control" id="town" name="town" [(ngModel)]="town">
+                  </div>
+              </div>
 
                 <div class="form-group col-xs-12">
                     <div class="col-xs-2"><label for="map-area" class="lable">Map Area :</label></div>

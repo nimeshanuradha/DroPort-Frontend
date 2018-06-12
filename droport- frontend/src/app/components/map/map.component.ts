@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class MapComponent implements OnInit {
   lng: number = 79.8606384;
   lat: number = 6.92154;
-
-  constructor() { }
+  
+  constructor() {
+    
+   }
 
   ngOnInit() {
   }
 
 }
+
+
+
+

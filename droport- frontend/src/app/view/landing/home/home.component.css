@@ -12,6 +12,8 @@ h1{
 }
 
 .img_new{
-    width: 350px;
+    width: 300px;
+    height: auto;
+    padding-left: 50px;
     
 }
