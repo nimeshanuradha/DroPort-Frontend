@@ -25,9 +25,9 @@ var user_routes = require('./routes/user_routes')
 //     next();
 // });
 
-app.set('views', path.join(__dirname, '../droport- frontend/src/app/view'));
-app.engine('html', cons.swig);
-app.set('view engine', 'html');
+// app.set('views', path.join(__dirname, '../droport- frontend/src/app/view'));
+// app.engine('html', cons.swig);
+// app.set('view engine', 'html');
 
 app.use('/api/req',request_routes);
 app.use('/api/user',user_routes);
@@ -36,6 +36,11 @@ app.use('/api/user',user_routes);
 
 
 port = 3000;
-app.listen(port ,()=>{
-    console.log('LIstning On ' + port)
+app.listen(port ,(err)=>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log('LIstning On ' + port)
+    }
+    
 })

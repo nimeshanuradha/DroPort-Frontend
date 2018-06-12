@@ -53,6 +53,7 @@ request_routes.post('/new',(req,res)=>{
     var media_confirmed="pending";
     var completed ="pending"
     var last_id_arr = []
+    
     // Getting next req_id
     var sql0 = ("SELECT req_id FROM request ORDER BY req_id DESC LIMIT 1")
     dbcon.query(sql0,(err,result)=>{
@@ -67,12 +68,9 @@ request_routes.post('/new',(req,res)=>{
         someVar = value;
         //console.log(JSON.stringify(someVar))
         last_id_arr = JSON.stringify(someVar)
-        }
+    }
+    console.log(last_id_arr)
     
-  
- 
- 
-
     // Updating request table
     var req_data = [district,town,area,date,time,cus_id,map_area]
     console.log(req_data)
@@ -114,6 +112,23 @@ request_routes.get("/all",(req,res)=>{
 
     
     
+})
+
+
+
+request_routes.get("/:id",(req,res)=>{
+    var req_id = req.req_id
+    dbcon.query("SELECT * FROM request WHERE req_id=?",req_id,(err,results)=>{
+        if(err){
+            console.log(err)
+        }
+        var result_data = []
+        result_data = JSON.stringify(results)
+        res.send(result_data)
+        console.log(result_data)
+        
+    })
+
 })
 
 module.exports = request_routes
