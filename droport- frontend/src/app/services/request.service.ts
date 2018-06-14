@@ -16,7 +16,7 @@ export class RequestService {
   //GET All pending Requests
     getAll_PendingRequests(){
       console.log("getAll_PendingRequests called")
-      return this.http.get("/api/req/all-pending").map((res: Response)=> res.json())
+      return this.http.get("/api/req/all_pending").map((res: Response)=> res.json())
     };
 
   //GET All completed Requests
@@ -34,10 +34,10 @@ export class RequestService {
 
 
   //GET Last req_id
-  getLast_RequestID(){
-    console.log("getLast_RequestID called")
-    return this.http.get("/api/req/last_id").map((res)=>res.json())
-  }
+    getLast_RequestID(){
+      console.log("getLast_RequestID called")
+      return this.http.get("/api/req/last_id").map((res)=>res.json())
+    }
     
 
 }

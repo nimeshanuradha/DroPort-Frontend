@@ -7,6 +7,8 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
+import { UserService } from "./services/user.service";
+import { RequestService } from "./services/request.service";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -72,7 +74,7 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
-  { path: 'owner_req',component:   OwnerReqComponent},
+  { path: 'owner_req/:id',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent}
@@ -117,6 +119,7 @@ const appRoutes: Routes = [
     MyDronesComponent,
     SidebarCustomerComponent,
     MapComponent,
+    
  
   ],
   imports: [
@@ -134,7 +137,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [],
+  providers: [UserService,RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
