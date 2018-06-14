@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2018 at 07:55 AM
+-- Generation Time: Jun 14, 2018 at 08:06 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -199,6 +199,7 @@ CREATE TABLE `drone_pilot` (
 
 CREATE TABLE `request` (
   `req_id` int(11) NOT NULL,
+  `req_type` varchar(255) NOT NULL,
   `district` varchar(45) DEFAULT NULL,
   `town` varchar(45) DEFAULT NULL,
   `area` varchar(45) DEFAULT NULL,
@@ -217,16 +218,14 @@ CREATE TABLE `request` (
 -- Dumping data for table `request`
 --
 
-INSERT INTO `request` (`req_id`, `district`, `town`, `area`, `date`, `time`, `cus_id`, `map_area`, `start_time`, `end_time`, `total_fly_time`, `quality_category`, `max_flight_time`) VALUES
-(36, 'Colombo', 'Piliyandala', 'madapatha', '0000-00-00', '00:00:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, 'Colombo', 'Piliyandala', 'madapatha', '2018-11-23', '00:00:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, 'Colombo', 'Piliyandala', 'madapatha', '2018-02-12', '00:00:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(39, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(40, 'Colombo', 'Piliyandala', 'madapatha', '2018-05-12', '00:00:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(41, 'Colombo', 'Piliyandala', 'madapatha', '2018-05-12', '00:00:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(42, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(43, 'Colombo', 'Kelaniya', NULL, '2018-06-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(44, 'Colombo', 'Piliyandala', NULL, '2018-06-15', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `request` (`req_id`, `req_type`, `district`, `town`, `area`, `date`, `time`, `cus_id`, `map_area`, `start_time`, `end_time`, `total_fly_time`, `quality_category`, `max_flight_time`) VALUES
+(96, '', 'Mullaitivu', 'kottawa', NULL, '2018-06-26', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(2007, '', 'Galle', 'piliyandalaa', NULL, '2018-06-28', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(4418, '', 'Ratnapura', 'hibutaana', NULL, '2018-06-26', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(4427, '', 'Galle', 'hibutaana', NULL, '2018-06-30', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(9680, '', 'Colombo', 'piliyandalaa', NULL, '2018-06-28', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(9765, '', 'Galle', 'piliyandalaa', NULL, '2018-06-28', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL),
+(9894, '', 'Gampaha', 'Piliyandala', NULL, '2018-06-14', NULL, 45, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -241,6 +240,19 @@ CREATE TABLE `req_assigned` (
   `pil_id` int(11) DEFAULT NULL,
   `dro_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `req_assigned`
+--
+
+INSERT INTO `req_assigned` (`req_id`, `cus_id`, `own_id`, `pil_id`, `dro_id`) VALUES
+(96, 45, NULL, NULL, NULL),
+(2007, 45, NULL, NULL, NULL),
+(4418, 45, 1111, NULL, NULL),
+(4427, 45, NULL, NULL, NULL),
+(9680, 45, 2222, NULL, NULL),
+(9765, 45, 3333, NULL, NULL),
+(9894, 45, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -261,7 +273,13 @@ CREATE TABLE `req_status` (
 --
 
 INSERT INTO `req_status` (`req_id`, `drone_recieved`, `media_recieved`, `media_confirmed`, `completed`) VALUES
-(0, 'pending', 'pending', 'pending', 'pending');
+(96, 'pending', 'pending', 'pending', 'pending'),
+(2007, 'pending', 'pending', 'pending', 'pending'),
+(4418, 'pending', 'pending', 'pending', 'pending'),
+(4427, 'pending', 'pending', 'pending', 'pending'),
+(9680, 'pending', 'pending', 'pending', 'pending'),
+(9765, 'pending', 'pending', 'pending', 'pending'),
+(9894, 'pending', 'pending', 'pending', 'pending');
 
 -- --------------------------------------------------------
 
@@ -370,12 +388,6 @@ ALTER TABLE `drone_owner`
   MODIFY `own_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `request`
---
-ALTER TABLE `request`
-  MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
---
 -- Constraints for dumped tables
 --
 
@@ -402,21 +414,6 @@ ALTER TABLE `drone_cam_video`
 --
 ALTER TABLE `drone_owner`
   ADD CONSTRAINT `FK_Drn_ID` FOREIGN KEY (`drn_id`) REFERENCES `drone` (`dro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `request`
---
-ALTER TABLE `request`
-  ADD CONSTRAINT `FK_Cus_ID` FOREIGN KEY (`cus_id`) REFERENCES `customer` (`cus_id`);
-
---
--- Constraints for table `req_assigned`
---
-ALTER TABLE `req_assigned`
-  ADD CONSTRAINT `FK_Cust_ID` FOREIGN KEY (`cus_id`) REFERENCES `customer` (`cus_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_Drone_ID` FOREIGN KEY (`dro_id`) REFERENCES `drone` (`dro_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_Pil_ID` FOREIGN KEY (`pil_id`) REFERENCES `drone_pilot` (`pil_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_Req_ID` FOREIGN KEY (`req_id`) REFERENCES `request` (`req_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_address`
