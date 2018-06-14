@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RequestService } from "../../../services/request.service";
 
 
@@ -32,8 +31,12 @@ export class AdminMainPanelComponent implements OnInit {
     this.RequestService.getAll_Requests().subscribe(res=>this.all_req_arr=res)
     console.log("printing all")
     console.log(this.all_req_arr)   
+    
   }
 
+  get_data(){
+    console.log('get_data called')
+  }
 
 // 
  
