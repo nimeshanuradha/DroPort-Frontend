@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from "./../../../services/user.service";
 
 @Component({
   selector: 'app-admin-reg-customers',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminRegCustomersComponent implements OnInit {
 
-  constructor() { }
+  all_reg_cus = []
+
+  constructor(
+    private UserService : UserService
+  ) { }
 
   ngOnInit() {
+
+    this.UserService.getAll_Customers().subscribe(res=>this.all_reg_cus=res)
+    console.log(this.all_reg_cus)
   }
 
 }
