@@ -1,19 +1,22 @@
-.container{
-    width: auto;
+.container_my{
+    padding-left: 55px;
+    width: 1650px;
     padding-bottom: 20px;
+    padding-top: 20px;
 
 }
 
 h1{
-    font: caption;
+    font-family: Roboto;
+    font-weight: bold;
     align-self: auto;
     font-size: 50px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-right: 30px;
 
 }
 
-.img_new{
-    width: 300px;
-    height: auto;
-    padding-left: 50px;
-    
+.container_home{
+    width: 1500px;
 }

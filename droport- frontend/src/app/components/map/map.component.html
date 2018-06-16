@@ -1,5 +1,12 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+<div class="container">
+      <div style="padding-left: -10px; padding-top: 30px;"><label for="location">Location : </label></div>
+      <div style="width: 700px;padding: 20px;">
+            <input type="text" class="form-control" #search [(ngModel)]="searchControl" placeholder="Enter Location">
+      </div>
+      
+      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
+</div>
 
-    
+ 

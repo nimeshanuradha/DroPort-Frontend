@@ -1,0 +1,21 @@
+
+.img_new{
+    width: 500px;
+    height: auto;
+    padding-left: 50px;
+    
+}
+#header {
+    background-color: #ecf0f3;
+}
+.container_my{
+    padding-left: 55px;
+    width: 1720px;
+}
+
+.center{
+    margin: auto;
+    padding-top: 70px;
+    font-size: 25px;
+    font-family: 'Merriweather', serif;
+}

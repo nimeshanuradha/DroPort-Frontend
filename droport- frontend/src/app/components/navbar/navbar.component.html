@@ -1,21 +1,33 @@
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a  class="navbar-brand" >DroPort System</a>
+       <img src="../../../assets/images/nav.png" alt="logo" height="50px">
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a routerLink="./land_home">Home</a></li>
-      <li><a routerLink="./land_services">Services</a></li>
-      <li><a routerLink="./land_about">About Us</a></li>
+      <li class="active"><a routerLink="">Home |</a></li>
+      <li><a routerLink="./land_services">Services |</a></li>
+      <li><a routerLink="./land_about">About Us |</a></li>
       <li><a routerLink="./land_contactus">Contact Us</a></li>
 
      </ul>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href=""><span class="glyphicon glyphicon-user" style="zoom:1.5;padding-right: 10px;"></span>Profile</a></li>
-      <li><a routerLink="./login"><span class="glyphicon glyphicon-log-in" style=" zoom:1.5;padding-right: 10px;"></span>LogIn</a></li>
       <li class="nav_search"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></li>
-      <li class="nav_search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>  
+      <li class="nav_search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>
+      <!-- <li>
+        <div class="dropdown glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
+          <span type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Register
+          </span>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </div>
+      </li> -->
+      <li><a><span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;"></span>Register</a></li>
+      <li><a routerLink="./login"><span class="glyphicon glyphicon-log-in" style=" zoom:1;padding-right: 20px;"></span>LogIn</a></li>  
     </ul>
   </div>
 </nav>

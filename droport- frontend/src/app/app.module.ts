@@ -34,8 +34,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
 import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/admin-reg-customers.component';
-
+import { } from 'googlemaps';
 import { CommonModule } from '@angular/common';
+import { FormControl } from '@angular/forms';
 
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
@@ -44,23 +45,19 @@ import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
-
 import { DroneComponent } from './view/landing/drone/drone.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
-
-
-
-
-  
-
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
 
 const appRoutes: Routes = [
-  { path: '',component: LoginComponent },
+  
+  { path: '', component:HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
+  { path: 'admin_reg_cus', component:AdminRegCustomersComponent},
   { path: 'admin_req_view/:req_id', component: AdminReqViewComponent },
   { path: 'admin_reg_req', component: AdminRegReqComponent },
   { path: 'cus_new_req', component: CusNewReqComponent },
@@ -85,10 +82,7 @@ const appRoutes: Routes = [
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
-
-  { path: 'map',component: MapComponent},
   { path: 'drone',component:DroneComponent},
-
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent}
 
@@ -135,6 +129,8 @@ const appRoutes: Routes = [
     MapComponent,
 
     DroneComponent,
+
+    AppHeaderComponent,
    
 
   ],
@@ -145,7 +141,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc'
+      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc',
+      libraries: ["places"]
     }),
 
     HttpModule,
