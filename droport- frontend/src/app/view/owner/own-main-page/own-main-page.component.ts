@@ -18,6 +18,8 @@ export class OwnMainPageComponent implements OnInit {
 
     this.RequestService.getAll_PendingRequests().subscribe(res => this.all_pending_req_arr = res)
 
+    
+
   }
 
 

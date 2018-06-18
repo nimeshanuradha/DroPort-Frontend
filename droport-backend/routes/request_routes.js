@@ -21,35 +21,24 @@ function get_last_req_id() {
 	})
 };
 
-
 // POST- New  flying Request
-
 request_routes.post('/new', (req, res) => {
 	console.log('data recieved to back end')
 
-	//getting data from http request
-	// var promise_data = get_last_req_id()
-	// var asd = promise_data.then(function(data){
-	// 	req_id = data;
-	// 	return req_id
-	// })
-
-	// console.log("global " + asd.catch(req_id))
-
-
-	var req_id = Math.floor((Math.random() * 10000) + 1);
 	var req_type = req.body.req_type
 	var district = req.body.district
 	var town = req.body.town
 	var area = req.body.area
 	var date = req.body.date
-	var time = req.body.time
+	var time_from = req.body.time_from
+	var time_to = req.body.time_to
 	var cus_id = null
 	var map_area = null
 	var start_time = null
 	var end_time = null
-	var quality_categoty = null
-	var max_flight_time = null
+	var total_fly_time = null
+	var quality_category = req.body.quality_categoty
+	var max_flight_time = req.body.max_flight_time
 	var drone_recieved = "pending";
 	var media_recieved = "pending";
 	var media_confirmed = "pending";
@@ -58,12 +47,15 @@ request_routes.post('/new', (req, res) => {
 	var own_id = null
 	var pil_id = null
 	var dro_id = null
+	var new_req_id 
+
+
 
 	// Updating request table
 
-	var req_data = [req_id, district, town, area, date, time, cus_id, map_area]
+	var req_data = [req_type, district, town, area, date, time_from,time_to, cus_id, map_area,start_time,end_time,total_fly_time,quality_category,max_flight_time]
 	console.log(req_data)
-	var sql1 = "INSERT INTO request(req_id,district,town,area,date,time,cus_id,map_area) VALUES(?,?,?,?,?,?,?,?)"
+	var sql1 = "INSERT INTO request(req_type, district, town, area, date, time_from,time_to, cus_id, map_area,start_time,end_time,total_fly_time,quality_category,max_flight_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 	dbcon.query(sql1, req_data, (err, result) => {
 		if (err) {
 			console.log("Error in query request")
@@ -74,8 +66,8 @@ request_routes.post('/new', (req, res) => {
 
 	//Updating req_status table
 
-	var status_data = [req_id, drone_recieved, media_recieved, media_confirmed, completed]
-	var sql2 = "INSERT INTO req_status(req_id,drone_recieved,media_recieved,media_confirmed,completed) VALUES(?,?,?,?,?)"
+	var status_data = [drone_recieved, media_recieved, media_confirmed, completed]
+	var sql2 = "INSERT INTO req_status(drone_recieved,media_recieved,media_confirmed,completed) VALUES(?,?,?,?)"
 	dbcon.query(sql2, status_data, (err, result) => {
 		if (err) {
 			console.log("Error in query req_status" + err)
@@ -87,8 +79,8 @@ request_routes.post('/new', (req, res) => {
 
 	//Updating req_assigned table
 
-	var assigned_data = [req_id, cus_id, own_id, pil_id, dro_id]
-	var sql3 = "INSERT INTO req_assigned(req_id,cus_id,own_id,pil_id,dro_id) VALUES(?,?,?,?,?)"
+	var assigned_data = [cus_id, own_id, pil_id, dro_id]
+	var sql3 = "INSERT INTO req_assigned(cus_id,own_id,pil_id,dro_id) VALUES(?,?,?,?)"
 	dbcon.query(sql3, assigned_data, (err, result) => {
 		if (err) {
 			console.log("Error in query req_assigned" + err)
@@ -117,8 +109,6 @@ request_routes.get("/all", (req, res) => {
 
 })
 
-
-
 //GET All pending requests
 request_routes.get("/all_pending", (req, res) => {
 	console.log("GET All pending requests recieved to back end")
@@ -131,21 +121,25 @@ request_routes.get("/all_pending", (req, res) => {
 	})
 })
 
-
-
 //GET one request by ID
 request_routes.get("/:id", (req, res) => {
-	var req_id = req.params.id
-	dbcon.query("SELECT * FROM request WHERE req_id= ? ",req_id, (err, results) => {
+	var req_id =  req.params.id
+	console.log("bakend route id  : "+ req_id)
+	dbcon.query("SELECT * FROM request WHERE req_id=?",req_id, (err, results) => {
 		if (err) {
 			console.log(err)
 		}
+
 		var result_data = []
 		result_data = JSON.stringify(results)
-		res.send(result_data)
-		//console.log(result_data)
+		res.send(result_data)	
+		console.log("bakend route id  : "+ req_id)
+		console.log("data in backend : "+ result_data)
+		
 
 	})
+
+	
 
 })
 
