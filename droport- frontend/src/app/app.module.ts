@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
-import { AgmCoreModule } from '@agm/core';
 import { HttpModule} from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule} from '@angular/common/http';
+import { UserService } from "./services/user.service";
+import { RequestService } from "./services/request.service";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -37,7 +38,6 @@ import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/adm
 import { } from 'googlemaps';
 import { CommonModule } from '@angular/common';
 import { FormControl } from '@angular/forms';
-
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
@@ -80,7 +80,7 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
-  { path: 'owner_req',component:   OwnerReqComponent},
+  { path: 'owner_req/:id',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'drone',component:DroneComponent},
   { path: 'my_drones',component:   MyDronesComponent},
@@ -128,10 +128,12 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
 
+
     DroneComponent,
 
     AppHeaderComponent,
    
+
 
   ],
   imports: [
@@ -151,7 +153,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [],
+  providers: [UserService,RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
