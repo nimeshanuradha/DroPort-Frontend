@@ -21,8 +21,8 @@ export class OwnRegComponent implements OnInit {
   }
   
   
-  
-  get_owner_data(own_reg: NgForm){
+
+  get_owner_data(own_reg: NgForm):void{
     
     const from_data = own_reg.value
     console.log(from_data.fname)

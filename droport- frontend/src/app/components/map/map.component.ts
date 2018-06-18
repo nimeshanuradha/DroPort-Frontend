@@ -1,6 +1,6 @@
 import { Component,ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { } from 'googlemaps';
+// import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
@@ -28,7 +28,7 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     //set google maps defaults
-    this.zoom = 4;
+    this.zoom = 10;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
@@ -56,7 +56,7 @@ export class MapComponent implements OnInit {
           //set latitude, longitude and zoom
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
-          this.zoom = 12;
+          this.zoom = 15;
         });
       });
     });

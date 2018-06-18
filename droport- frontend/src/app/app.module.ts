@@ -48,12 +48,12 @@ import { MapComponent } from './components/map/map.component';
 import { DroneComponent } from './view/landing/drone/drone.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
-<<<<<<< HEAD
+
 import { AppHeaderComponent } from './components/app-header/app-header.component';
-=======
+
 import { OwnReqViewComponent } from './view/owner/own-req-view/own-req-view.component';
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
->>>>>>> bdfd6eb9f444dbb4fd3fbbfd6cb73ef28fd3d9d8
+
 
 const appRoutes: Routes = [
   
@@ -134,21 +134,15 @@ const appRoutes: Routes = [
     MyDronesComponent,
     SidebarCustomerComponent,
     MapComponent,
-<<<<<<< HEAD
+
 
 
     DroneComponent,
 
     AppHeaderComponent,
-   
-
-
-=======
     OwnReqViewComponent,
     CusRegComponent,
-    
- 
->>>>>>> bdfd6eb9f444dbb4fd3fbbfd6cb73ef28fd3d9d8
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
