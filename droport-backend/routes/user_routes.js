@@ -1,7 +1,8 @@
 // THIS IS ROUTES FILE FOR USER RELATED ROUTES //
 
 const user_routes = require('express').Router();
-const dbcon = require('../dbconnection')
+const dbcon = require('../dbconnection');
+var passport = require('passport');
 
 //GET All Customers
 user_routes.get('/cus', (req, res) => {
@@ -53,13 +54,13 @@ user_routes.get('/pil', (req, res) => {
 user_routes.get('/pil/:id', (req, res) => {
     console.log('user_routes called')
     var id = req.body.id
-    dbcon.query("SELECT * FROM drone_pilot WHERE pil_id=?",id, (err, results) => {
+    dbcon.query('SELECT * FROM drone_pilot WHERE pil_id=?',id, (err, results) => {
         if (err) {
             console.log(err)
         }
         var user_data_arr = []
         user_data_arr = JSON.stringify(results)
-        //console.log(user_data_arr)
+        console.log(user_data_arr)
         res.send(user_data_arr)
 
     })
@@ -126,5 +127,65 @@ user_routes.get('/admin/:id', (req, res) => {
 
     })
 })
+
+//POST New Pilot
+user_routes.post('/pil/new',(req,res)=>{
+    var fname = req.body.firstname
+    var lname = req.body.lastname
+    var dob = req.body.dob
+    var age = req.body.age    
+    var sex = req.body.sex
+    var nic = req.body.nic
+    var mobile_no = req.body.mobile_no
+    var fixed_no = req.body.fixed_no
+    var email = req.body.email
+    var fb_link = req.body.fb_link
+    var username = req.body.username
+    var password = req.body.password
+    var con_password = req.body.con_password
+
+    console.log(fname)
+
+    var data_arr = [username,password,fname,lname,dob,age,sex,nic,mobile_no,fixed_no,email,fb_link]
+    var sql1 = "INSERT INTO drone_pilot(username ,password ,f_name ,l_name ,dob ,age ,sex ,nic ,mobile_no ,fixed_no ,email ,fb_link) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
+    // var sql2 = "SELECT LAST_INSERT_ID() as user_id"
+    dbcon.query(sql1,data_arr,function(err,results){
+            if (err) throw err;
+
+            dbcon.query('SELECT LAST_INSERT_ID() as user_id', function(err,results){
+                if (err) throw err;
+                const user_id = results[0];
+                console.log(user_id);
+                // req.login(user_id, function(err){
+                //     res.redirect('pil_main_page')
+                    // res.send(" get user id ok");
+                // });
+                res.json({
+                    id: user_id
+                });
+                
+                
+            });
+        }
+        // data_arr,(err,results)=>{
+        // if(err) throw err
+        // var results_data = []
+        // results_data = JSON.stringify(results)
+        // console.log(results_data)
+
+    )
+
+    // const url = 'http://localhost:4200/login'
+    // res.redirect(url)
+    // res.send(" POST New Pilot ok")
+});
+passport.serializeUser(function(user_id, done) {
+    done(null, user_id);
+  });
+  
+  passport.deserializeUser(function(user_id, done) {
+      done(null, user_id);
+
+  });
 
 module.exports = user_routes;

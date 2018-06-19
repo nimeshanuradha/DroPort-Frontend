@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <app-sidebar-pilot></app-sidebar-pilot>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Request No</th>
+                <th scope="col">Sender Name</th>
+                <th scope="col">District</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>dsf</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td><a routerLink="/pil_todo_detail">View More</a></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td><button>View More</button></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+                <td><button>View More</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+  </div>
+
+</div>

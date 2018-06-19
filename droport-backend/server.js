@@ -9,10 +9,41 @@ var app = express();
 var cons = require('consolidate');
 var path =require('path');
 var bodyParser = require('body-parser');
-// var cors = require('cors');
+var cors = require('cors');
+var cookieParser = require('cookie-parser');
+
+//authentication packages
+var session = require('express-session'); 
+var passport = require('passport');
+var MySQLStore = require('express-mysql-session')(session);
+
+
 
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended:true}));
+
+var options = {
+    host: 'localhost',
+    // port: 3306,
+    user: 'root',
+    password: '',
+    database: 'droport_new'
+};
+
+var sessionStore = new MySQLStore(options);
+
+app.use(cookieParser()); 
+app.use(session({
+    secret: 'sdmbgjgrjgbdskjfbqerlihkjadgkd',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    // cookie: { secure: true }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 var request_routes = require('./routes/request_routes')
 var user_routes = require('./routes/user_routes')
