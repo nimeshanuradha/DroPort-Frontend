@@ -1,0 +1,19 @@
+.navbar{
+    height: 50px;
+    background:#463bdf; 
+}
+
+.nav_search{
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+a{
+    color: #FFF;
+}
+
+ul a:hover{
+    background-color:  rgba(120, 132, 236, 0.938);
+    color: #FFF;
+  
+  }
