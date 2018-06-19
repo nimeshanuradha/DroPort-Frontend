@@ -1,47 +1,46 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
-
-<div>
-  <div class="contsainer-fluid col-xs-offset-2">
-		<div>
-			<h2 class="page-header "> PHI Profile for {{phi_id}}</h2>
-		</div>
-		<div class="panel panel-primary ">
-			<div class="panel-heading">
-			Basic Information
-			</div>
-			<div class="form-group form-inline">
-				<label for="phi_id" class="control-lable col-xs-1">PHI ID :</label>
-				<input type="text" class="form-control form-inline"  id="phi_id" ng-model="phi_id">
-			</div>
-			<div class="form-group form-inline">
-				<label for="name" class="control-lable col-xs-1">Name :</label>
-				<input type="text" class="form-control form-inline" id="name" ng-model="name">
-			</div>
-			<div class="form-group form-inline">
-				<label for="nic" class="control-lable col-xs-1">NIC No. :</label>
-				<input type="text" class="form-control form-inline" id="nic" ng-model="nic">
-			</div>
-			<div class="form-group form-inline">
-				<label for="mobile" class="control-lable col-xs-1">Mobile :</label>
-				<input type="text" class="form-control form-inline" id="mobile" ng-model="mobile">
-			</div>
-			<div class="form-group form-inline">
-				<label for="email" class="control-lable col-xs-1">E-mail :</label>
-				<input type="text" class="form-control form-inline" id="email" ng-model="email">
-			</div>
-			<div class="form-group form-inline">
-				<label for="licen" class="control-lable col-xs-1">PHI Licence No :</label>
-				<input type="text" class="form-control form-inline" id="licen" ng-model="licen">
-			</div>
-		   </div>
-		   <div class="panel panel-primary">
-			   <div class="panel-heading">
-				   Flying Request History
-			   </div>
-			   <div>
-				   <label class="control-lable"> history list gose hear</label >
-			   </div>
-		   </div>
-  	</div>
-</div>
+<div class="row">
+   <div class="col-xs-2">
+      <app-sidebar></app-sidebar>
+   </div>
+   <div class="col-xs-8">
+      <div>
+         <div>
+            <h2 class="page-header "> All Registered Customers</h2>
+         </div>
+         <div class="panel panel-primary ">
+            <div class="panel-heading">
+               Customers List
+            </div>
+            <div class="panel-body">
+               <div>
+                  <table class="table">
+                     <thead class="thead-dark">
+                        <tr>
+                           <th>Customer ID</th>
+                           <th>First Name</th>
+                           <th>Last Name</th>
+                           <th>Email</th>
+                           <th>NIC</th>
+                           <th>Mobile No.</th>
+                           <th>Actions</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let customer of all_reg_cus ">
+                           <td> {{ customer.cus_id}} </td>
+                           <td> {{ customer.f_name}} </td>
+                           <td> {{ customer.l_name}} </td>
+                           <td> {{ customer.email}} </td>
+                           <td> {{ customer.nic}} </td>
+                           <td> {{ customer.phone_mobile}} </td>
+                           <td>
+                              <button class="btn btn-success" routerLink="">View More</button>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

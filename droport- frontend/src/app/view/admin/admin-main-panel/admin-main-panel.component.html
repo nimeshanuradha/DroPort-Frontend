@@ -1,49 +1,43 @@
 <div ng-app="admin_main_page">
-<div class="container-fluid" ng-controller="admin_main_ctrl" >
-    <div class="row">
-        <div class="col-xs-2">
-            <app-sidebar-admin></app-sidebar-admin>
-        </div>
-        <div class="col-xs-9">
-            <div class="page-header"><h3>Admin Main Panel - {{user}}</h3></div>
-            <div>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Req ID</th>
-                            <th>Town</th>
-                            <th>Customer ID</th>
-                            <th>Owner ID</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <!-- <td>{{req.req_id}}</td>
-                                <td>{{req.district}}</td>
-                                <td>{{req.town}}</td>
-                                <td>{{req.date}}</td>
-                                <td>{{req.time}}</td>
-                                <td>{{req.cus_id}}</td> -->
-                                <td><button class="btn btn-success" (click)=getdata()>View More</button></td>
-                                <td><button class="btn btn-success" (click)=getRequests()>View More</button></td>
-                            </tr>
-                    </tbody>
-                </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2">
+                <app-sidebar-admin></app-sidebar-admin>
             </div>
-
-            <ul>
-                <li>{{requests[0].req_id}}</li>
-                <li>{{requests[0].district}}</li>
-                <li>{{requests[0].time}}</li>
-            </ul>
-            
-
-
-
+            <div class="col-xs-9">
+                <div class="page-header">
+                    <h3>Admin Main Panel - {{user}}</h3>
+                </div>
+                <div>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Req ID</th>
+                                <th>Town</th>
+                                <th>Customer ID</th>
+                                <th>Owner ID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let request of all_req_arr ">
+                                <td> {{ request.req_id}} </td>
+                                <td> {{ request.town}} </td>
+                                <td> {{ request.cus_id}} </td>
+                                <td> {{ request.own_id}} </td>
+                                <td> {{ request.date}} </td>
+                                <td> {{ request.time}} </td>
+                                <td>
+                                    <button class="btn btn-success" routerLink="/admin_req_view/{{request.req_id}}">View More</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button (click)="get_data()">get data </button>
+            </div>
         </div>
     </div>
-</div>
 </div>

@@ -16,26 +16,32 @@
                 <div class="panel-body">
                 <fieldset> 
             
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Drone ID :</div>
+            <div class="form-group col-xs-12"  [class.has-error]="DroneIdControl.invalid && DroneIdControl.touched">
+                <div class="col-xs-2"> <label for="drone_id" class="control-lable">Drone ID :</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="drone_id" name="drone_id" [(ngModel)]="drone_id" placeholder="Drone ID">
+                <input required id="drone_id" type="text" class="form-control" id="drone_id" name="drone_id" [(ngModel)]="drone_id" #DroneIdControl="ngModel" placeholder="Drone ID">
+                <span class="help-block" *ngIf="DroneIdControl.invalid && DroneIdControl.touched"> ID is Required  </span>
+
               </div>
             </div>
           
             
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Owner ID :</div>
+            <div class="form-group col-xs-12" [class.has-error]="OwnerIdControl.invalid && OwnerIdControl.touched">
+              <div class="col-xs-2"><label for="own_id" class="control-lable">Owner ID :</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="own_id" name="own_id" [(ngModel)]="own_id" placeholder="Owner ID">
+                <input  required id="own_id" type="text" class="form-control" id="own_id" name="own_id" [(ngModel)]="own_id"  #OwnerIdControl="ngModel" placeholder="Owner ID">
+                <span class="help-block" *ngIf="OwnerIdControl.invalid && OwnerIdControl.touched"> ID is Required  </span>
+
               </div>
             </div>
           
             
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Model :</div>
+            <div class="form-group col-xs-12"  [class.has-error]="ModelControl.invalid && ModelControl.touched">
+              <div class="col-xs-2"><label for="model_no" class="control-lable">Model No :</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="mname" name="mname" [(ngModel)]="mname" placeholder="Model No">
+                <input  required id="model_no" type="text" class="form-control" id="mname" name="mname" [(ngModel)]="mname"  #ModelControl="ngModel" placeholder="Model No">
+                <span class="help-block" *ngIf="ModelControl.invalid && ModelControl.touched"> Model No is Required  </span>
+
               </div>
             </div>
 
@@ -48,26 +54,29 @@
             </div>
           
           
-          <div class="form-group col-xs-12">
-              <div class="col-xs-2">Max Speed :</div>
+          <div class="form-group col-xs-12"  [class.has-error]="MaxControl.invalid && MaxControl.touched">
+            <div class="col-xs-2"><label for="max_no" class="control-lable">Max Speed :</label></div>
             <div class="col-xs-10">
-              <input type="text" class="form-control" id="sname" name="sname" [(ngModel)]="sname" placeholder="Speed">
+              <input required id="max_no" type="text" class="form-control" id="sname" name="sname" [(ngModel)]="sname" #MaxControl="ngModel"  placeholder="Speed">
+              <span class="help-block" *ngIf="MaxControl.invalid && MaxControl.touched"> Maximum Speed is Required  </span>
             </div>
           </div>
         
        
-        <div class="form-group col-xs-12">
-            <div class="col-xs-2">Min Service Celing:</div>
+        <div class="form-group col-xs-12" [class.has-error]="MinServControl.invalid && MinServControl.touched">
+          <div class="col-xs-2"><label for="max_no" class="control-lable">Min Service Celing:</label></div>
           <div class="col-xs-10">
-            <input type="text" class="form-control" id="cname" name="cname" [(ngModel)]="cname" placeholder="Service">
+            <input required id="min_serv" type="text" class="form-control" id="cname" name="cname" [(ngModel)]="cname"  #MinServControl="ngModel" placeholder="Service">
+            <span class="help-block" *ngIf="MinServControl.invalid && MinServControl.touched"> Min Service Celing is Required  </span>
           </div>
         </div>
       
         
-      <div class="form-group col-xs-12">
-          <div class="col-xs-2">Max Flight time :</div>
+      <div class="form-group col-xs-12"  [class.has-error]="MaxfliControl.invalid && MaxfliControl.touched">
+        <div class="col-xs-2"><label for="max_no" class="control-lable">Max Flight time:</label></div>
         <div class="col-xs-10">
-          <input type="text" class="form-control" id="iname" name="iname" [(ngModel)]="iname" placeholder="Flight Time">
+          <input  required id="max_fly" type="text" class="form-control" id="iname" name="iname" [(ngModel)]="iname"  #MaxfliControl="ngModel" placeholder="Flight Time">
+          <span class="help-block" *ngIf="MaxfliControl.invalid && MaxfliControl.touched"> Max Flight time is Required  </span>
         </div>
       </div>
     
@@ -119,18 +128,20 @@
                   <div class="panel-body">
                   <fieldset> 
             
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Sensor:</div>
+            <div class="form-group col-xs-12" [class.has-error]="SenseControl.invalid && SenseControl.touched">
+              <div class="col-xs-2"><label for="sense_no" class="control-lable">Sensor:</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="sname" name="sname" [(ngModel)]="sname" placeholder="Sensor">
+                <input required id="sense_no" type="text" class="form-control" id="sname" name="sname" [(ngModel)]="sname"  #SenseControl="ngModel"  placeholder="Sensor">
+                <span class="help-block" *ngIf="SenseControl.invalid && SenseControl.touched"> Senser is Required  </span>
               </div>
             </div>
           
            
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Lense:</div>
+            <div class="form-group col-xs-12"  [class.has-error]="LenseControl.invalid && LenseControl.touched">
+              <div class="col-xs-2"><label for="lense_no" class="control-lable">Lense:</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname" placeholder="Lense Type">
+                <input required id="lense_no" type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname"  #LenseControl="ngModel" placeholder="Lense Type">
+                <span class="help-block" *ngIf="LenseControl.invalid && LenseControl.touched"> Lense is Required  </span>
               </div>
             </div>
       
@@ -169,10 +180,11 @@
               <div class="panel-body">
               <fieldset> 
             
-            <div class="form-group col-xs-12">
-                <div class="col-xs-2">Storage Type :</div>
+            <div class="form-group col-xs-12" [class.has-error]="StorageControl.invalid && StorageControl.touched">
+                <div class="col-xs-2"><label for="storage_no" class="control-lable">Storage:</label></div>
               <div class="col-xs-10">
-                <input type="text" class="form-control" id="tname" name="tname" [(ngModel)]="tname" placeholder="Storage Type">
+                <input required id="storage_no" type="text" class="form-control" id="tname" name="tname" [(ngModel)]="tname"  #StorageControl="ngModel" placeholder="Storage Type">
+                <span class="help-block" *ngIf="StorageControl.invalid && StorageControl.touched"> Storage is Required  </span>
               </div>
             </div>
          

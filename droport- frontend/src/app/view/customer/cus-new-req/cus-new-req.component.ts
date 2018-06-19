@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response, Headers} from '@angular/http'
 import { NgForm } from '@angular/forms';
-
+import { RequestService } from "../../../services/request.service";
 
 @Component({
   selector: 'app-cus-new-req',
@@ -11,18 +10,24 @@ import { NgForm } from '@angular/forms';
 
 export class CusNewReqComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  
+    private RequestService: RequestService
+  ) { }
 
   ngOnInit() {
+ 
   }
 
 
-  get_req_data(cus_new_req: NgForm):void{
-    console.log(cus_new_req.value)
+  get_req_data(cus_new_req: NgForm){
+    console.log('sending :', cus_new_req.value)
+    var req_data = cus_new_req.value
+
+    //this.http.post("/api/req/new",data).subscribe(res=>(res.status))
+
+    this.RequestService.post_NewRequest(req_data).subscribe(res=>console.log("Successfully added"))
+
   }
 
 }
-
-
-
-

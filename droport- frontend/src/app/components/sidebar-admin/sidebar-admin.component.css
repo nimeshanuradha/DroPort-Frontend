@@ -1,6 +1,5 @@
 
 sidebarcanves{
-<<<<<<< HEAD
     height: 100%;
     background-color: #1c3e5c;
     margin-top: 500px;
@@ -29,11 +28,7 @@ sidebarcanves{
     color: #FFF
   
   }
-=======
-  height: 100%;
-  background-color: #1c3e5c;
-  margin-top: 500px;
-}
+
 ul {
   list-style : none;
   margin: 0;
@@ -55,7 +50,8 @@ ul a {
 
 ul a:hover{
   background-color: #337ab7;
-  color: #FFF
+  color: #FFF;
+
 
 }
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
+

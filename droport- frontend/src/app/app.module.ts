@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule} from '@angular/forms'
-import { HttpModule} from '@angular/http'
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule} from '@angular/forms';
+import { HttpModule} from '@angular/http';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule} from '@angular/common/http';
+import { UserService } from "./services/user.service";
+import { RequestService } from "./services/request.service";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -28,31 +31,39 @@ import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
 import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
-import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 import { AdminProfileComponent } from './view/admin/admin-profile/admin-profile.component';
-<<<<<<< HEAD
 import { AdminRegCustomersComponent } from './view/admin/admin-reg-customers/admin-reg-customers.component';
-import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
+import { } from 'googlemaps';
 import { CommonModule } from '@angular/common';
-
-
-=======
+import { FormControl } from '@angular/forms';
 import { PilFlyHistDetailComponent } from './view/pilot/pil-fly-hist-detail/pil-fly-hist-detail.component';
 import { PilProfileComponent } from './view/pilot/pil-profile/pil-profile.component';
 import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.component';
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
+import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
+import { MapComponent } from './components/map/map.component';
+import { DroneComponent } from './view/landing/drone/drone.component';
+import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
+import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
+
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+
+import { OwnReqViewComponent } from './view/owner/own-req-view/own-req-view.component';
+import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
+
 
 const appRoutes: Routes = [
-  { path: '', component: LoginComponent },
+  
+  { path: '', component:HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
-  { path: 'admin_req_view', component: AdminReqViewComponent },
+  { path: 'admin_reg_cus', component:AdminRegCustomersComponent},
+  { path: 'admin_req_view/:req_id', component: AdminReqViewComponent },
   { path: 'admin_reg_req', component: AdminRegReqComponent },
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -63,24 +74,27 @@ const appRoutes: Routes = [
   { path: 'req_detail', component: PilReqDetailComponent},
   { path: 'pil_fly_history', component: PilFlyHistoryComponent},
   { path: 'land_about', component: AboutComponent },
-  { path: 'land_home', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'land_home', component:HomeComponent},
   { path: 'land_services', component: ServicesComponent },
   { path: 'land_contactus', component: ContactusComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'admin_profile',component: AdminProfileComponent},
-<<<<<<< HEAD
-  { path: 'drone_reg',component: DroneRegComponent},
-  { path: 'admin_reg_customer', component:AdminRegCustomersComponent}
-
-=======
+  { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
-  { path: 'owner_req',component:   OwnerReqComponent},
+  { path: 'owner_req/:id',component:   OwnerReqComponent},
+  { path: 'owner_req_view/:id',component:   OwnReqViewComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
+  { path: 'drone',component:DroneComponent},
+  { path: 'my_drones',component:   MyDronesComponent},
+  { path: 'map',component: MapComponent},
+  { path: 'cus_reg',component: CusRegComponent}
 
 ]
+
 
 @NgModule({
   declarations: [
@@ -103,7 +117,6 @@ const appRoutes: Routes = [
     PilReqDetailComponent,
     PilFlyHistoryComponent,
     OwnProfComponent,
-    DroneRegComponent,
     OwnerHistComponent,
     HomeComponent,
     AboutComponent,
@@ -112,27 +125,43 @@ const appRoutes: Routes = [
     FooterComponent,
     SidebarAdminComponent,
     AdminProfileComponent,
-<<<<<<< HEAD
     AdminRegCustomersComponent,
-    DroneRegComponent
-=======
+    DroneRegComponent,
     PilFlyHistDetailComponent,
     PilProfileComponent,
     SidebarOwnerComponent,
     OwnerReqComponent,
-   
->>>>>>> 0c296f3cd24647bcc668d4085cf99c74ba0a26f6
+    MyDronesComponent,
+    SidebarCustomerComponent,
+    MapComponent,
+
+
+
+    DroneComponent,
+
+    AppHeaderComponent,
+    OwnReqViewComponent,
+    CusRegComponent,
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc',
+      libraries: ["places"]
+    }),
+
     HttpModule,
     FormsModule,
     CommonModule,
     
     
   ],
-  providers: [],
+  providers: [UserService,RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

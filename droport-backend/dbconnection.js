@@ -4,7 +4,8 @@ var dbconnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'droport'
+    database: 'droport_new',
+    debug: true
 });
 
 dbconnection.connect(function(err){
@@ -16,5 +17,5 @@ dbconnection.connect(function(err){
     
 });
 
-module.exports.dbconnection = dbconnection;
+module.exports = dbconnection;
 
