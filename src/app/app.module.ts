@@ -47,6 +47,7 @@ import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-
 import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
 
 const appRoutes: Routes = [
   { path: '',component: LoginComponent },
@@ -122,7 +123,7 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
     PilRegComponent,
-    
+    AppHeaderComponent
  
   ],
   imports: [
@@ -137,6 +138,7 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     CommonModule,
+    
     
     
   ],
