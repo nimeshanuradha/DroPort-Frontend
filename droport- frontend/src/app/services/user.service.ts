@@ -33,7 +33,7 @@ export class UserService {
   };
 
   getPilot_byID(id:any){
-    console.log("getCustomer_byID called")
+    console.log("getPilot_byID called")
     return this.http.get("/api/user/pil/:id").map((res: Response)=>res.json())
   };
 
@@ -48,4 +48,9 @@ export class UserService {
   };
 
 
+  POST_New_pil(pil_data){
+    console.log("POST_New_pil called")
+    return this.http.post("/api/user/pil/new",pil_data)
+  }
 }
+
