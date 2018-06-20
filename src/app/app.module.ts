@@ -49,13 +49,10 @@ import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
-<<<<<<< HEAD
 import { OwnDrnSelComponent } from './view/owner/own-drn-sel/own-drn-sel.component';
 import { combineLatest } from 'rxjs';
 import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.component';
-=======
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
->>>>>>> dac031aa77db86e97d65acf3e2dd395c79349576
 
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
@@ -90,13 +87,8 @@ const appRoutes: Routes = [
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
-<<<<<<< HEAD
-  { path: 'own_drn_sel', component: OwnDrnSelComponent }
-
-
-=======
+  { path: 'own_drn_sel', component: OwnDrnSelComponent },
   { path: 'cus_reg',component:CusRegComponent}
->>>>>>> dac031aa77db86e97d65acf3e2dd395c79349576
 
 ]
 
@@ -140,13 +132,10 @@ const appRoutes: Routes = [
     MapComponent,
     PilRegComponent,
     AppHeaderComponent,
-<<<<<<< HEAD
     OwnDrnSelComponent,
     OwnReqViewComponent,
-    OwnPilSelComponent
-=======
+    OwnPilSelComponent,
     CusRegComponent
->>>>>>> dac031aa77db86e97d65acf3e2dd395c79349576
  
   ],
   imports: [
