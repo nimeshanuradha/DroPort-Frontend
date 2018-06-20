@@ -43,11 +43,15 @@ import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
+import { OwnReqViewComponent } from "./view/owner/own-req-view/own-req-view.component" ;
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { OwnDrnSelComponent } from './view/owner/own-drn-sel/own-drn-sel.component';
+import { combineLatest } from 'rxjs';
+import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.component';
 
 const appRoutes: Routes = [
   { path: '',component: LoginComponent },
@@ -76,11 +80,15 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
+  { path: 'owner_req_view/:id', component: OwnReqViewComponent  },
   { path: 'owner_req/:id',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
+  { path: 'own_drn_sel', component: OwnDrnSelComponent }
+
+
 
 ]
 
@@ -123,7 +131,10 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
     PilRegComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    OwnDrnSelComponent,
+    OwnReqViewComponent,
+    OwnPilSelComponent
  
   ],
   imports: [

@@ -18,11 +18,12 @@ export class LoginComponent implements OnInit {
   option_preview = false;
 
   ngOnInit(){
+    
   };
 
   toggle_option(){
     this.option_preview = !this.option_preview
-  };
+   };
 
   // post_login_data(login: NgForm):void{
   //   console.log('login')
@@ -35,21 +36,6 @@ export class LoginComponent implements OnInit {
   //     console.log('login using '+ password)
   //   }
   // };
-
-  add_to_db(login: NgForm){
-    console.log("add_to_db called on client")
-    var username = login.value.username
-    var password = login.value.password
-    //var formData = JSON.stringify({"username": username,"password": password})
-    //var data = JSON.stringify({"username": username,"password": password})
-    //console.log("this is from client ",data)
-    this._http.post("/req/zxc",{
-      "username": username,
-      "password": password
-    })
-      .subscribe(res=>{console.log(res.status)})
-  };
-    
 
 };
 

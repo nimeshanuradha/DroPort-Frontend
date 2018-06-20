@@ -49,6 +49,17 @@ export class RequestService {
       return this.http.post("/api/req/new",req_data).map((res:Response)=>res.json())
     }
       
+
+    
+  // POST Assign_own_as_pilot()
+  Assign_own_as_pil(data){
+    console.log("Assign_own_as_pilot called")
+    return this.http.post("/api/req/own-as-pil",data).map((res:Response)=>res.json())
+
+  }
+
+
+  
   
 
     
