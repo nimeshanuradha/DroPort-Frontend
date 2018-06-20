@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -14,29 +15,18 @@
     <ul class="nav navbar-nav navbar-right">
       <li class="nav_search"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></li>
       <li class="nav_search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>
-      <!-- <li>
-        <div class="dropdown glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
-          <span type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            Register
-          </span>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
+      <li style="display: inline;"><a><span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
+        <div class="dropdown">
+          <button class="dropbtn">Register</button>
+          <div class="dropdown-content">
+            <a routerLink="./own_reg">Owner</a>
+            <a routerLink="./pil_reg">Pilot</a>
+            <a routerLink="./cus_reg">Customer</a>
           </div>
         </div>
-      </li> -->
-      <li><a><span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;"></span>Register</a></li>
+      </span></a></li>
       <li><a routerLink="./login"><span class="glyphicon glyphicon-log-in" style=" zoom:1;padding-right: 20px;"></span>LogIn</a></li>  
     </ul>
   </div>
 </nav>
 
-<!--
-   <ul>
-      <li><a routerLink="./admin_main_panel">admin</a></li>
-      <li><a routerLink="./own_main_page">owner</a></li>
-      <li><a routerLink="./pil_main_page">pilot</a></li>
-      <li><a routerLink="./cus_new_req">Customer</a></li>
-    </ul>
--->
