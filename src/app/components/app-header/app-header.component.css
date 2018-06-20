@@ -17,5 +17,11 @@
     margin: auto;
     padding-top: 70px;
     font-size: 25px;
-    font-family: 'Merriweather', serif;
+    
+}
+.regul_img{
+    padding-top: 50px;
+    width: 200px;
+    height:250px;
+    position:fixed;
 }

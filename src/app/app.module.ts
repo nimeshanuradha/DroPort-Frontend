@@ -48,9 +48,10 @@ import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
 
 const appRoutes: Routes = [
-  { path: '',component: LoginComponent },
+  { path: '',component: HomeComponent  },
   { path: 'login', component: LoginComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
+  { path: 'cus_reg',component:CusRegComponent}
 
 ]
 
@@ -123,7 +125,8 @@ const appRoutes: Routes = [
     SidebarCustomerComponent,
     MapComponent,
     PilRegComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    CusRegComponent
  
   ],
   imports: [
@@ -133,7 +136,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc'
+      apiKey: 'AIzaSyDYoouloKlGIUxiQswbLAB5rf96oLPuavc',
+      libraries: ["places"]
     }),
     HttpModule,
     FormsModule,
