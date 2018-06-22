@@ -136,7 +136,7 @@
                   <label for="drone" class="lable">Drone :</label>
                 </div>
                 <div class="col-xs-8">
-                  <input type='button' class='btn btn-primary' value='Select Drone' routerLink="">
+                  <input type='button' class='btn btn-primary' value='Select Drone' routerLink="/my_drones">
                 </div>
               </div>
             </div>
@@ -149,7 +149,13 @@
               <app-map></app-map>
             </div>
           </div>
-          <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit'>
+          <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit' (click)=drone_selected()>
+          <div class="form-group" *ngIf="drone_select">
+
+            Drone Id : 1045
+
+          </div>
+
           
         </div>
       </form>

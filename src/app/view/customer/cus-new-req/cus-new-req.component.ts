@@ -15,6 +15,8 @@ export class CusNewReqComponent implements OnInit {
     private RequestService: RequestService
   ) { }
 
+  drone_select : boolean = true
+
   ngOnInit() {
  
   }
@@ -28,6 +30,10 @@ export class CusNewReqComponent implements OnInit {
 
     this.RequestService.post_NewRequest(req_data).subscribe(res=>console.log("Successfully added"))
 
+  }
+
+  drone_selected(){
+    this.drone_select = !this.drone_select
   }
 
 }

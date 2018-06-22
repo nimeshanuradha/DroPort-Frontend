@@ -1,6 +1,6 @@
 import { Component,ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-//import {} from 'googlemaps';
+import { google, GoogleMap} from '@agm/core/services/google-maps-types';
 import { MapsAPILoader } from '@agm/core';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 

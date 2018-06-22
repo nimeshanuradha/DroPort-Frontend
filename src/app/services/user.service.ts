@@ -52,5 +52,10 @@ export class UserService {
     console.log("POST_New_pil called")
     return this.http.post("/api/user/pil/new",pil_data)
   }
+
+  POST_New_cus(cus_data){
+    console.log("POST_New_cus called")
+    return this.http.post("/api/user/cus/new",cus_data)
+  }
 }
 

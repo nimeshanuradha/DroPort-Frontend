@@ -1,8 +1,8 @@
 .container_my{
-    padding-left: 55px;
-    width: 1650px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 70px;
+    
 
 }
 
@@ -12,8 +12,8 @@ h1{
     align-self: auto;
     font-size: 50px;
     text-align: center;
-    padding-bottom: 5px;
-    padding-right: 30px;
+    /* padding-bottom: 5px;
+    padding-right: 30px; */
 
 }
 

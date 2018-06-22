@@ -53,6 +53,7 @@ import { OwnDrnSelComponent } from './view/owner/own-drn-sel/own-drn-sel.compone
 import { combineLatest } from 'rxjs';
 import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.component';
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
+import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-page.component';
 
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
@@ -135,7 +136,8 @@ const appRoutes: Routes = [
     OwnDrnSelComponent,
     OwnReqViewComponent,
     OwnPilSelComponent,
-    CusRegComponent
+    CusRegComponent,
+    CusMainPageComponent
  
   ],
   imports: [
