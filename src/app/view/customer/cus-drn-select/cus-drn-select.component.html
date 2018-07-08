@@ -1,0 +1,108 @@
+<div>
+  <div class="col-md-2">
+    side bar goes here
+  </div>
+  <div class="col-md-10">
+    <div class="page-header">
+      <h3>Select a Drone</h3>
+    </div>
+    <div class="col-md-11">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Filter your choice
+        </div>
+        <div class="panel-body">
+          filtering options
+        </div>
+        <div class="panel-footer">
+
+        </div>
+      </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Results
+        </div>
+        <div class="panel-body">
+
+          <!-- loop for each drone -->
+          <div *ngFor="let drone of all_drone_arr">
+            <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  {{drone.model}}
+                </div>
+                <div class="panel-body">
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>Max speed :</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.max_speed}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>GPS :</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.gps_positioning}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>Obstacle sensor :</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.obstacle_sensing_range}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>Max Storage :</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.max_storage_capacity}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>Max Continous Fly Time (min):</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.fly_time_category}}
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="col-md-6">
+                      <strong>Drone ID:</strong>
+                    </div>
+                    <div class="col-md-6">
+                      {{drone.dro_id}}
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="panel-footer">
+                  <input type="button" value="Select" class="btn btn-success">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

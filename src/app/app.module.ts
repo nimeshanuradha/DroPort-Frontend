@@ -9,6 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
+import { DroneService } from './services/drone.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -54,6 +55,8 @@ import { combineLatest } from 'rxjs';
 import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.component';
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
 import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-page.component';
+import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-select.component';
+
 
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
@@ -89,7 +92,8 @@ const appRoutes: Routes = [
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
   { path: 'own_drn_sel', component: OwnDrnSelComponent },
-  { path: 'cus_reg',component:CusRegComponent}
+  { path: 'cus_reg',component:CusRegComponent},
+  { path: 'cus_drn_select', component:CusDrnSelectComponent}
 
 ]
 
@@ -137,7 +141,8 @@ const appRoutes: Routes = [
     OwnReqViewComponent,
     OwnPilSelComponent,
     CusRegComponent,
-    CusMainPageComponent
+    CusMainPageComponent,
+    CusDrnSelectComponent
  
   ],
   imports: [
@@ -157,7 +162,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [UserService,RequestService],
+  providers: [UserService,RequestService,DroneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
