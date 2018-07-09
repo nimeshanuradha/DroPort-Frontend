@@ -1,7 +1,14 @@
 .container_my{
+<<<<<<< HEAD
     /* padding-left: 55px; */
     width: auto;
     padding: 20px;
+=======
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 70px;
+    
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 
 }
 
@@ -11,8 +18,13 @@ h1{
     align-self: auto;
     font-size: 50px;
     text-align: center;
+<<<<<<< HEAD
     padding-bottom: 5px;
     /* padding-right: 30px; */
+=======
+    /* padding-bottom: 5px;
+    padding-right: 30px; */
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 
 }
 

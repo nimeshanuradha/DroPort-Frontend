@@ -69,11 +69,11 @@
                   <input type="text" class="form-control" id="town" name="town" [(ngModel)]="town">
                 </div>
                 <div class="col-xs-2">
-                    <label for="town">Area :</label>
-                  </div>
-                  <div class="col-xs-2">
-                    <input type="text" class="form-control" id="area" name="area" [(ngModel)]="area">
-                  </div>
+                  <label for="town">Area :</label>
+                </div>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" id="area" name="area" [(ngModel)]="area">
+                </div>
               </div>
 
               <div class="form-group col-xs-12">
@@ -136,7 +136,7 @@
                   <label for="drone" class="lable">Drone :</label>
                 </div>
                 <div class="col-xs-8">
-                  <input type='button' class='btn btn-primary' value='Select Drone' routerLink="">
+                  <input type='button' class='btn btn-primary' value='Select Drone'(click)="get_drn_data()">
                 </div>
               </div>
             </div>
@@ -149,8 +149,10 @@
               <app-map></app-map>
             </div>
           </div>
-          <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit'>
-          
+          <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit' (click)=drone_selected()>
+          <div class="form-group" *ngIf="drone_select">
+
+          </div>
         </div>
       </form>
     </div>

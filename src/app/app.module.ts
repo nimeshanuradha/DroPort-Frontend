@@ -9,6 +9,11 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
+<<<<<<< HEAD
+=======
+import { DroneService } from './services/drone.service';
+
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -42,12 +47,19 @@ import { SidebarOwnerComponent } from './components/sidebar-owner/sidebar-owner.
 import { OwnerHistComponent } from './view/owner/owner-hist/owner-hist.component';
 import { OwnerReqComponent } from './view/owner/owner-req/owner-req.component';
 import { MyDronesComponent } from './view/owner/my-drones/my-drones.component';
+import { OwnReqViewComponent } from "./view/owner/own-req-view/own-req-view.component" ;
 import { SidebarCustomerComponent } from './components/sidebar-customer/sidebar-customer.component';
 import { MapComponent } from './components/map/map.component';
 import { DroneRegComponent } from './view/owner/drone-reg/drone-reg.component';
 import { PilRegComponent } from './view/pilot/pil-reg/pil-reg.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { OwnDrnSelComponent } from './view/owner/own-drn-sel/own-drn-sel.component';
+import { combineLatest } from 'rxjs';
+import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.component';
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
+import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-page.component';
+import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-select.component';
+
 
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
@@ -76,12 +88,15 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
+  { path: 'owner_req_view/:id', component: OwnReqViewComponent  },
   { path: 'owner_req/:id',component:   OwnerReqComponent},
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
   { path: 'map',component: MapComponent},
   { path: 'pil_reg',component: PilRegComponent },
-  { path: 'cus_reg',component:CusRegComponent}
+  { path: 'own_drn_sel', component: OwnDrnSelComponent },
+  { path: 'cus_reg',component:CusRegComponent},
+  { path: 'cus_drn_select', component:CusDrnSelectComponent}
 
 ]
 
@@ -125,7 +140,12 @@ const appRoutes: Routes = [
     MapComponent,
     PilRegComponent,
     AppHeaderComponent,
-    CusRegComponent
+    OwnDrnSelComponent,
+    OwnReqViewComponent,
+    OwnPilSelComponent,
+    CusRegComponent,
+    CusMainPageComponent,
+    CusDrnSelectComponent
  
   ],
   imports: [
@@ -145,7 +165,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [UserService,RequestService],
+  providers: [UserService,RequestService,DroneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

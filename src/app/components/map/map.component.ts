@@ -1,12 +1,20 @@
 import { Component,ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+<<<<<<< HEAD
+=======
+import { google, GoogleMap} from '@agm/core/services/google-maps-types';
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 import { MapsAPILoader } from '@agm/core';
 // import { GoogleMap } from 'googlemaps';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 
+<<<<<<< HEAD
 // var google: any;
+=======
+
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 @Component({
     selector: 'app-map',
     templateUrl: './map.component.html',
@@ -19,6 +27,7 @@ export class MapComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
+
   
 
   @ViewChild("search")
@@ -49,6 +58,7 @@ export class MapComponent implements OnInit {
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
           //get the place result
+          //let place: google.maps.places.PlaceResult = autocomplete.getPlace();
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
           //verify result

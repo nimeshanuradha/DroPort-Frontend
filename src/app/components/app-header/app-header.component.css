@@ -10,10 +10,16 @@
     background-color: #ecf0f3;
     /* width: 1000px; */
 }
+<<<<<<< HEAD
 /* .container_my{
     /* padding-left: 55px; */
     /* width: auto ; */
 /* }  */
+=======
+.container_my{
+    width: 100%;
+}
+>>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
 
 .center{
     /* margin: auto; */

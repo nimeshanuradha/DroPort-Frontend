@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { RequestService } from "../../../services/request.service";
+import { DroneService } from '../../../services/drone.service';
+
 
 @Component({
   selector: 'app-cus-new-req',
@@ -10,12 +12,18 @@ import { RequestService } from "../../../services/request.service";
 
 export class CusNewReqComponent implements OnInit {
 
+  all_drone_arr = []
+
   constructor(
   
-    private RequestService: RequestService
+    private RequestService: RequestService,
+    private droneService:DroneService
   ) { }
 
+  drone_select : boolean = true
+
   ngOnInit() {
+    this.droneService.getAll_Drones().subscribe(res=>console.log(this.all_drone_arr=res))
  
   }
 
@@ -30,5 +38,9 @@ export class CusNewReqComponent implements OnInit {
 
   }
   
+
+  drone_selected(){
+    this.drone_select = !this.drone_select
+  }
 
 }
