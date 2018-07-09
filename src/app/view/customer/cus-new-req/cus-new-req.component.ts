@@ -29,5 +29,6 @@ export class CusNewReqComponent implements OnInit {
     this.RequestService.post_NewRequest(req_data).subscribe(res=>console.log("Successfully added"))
 
   }
+  
 
 }

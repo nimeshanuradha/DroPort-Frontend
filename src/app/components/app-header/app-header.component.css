@@ -2,26 +2,31 @@
 .img_new{
     width: 500px;
     height: auto;
-    padding-left: 50px;
+    /* padding-left: 50px; */
+    /* padding-bottom: 30px; */
     
 }
 #header {
     background-color: #ecf0f3;
+    /* width: 1000px; */
 }
-.container_my{
-    padding-left: 55px;
-    width: 1720px;
-}
+/* .container_my{
+    /* padding-left: 55px; */
+    /* width: auto ; */
+/* }  */
 
 .center{
-    margin: auto;
+    /* margin: auto; */
     padding-top: 70px;
-    font-size: 25px;
+    font-size: 30px;
+    font-family: 'Anton', sans-serif; 
     
 }
 .regul_img{
     padding-top: 50px;
     width: 200px;
     height:250px;
-    position:fixed;
 }
+
+
+    

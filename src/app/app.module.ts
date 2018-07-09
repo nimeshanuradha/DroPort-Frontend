@@ -9,7 +9,6 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -52,7 +51,7 @@ import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
 
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
-  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
