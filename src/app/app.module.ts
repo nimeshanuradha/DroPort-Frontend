@@ -61,40 +61,44 @@ import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-se
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
   { path: 'login', component: LoginComponent },
+  { path: 'map',component: MapComponent},
+
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
   { path: 'admin_req_view/:req_id', component: AdminReqViewComponent },
   { path: 'admin_reg_req', component: AdminRegReqComponent },
+  { path: 'admin_profile',component: AdminProfileComponent},
+  { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
+
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
   { path: 'cus_req_view', component: CusReqViewComponent },
+  { path: 'cus_reg',component:CusRegComponent},
+  { path: 'cus_drn_select', component:CusDrnSelectComponent},
+
   { path: 'pil_main_page', component: PilMainPageComponent },
-  { path: 'own_main_page', component: OwnMainPageComponent },
-  { path: 'own_reg', component:OwnRegComponent},
-  { path: 'req_detail', component: PilReqDetailComponent},
-  { path: 'pil_fly_history', component: PilFlyHistoryComponent},
-  { path: 'land_about', component: AboutComponent },
-  { path: 'land_home', component: HomeComponent },
-  { path: 'land_services', component: ServicesComponent },
-  { path: 'land_contactus', component: ContactusComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'admin_profile',component: AdminProfileComponent},
-  { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
+  { path: 'pil_reg',component: PilRegComponent },
+  { path: 'pil_fly_history', component: PilFlyHistoryComponent},
+  { path: 'req_detail', component: PilReqDetailComponent},
+
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
   { path: 'owner_req_view/:id', component: OwnReqViewComponent  },
   { path: 'owner_req/:id',component:   OwnerReqComponent},
+  { path: 'own_main_page', component: OwnMainPageComponent },
+  { path: 'own_reg', component:OwnRegComponent},
+  { path: 'own_drn_sel', component: OwnDrnSelComponent },
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
-  { path: 'map',component: MapComponent},
-  { path: 'pil_reg',component: PilRegComponent },
-  { path: 'own_drn_sel', component: OwnDrnSelComponent },
-  { path: 'cus_reg',component:CusRegComponent},
-  { path: 'cus_drn_select', component:CusDrnSelectComponent}
 
+  { path: 'land_about', component: AboutComponent },
+  { path: 'land_home', component: HomeComponent },
+  { path: 'land_services', component: ServicesComponent },
+  { path: 'land_contactus', component: ContactusComponent },
+  
 ]
 
 @NgModule({

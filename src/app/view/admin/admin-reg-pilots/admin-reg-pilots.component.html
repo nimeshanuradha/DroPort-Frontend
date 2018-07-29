@@ -1,3 +1,38 @@
-<p>
-  admin-reg-pilots works!
-</p>
+<div>
+  <div class="col-md-2">
+    side bar
+  </div>
+  <div class="col-md-10">
+    <div class="page-header">
+      <h3>Registered pilots</h3>
+    </div>
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Pilot ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>E-mail</th>
+            <th># of Flyies</th>
+            <th>Rating</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pilot of all_pil_arr">
+            <td> {{ pilot.pil_id}} </td>
+            <td> {{ pilot.f_name}} {{pilot.l_name}}</td>
+            <td> {{ pilot.mobile_no}} </td>
+            <td> {{ pilot.email}} </td>
+            <td> {{ pilot.no_of_drones}} </td>
+            <td> {{ pilot.rating}} </td>
+            <td>
+              <button class="btn btn-success" routerLink="/admin_req_view/{{pilot.req_id}}">View More</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
