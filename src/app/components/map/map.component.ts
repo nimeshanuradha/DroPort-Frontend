@@ -31,12 +31,12 @@ export class MapComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //set google maps defaults
+    // set google maps defaults
     this.zoom = 10;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
-    //create search FormControl
+    // create search FormControl
     this.searchControl = new FormControl();
 
     //set current position
@@ -49,16 +49,16 @@ export class MapComponent implements OnInit {
       });
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
-          //get the place result
+          // get the place result
           //let place: google.maps.places.PlaceResult = autocomplete.getPlace();
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          //verify result
+          // verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
 
-          //set latitude, longitude and zoom
+          // set latitude, longitude and zoom
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 15;

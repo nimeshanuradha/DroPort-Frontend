@@ -12,7 +12,7 @@ export class AdminRegOwnersComponent implements OnInit {
   all_own_arr = [];
 
   constructor(
-    private userService : UserService
+    private userService: UserService
   ) { }
 
   ngOnInit() {

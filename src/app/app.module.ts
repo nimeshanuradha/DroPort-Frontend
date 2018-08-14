@@ -59,9 +59,9 @@ import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-se
 
 
 const appRoutes: Routes = [
-  { path: '',component: HomeComponent  },
+  { path: '', component: HomeComponent  },
   { path: 'login', component: LoginComponent },
-  { path: 'map',component: MapComponent},
+  { path: 'map', component: MapComponent},
 
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },

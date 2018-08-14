@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   option_preview = false;
 
   ngOnInit(){
-    
   };
 
   toggle_option(){
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
     const username = data_arr.username
     const password = data_arr.password
 
-    if (username=="nimesh" && password=="123") {
+    if (username==="nimesh" && password=="123") {
       console.log('login using '+ username)
       console.log('login using '+ password)
     }
