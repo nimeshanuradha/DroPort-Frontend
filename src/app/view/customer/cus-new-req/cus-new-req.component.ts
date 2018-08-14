@@ -13,6 +13,9 @@ import { DroneService } from '../../../services/drone.service';
 export class CusNewReqComponent implements OnInit {
 
   all_drone_arr = []
+  dro_id: Number
+
+  
 
   constructor(
   
@@ -20,7 +23,7 @@ export class CusNewReqComponent implements OnInit {
     private droneService:DroneService
   ) { }
 
-  drone_select : boolean = true
+  drone_select : boolean = false
 
   ngOnInit() {
     this.droneService.getAll_Drones().subscribe(res=>console.log(this.all_drone_arr=res))
@@ -41,6 +44,10 @@ export class CusNewReqComponent implements OnInit {
 
   drone_selected(){
     this.drone_select = !this.drone_select
+  }
+
+  set_drone(drone){
+    this.dro_id = drone
   }
 
 }

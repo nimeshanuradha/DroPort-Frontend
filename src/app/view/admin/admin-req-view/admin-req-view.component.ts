@@ -10,33 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminReqViewComponent implements OnInit {
 
-  req_id:number
+  req_id:any
   req_data = []
 
   constructor(
-    router: ActivatedRoute,
+    private router: ActivatedRoute,
     private RequestService : RequestService
   
-  ) { 
-    router.params.subscribe(req_id=>this.req_id)
-  }
+  ) { }
 
     
   ngOnInit() {
-
+    //this.router.params.subscribe(id => this.req_id = id)
+    let nid = this.router.snapshot.paramMap.get(this.req_id)
     console.log("on init  function called")
     this.RequestService.getRequest_byID(this.req_id).subscribe(res=>this.req_data=res)
     console.log(this.req_data)
     
-  }
-
-
-
-
-
-
-
-
-
-
+  } 
 }

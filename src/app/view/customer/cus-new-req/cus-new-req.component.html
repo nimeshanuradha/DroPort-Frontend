@@ -3,7 +3,7 @@
     <div class="col-md-2">
       <app-sidebar-customer></app-sidebar-customer>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
       <form #cus_new_req="ngForm" (ngSubmit)=get_req_data(cus_new_req)>
 
         <div class="container">
@@ -15,6 +15,7 @@
           <div class="panel panel-primary">
             <div class="panel-heading">Flying Request Description</div>
             <div class="panel-body">
+
               <div class="form-group col-xs-12">
                 <div class="col-xs-2">
                   <label for="req_type">Request Type :</label>
@@ -29,6 +30,7 @@
                   </select>
                 </div>
               </div>
+
               <div class="form-group col-xs-12">
                 <div class="col-xs-2">
                   <label for="district">District :</label>
@@ -93,7 +95,7 @@
                   <label for="time_from">From :</label>
                   <input type="time" class="form-control" id="time_from" name="time_from" [(ngModel)]="time_from">
                 </div>
-                <div class="col-xs-2">
+                <div class=" form-group col-xs-2">
                   <label for="time_to">To :</label>
                   <input type="time" class="form-control" id="time_to" name="time_to" [(ngModel)]="time_to">
                 </div>
@@ -131,17 +133,103 @@
                 </div>
               </div>
 
-              <div class="form-group col-xs-12">
-                <div class="col-xs-2">
+              <div class="form-group col-md-12">
+                <div class="col-md-2">
                   <label for="drone" class="lable">Drone :</label>
                 </div>
-                <div class="col-xs-8">
-                  <input type='button' class='btn btn-primary' value='Select Drone'(click)="get_drn_data()">
+                <div class="col-md-2">
+                  <input type='text' class="form-control" name="dro_id" [(ngModel)]="dro_id" readonly>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <button type='button' class='btn btn-warning' (click)="drone_selected()">{{drone_select? "Confirm Selection":"Select Drone"}}</button>
+
+                  <!-- Drone Selection Panel -->
+
+                  <div *ngIf="drone_select">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        Results
+                      </div>
+                      <div class="panel-body">
+
+                        <!-- loop for each drone -->
+                        <div *ngFor="let drone of all_drone_arr">
+                          <div class="col-md-6">
+                            <div class="panel panel-default">
+                              <div class="panel-heading">
+                                {{drone.model}}
+                              </div>
+                              <div class="panel-body">
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>Max speed :</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.max_speed}}
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>GPS :</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.gps_positioning}}
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>Obstacle sensor :</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.obstacle_sensing_range}}
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>Max Storage :</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.max_storage_capacity}}
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>Max Continous Fly Time (min):</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.fly_time_category}}
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="col-md-6">
+                                    <strong>Drone ID:</strong>
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{drone.dro_id}}
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel-footer">
+                                <input type="button" value="Select" class="btn btn-success" (click)="set_drone(drone.dro_id)">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- Map Area Pnel     -->
           <div class="panel panel-primary">
             <div class="panel-heading">Required Map Area</div>
@@ -150,12 +238,8 @@
             </div>
           </div>
           <input type='submit' class='btn btn-success' value='Send Flying Request' id='submit' (click)=drone_selected()>
-          <div class="form-group" *ngIf="drone_select">
-
-          </div>
         </div>
       </form>
     </div>
   </div>
-
 </div>

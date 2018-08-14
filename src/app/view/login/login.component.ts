@@ -18,24 +18,23 @@ export class LoginComponent implements OnInit {
   option_preview = false;
 
   ngOnInit(){
-    
   };
 
   toggle_option(){
     this.option_preview = !this.option_preview
    };
 
-  // post_login_data(login: NgForm):void{
-  //   console.log('login')
-  //   const data_arr = login.value;
-  //   const username = data_arr.username
-  //   const password = data_arr.password
+  post_login_data(login: NgForm):void{
+    console.log('login calle on front end')
+    const data_arr = login.value;
+    const username = data_arr.username
+    const password = data_arr.password
 
-  //   if (username=="nimesh" && password=="123") {
-  //     console.log('login using '+ username)
-  //     console.log('login using '+ password)
-  //   }
-  // };
+    if (username==="nimesh" && password=="123") {
+      console.log('login using '+ username)
+      console.log('login using '+ password)
+    }
+  };
 
 };
 
