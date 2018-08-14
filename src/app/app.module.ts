@@ -9,11 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
-<<<<<<< HEAD
-=======
-import { DroneService } from './services/drone.service';
-
->>>>>>> 58b3ea16587864769c5f64ba0a93dcbbfb9f322d
+import { DroneService} from "./services/drone.service";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';

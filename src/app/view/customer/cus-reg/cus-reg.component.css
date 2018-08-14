@@ -1,0 +1,26 @@
+.btn {
+    background-color: rgb(104, 241, 109); 
+    color: black; 
+    border: blue;
+}
+
+.btn:hover {
+    background-color: rgb(6, 128, 10);
+    color: white;
+}
+
+.container{
+    border: 2px solid rgb(11, 8, 212);
+    padding-right: 100px;
+}
+
+h3{
+    font-family: 'Inknut Antiqua', serif;
+    size: 80px; 
+    font-weight: bold;
+}
+
+/* .reg_img{
+    height: 10px;
+    width: 20px;
+} */
