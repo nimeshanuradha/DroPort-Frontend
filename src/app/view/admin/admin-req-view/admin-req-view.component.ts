@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequestService  } from "../../../services/request.service";
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { JSONPBackend } from '../../../../../node_modules/@angular/http';
 
 @Component({
   selector: 'app-admin-req-view',
@@ -11,21 +12,23 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminReqViewComponent implements OnInit {
 
   req_id:any
-  req_data = []
+  req_data:any
 
   constructor(
     private router: ActivatedRoute,
-    private RequestService : RequestService
+    private RequestService : RequestService,
+  
   
   ) { }
 
     
   ngOnInit() {
-    //this.router.params.subscribe(id => this.req_id = id)
-    let nid = this.router.snapshot.paramMap.get(this.req_id)
+    this.router.params.subscribe(res => this.req_id = res.req_id)
     console.log("on init  function called")
-    this.RequestService.getRequest_byID(this.req_id).subscribe(res=>this.req_data=res)
-    console.log(this.req_data)
-    
+    this.RequestService.getRequest_byID(this.req_id).subscribe(res=>{
+      this.req_data=res;
+      console.log(this.req_data[0]);
+      
+    })
   } 
 }

@@ -56,6 +56,7 @@ import { OwnPilSelComponent } from './view/owner/own-pil-sel/own-pil-sel.compone
 import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
 import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-page.component';
 import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-select.component';
+import { AdminUserViewComponent } from './view/admin/admin-user-view/admin-user-view.component';
 
 
 const appRoutes: Routes = [
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
   { path: 'admin_reg_req', component: AdminRegReqComponent },
   { path: 'admin_profile',component: AdminProfileComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
+  { path: 'admin_user_view/:cus_id/:user_type', component:AdminUserViewComponent},
 
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -146,7 +148,8 @@ const appRoutes: Routes = [
     OwnPilSelComponent,
     CusRegComponent,
     CusMainPageComponent,
-    CusDrnSelectComponent
+    CusDrnSelectComponent,
+    AdminUserViewComponent
  
   ],
   imports: [
