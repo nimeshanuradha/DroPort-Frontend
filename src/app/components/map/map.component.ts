@@ -1,17 +1,17 @@
 import { Component,ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { google, GoogleMap} from '@agm/core/services/google-maps-types';
 import { MapsAPILoader } from '@agm/core';
+// import { GoogleMap } from 'googlemaps';
 import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 
-
+// var google: any;
 @Component({
     selector: 'app-map',
     templateUrl: './map.component.html',
     styleUrls: ['./map.component.css']
-  })
+})
 
 export class MapComponent implements OnInit {
 

@@ -21,12 +21,12 @@ ul a:hover{
   .dropbtn {
     font-size: 16px;
     border: none;
-    background-color:#463bdf;
+    background-color:transparent;
 }
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: inline; 
 }
 
 .dropdown-content {

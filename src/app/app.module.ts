@@ -9,8 +9,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
-import { DroneService } from './services/drone.service';
-
+import { DroneService} from "./services/drone.service";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -60,10 +59,8 @@ import { AdminUserViewComponent } from './view/admin/admin-user-view/admin-user-
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent  },
-  { path: 'login', component: LoginComponent },
-  { path: 'map', component: MapComponent},
-
+  { path: '',component: HomeComponent  },
+  { path: 'home', component: HomeComponent },
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
@@ -72,6 +69,7 @@ const appRoutes: Routes = [
   { path: 'admin_profile',component: AdminProfileComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'admin_user_view/:cus_id/:user_type', component:AdminUserViewComponent},
+  { path: 'login', component:LoginComponent },
 
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -150,6 +148,7 @@ const appRoutes: Routes = [
     CusMainPageComponent,
     CusDrnSelectComponent,
     AdminUserViewComponent
+    
  
   ],
   imports: [

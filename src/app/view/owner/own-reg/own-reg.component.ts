@@ -10,7 +10,8 @@ import { Owner } from "../../../models/user";
 })
 export class OwnRegComponent implements OnInit {
 
-  data_arr: any[]
+  data_arr: any[];
+  
   
 
   constructor(
