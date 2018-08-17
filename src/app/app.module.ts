@@ -58,15 +58,8 @@ import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-se
 
 
 const appRoutes: Routes = [
-<<<<<<< HEAD
   { path: '',component: HomeComponent  },
   { path: 'home', component: HomeComponent },
-=======
-  { path: '', component: HomeComponent  },
-  { path: 'login', component: LoginComponent },
-  { path: 'map', component: MapComponent},
-
->>>>>>> daae9fbfe5f72c5ab36642663abfa3080ab5e5e9
   { path: 'admin_main_panel', component: AdminMainPanelComponent },
   { path: 'admin_reg_owners', component: AdminRegOwnersComponent },
   { path: 'admin_reg_pilots', component: AdminRegPilotsComponent },
@@ -74,6 +67,7 @@ const appRoutes: Routes = [
   { path: 'admin_reg_req', component: AdminRegReqComponent },
   { path: 'admin_profile',component: AdminProfileComponent},
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
+  { path: 'login', component:LoginComponent },
 
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -150,7 +144,8 @@ const appRoutes: Routes = [
     OwnPilSelComponent,
     CusRegComponent,
     CusMainPageComponent,
-    CusDrnSelectComponent
+    CusDrnSelectComponent,
+    
  
   ],
   imports: [

@@ -133,30 +133,31 @@
                 </div>
               </div>
 
-              <div class="form-group col-md-12">
+              <!-- <div class="form-group col-md-12">
                 <div class="col-md-2">
                   <label for="drone" class="lable">Drone :</label>
                 </div>
                 <div class="col-md-2">
                   <input type='text' class="form-control" name="dro_id" [(ngModel)]="dro_id" readonly>
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <div class="col-xs-12">
-                  <button type='button' class='btn btn-warning' (click)="drone_selected()">{{drone_select? "Confirm Selection":"Select Drone"}}</button>
+                  <!-- <button type='button' class='btn btn-warning' (click)="drone_selected()">{{drone_select? "Confirm Selection":"Select Drone"}}</button> -->
+                  <button type='button' class='btn btn-warning'  (click)="select_drone()">Select Drone</button>
 
                   <!-- Drone Selection Panel -->
 
-                  <div *ngIf="drone_select">
+                  <!-- <div *ngIf="drone_select">
                     <div class="panel panel-primary">
                       <div class="panel-heading">
                         Results
                       </div>
-                      <div class="panel-body">
+                      <div class="panel-body"> -->
 
                         <!-- loop for each drone -->
-                        <div *ngFor="let drone of all_drone_arr">
+                        <!-- <div *ngFor="let drone of all_drone_arr">
                           <div class="col-md-6">
                             <div class="panel panel-default">
                               <div class="panel-heading">
@@ -225,7 +226,12 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+
+
+
+
+                  
                 </div>
               </div>
             </div>

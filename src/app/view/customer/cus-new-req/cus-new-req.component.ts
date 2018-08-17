@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { RequestService } from "../../../services/request.service";
 import { DroneService } from '../../../services/drone.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class CusNewReqComponent implements OnInit {
   constructor(
   
     private RequestService: RequestService,
-    private droneService:DroneService
+    private droneService:DroneService,
+    private router : Router
   ) { }
 
   drone_select : boolean = false
@@ -48,6 +50,10 @@ export class CusNewReqComponent implements OnInit {
 
   set_drone(drone){
     this.dro_id = drone
+  }
+
+  select_drone(){
+    this.router.navigate(['/cus_drn_select']);
   }
 
 }
