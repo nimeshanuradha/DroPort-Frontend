@@ -7,9 +7,12 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule} from '@angular/common/http';
+
 import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
 import { DroneService} from "./services/drone.service";
+import { AuthService } from './services/auth.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -56,6 +59,9 @@ import { CusRegComponent } from './view/customer/cus-reg/cus-reg.component';
 import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-page.component';
 import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-select.component';
 import { AdminUserViewComponent } from './view/admin/admin-user-view/admin-user-view.component';
+import { CusProfComponent } from './view/customer/cus-prof/cus-prof.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -76,6 +82,7 @@ const appRoutes: Routes = [
   { path: 'cus_req_view', component: CusReqViewComponent },
   { path: 'cus_reg',component:CusRegComponent},
   { path: 'cus_drn_select', component:CusDrnSelectComponent},
+  { path: 'cus_prof', component:CusProfComponent},
 
   { path: 'pil_main_page', component: PilMainPageComponent },
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
@@ -147,7 +154,8 @@ const appRoutes: Routes = [
     CusRegComponent,
     CusMainPageComponent,
     CusDrnSelectComponent,
-    AdminUserViewComponent
+    AdminUserViewComponent,
+    CusProfComponent
     
  
   ],
@@ -168,7 +176,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [UserService,RequestService,DroneService],
+  providers: [UserService,RequestService,DroneService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

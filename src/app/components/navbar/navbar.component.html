@@ -2,31 +2,58 @@
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-       <img src="../../../assets/images/nav.png" alt="logo" height="50px">
+      <img src="../../../assets/images/nav.png" alt="logo" height="50px">
     </div>
     <ul class="nav navbar-nav">
-      <li><a routerLink="./home">Home </a></li>
-      <li><a routerLink="./land_services">Services </a></li>
-      <li><a routerLink="./land_about">About Us </a></li>
-      <li><a routerLink="./land_contactus">Contact Us</a></li>
+      <li>
+        <a routerLink="./home">Home </a>
+      </li>
+      <li>
+        <a routerLink="./land_services">Services </a>
+      </li>
+      <li>
+        <a routerLink="./land_about">About Us </a>
+      </li>
+      <li>
+        <a routerLink="./land_contactus">Contact Us</a>
+      </li>
 
-     </ul>
-    
+    </ul>
+
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav_search"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></li>
-      <li class="nav_search"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></li>
-      <li style="display: inline;"><a><span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
-        <div class="dropdown">
-          <button class="dropbtn">Register</button>
-          <div class="dropdown-content">
-            <a routerLink="./own_reg">Owner</a>
-            <a routerLink="./pil_reg">Pilot</a>
-            <a routerLink="./cus_reg">Customer</a>
-          </div>
-        </div>
-      </span></a></li>
-      <li><a routerLink="./login"><span class="glyphicon glyphicon-log-in" style=" zoom:1;padding-right: 20px;"></span>LogIn</a></li>  
+     
+      <li *ngIf="!isLogged()" style="display: inline;">
+        <a>
+          <span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
+            <div class="dropdown">
+              <button class="dropbtn">Register</button>
+              <div class="dropdown-content">
+                <a routerLink="./own_reg">Owner</a>
+                <a routerLink="./pil_reg">Pilot</a>
+                <a routerLink="./cus_reg">Customer</a>
+              </div>
+            </div>
+          </span>
+        </a>
+      </li>
+      
+      <li *ngIf="!isLogged()">
+        <a routerLink="./login">
+          <span class="glyphicon glyphicon-log-in" style=" zoom:1;padding-right: 20px;"></span>Login</a>
+      </li>
+
+      <li *ngIf="isLogged()" style="display: inline;">
+          <span class="glyphicon glyphicon-user" style="zoom:1;padding-right: 10px;">
+              <div class="dropdown">
+                <button class="dropbtn">{{user}}</button>
+                <div class="dropdown-content">
+                  <a routerLink="./cus_prof">Profile</a>
+                  <a routerLink="./login" (click)="logout()">Logout</a>
+                </div>
+              </div>
+            </span>
+      </li>
+     
     </ul>
   </div>
 </nav>
-

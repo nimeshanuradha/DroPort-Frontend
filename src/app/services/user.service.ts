@@ -9,7 +9,7 @@ export class UserService {
 
   log_User(user_data){
     console.log("getAll_Customers called")
-    return this.http.post("http://localhost:3000/login",user_data).map((res: Response)=> res.json())
+    return this.http.post("http://localhost:3000/api/auth/login",user_data).map((res: Response)=> res.json())
   };
 
   getAll_Customers(){
@@ -62,5 +62,11 @@ export class UserService {
     console.log("POST_New_cus called")
     return this.http.post("http://localhost:3000/api/user/cus/new",cus_data)
   }
+
+  POST_New_own(own_data){
+    console.log("POST_New_cus called",own_data)
+    return this.http.post("http://localhost:3000/api/user/own/new",own_data)
+  }
+
 }
 

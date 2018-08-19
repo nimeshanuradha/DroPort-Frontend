@@ -24,8 +24,7 @@ export class CusRegComponent implements OnInit {
     var cus_data =  cus_reg.value
 
     console.log(cus_data)
-    this.UserService.POST_New_cus(cus_data).subscribe(
-      (res) => {
+    this.UserService.POST_New_cus(cus_data).subscribe((res) => {
         console.log(res);
         this.router.navigateByUrl('/cus_new_req');
       });

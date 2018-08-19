@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from "../../../services/request.service";
+import {Router  } from "@angular/router";
 
 
 
@@ -16,8 +17,14 @@ export class AdminMainPanelComponent implements OnInit {
   
   constructor(
     private RequestService: RequestService, 
+    private router: Router
     
-  ) { }
+  ) { 
+  var loggedIn = localStorage.getItem('loggedIn')
+  if(!loggedIn){
+    this.router.navigate(["/login"])
+  }
+  }
 
 // Variables 
   all_req_arr = [];

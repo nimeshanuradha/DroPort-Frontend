@@ -10,6 +10,7 @@ export class AppHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
