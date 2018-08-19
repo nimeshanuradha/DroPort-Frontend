@@ -7,6 +7,11 @@ export class UserService {
 
   constructor(private http:Http) { }
 
+  log_User(user_data){
+    console.log("getAll_Customers called")
+    return this.http.post("http://localhost:3000/login",user_data).map((res: Response)=> res.json())
+  };
+
   getAll_Customers(){
     console.log("getAll_Customers called")
     return this.http.get("http://localhost:3000/api/user/cus").map((res: Response)=> res.json())

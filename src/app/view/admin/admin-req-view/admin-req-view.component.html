@@ -19,38 +19,38 @@
 					<div class="form-group col-xs-7">
 						<div class="form-group form-inline">
 							<label for="req_id" class="control-lable col-xs-4">Flying Request ID : </label>
-							<input type="text" id="req_id" class="form-control" readonly>
+							<input type="text" id="req_id" class="form-control" readonly value="{{req_data[0].req_id}}">
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="district" class="control-lable col-xs-4">District :</label>
-							<input type="text" id="district" class="form-control" readonly>
+							<input type="text" id="district" class="form-control" readonly value="{{req_data[0].district}}">
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="town" class="control-lable col-xs-4">Town :</label>
-							<input type="text" id="town" class="form-control" readonly>
+							<input type="text" id="town" class="form-control" readonly value="{{req_data[0].town}}">
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="area" class="control-lable col-xs-4">Area :</label>
-							<input type="text" id="area" class="form-control" readonly>
+							<input type="text" id="area" class="form-control" readonly value="{{req_data[0].area}}">
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="date" class="control-lable col-xs-4">Date :</label>
-							<input type="text" id="date" class="form-control" readonly>
+							<input type="text" id="date" class="form-control" readonly value="{{req_data[0].date}}">
 						</div>
 						<div class="form-group form-inline">
 							<label for="time" class="control-lable col-xs-4">Time :</label>
-							<input type="text" id="time" class="form-control" readonly>
+							<input type="text" id="time" class="form-control" readonly value="{{req_data[0].time}}">
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="cus_id" class="control-lable col-xs-4">Customer ID :</label>
-							<input type="text" id="cus_id" class="form-control" onchange="" re>
+							<input type="text" id="cus_id" class="form-control" readonly value="{{req_data[0].cus_id}}">
 							<span style="margin-left:20px;">
-								<a class="btn btn-xs btn-success " href="">View Customer Profile</a>
+								<a class="btn btn-xs btn-success " routerLink="/admin_user_view/{{req_data[0].cus_id}}/{{req_data[0].req_id}}">View Customer Profile</a>
 							</span>
 						</div>
 					</div>
