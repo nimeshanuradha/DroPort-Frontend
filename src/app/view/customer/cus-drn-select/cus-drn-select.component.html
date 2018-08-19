@@ -1,113 +1,37 @@
-<!-- <div class="panel panel-primary">
-  <div class="panel-heading">
-    Results
-  </div>
-  <div class="panel-body"> -->
+<!-- <div class="container-fluid" *ngFor = "let districts for district">
+<app-cus-new-req [district]="districts"></app-cus-new-req>
+</div> -->
 
-    <!-- loop for each drone -->
-    <!-- <div *ngFor="let drone of all_drone_arr">
-      <div class="col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            {{drone.model}}
-          </div>
-          <div class="panel-body">
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>Max speed :</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.max_speed}}
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>GPS :</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.gps_positioning}}
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>Obstacle sensor :</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.obstacle_sensing_range}}
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>Max Storage :</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.max_storage_capacity}}
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>Max Continous Fly Time (min):</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.fly_time_category}}
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <strong>Drone ID:</strong>
-              </div>
-              <div class="col-md-6">
-                {{drone.dro_id}}
-              </div>
-            </div>
-
-
-          </div>
-          <div class="panel-footer">
-            <input type="button" value="Select" class="btn btn-success">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <app-sidebar-customer></app-sidebar-customer>
+    </div>
+    <div class="col-md-10">
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="../../../../assets/drone.jpg" alt="drone">
+          <hr>
+          <div *ngFor="let drone of all_drone_arr">
+            <h3>{{drone.brand}} {{drone.model}}</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Max Fly Time : {{drone.max_flight_time}}</li>
+              <li class="list-group-item">Max Speed : {{drone.max_speed}}</li>
+              <li class="list-group-item">Video Resolution (p) :{{drone.video_resolution}}</li>
+              <li class="list-group-item">Megapixels (MP):{{drone.megapixels}}</li>
+              <li class="list-group-item">
+                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+              </li>
+            </ul>
+            <p>
+              <a routerLink="" class="btn btn-primary btn-sm" role="button">View Details</a>
+            </p>
+            <p>
+              <a type="submit" class="btn btn-primary btn-sm" role="button">Select Drone</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-
-
-  </div> -->
-
-
-
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
-        <app-sidebar-customer></app-sidebar-customer>
-      </div>
-      <div class="col-md-10">
-        <div class="col-md-4">
-          <div class="thumbnail">
-              <img src="../../../../assets/drone.jpg" alt="drone">
-              <hr>
-              <div>
-                <h3>Single-Rotor drones</h3>
-                  <ul class="list-group list-group-flush" *ngFor="let x of drones">
-                    <li class="list-group-item">Drone type : {{x.drone_type}}</li>
-                    <li class="list-group-item">location:</li>
-                    <li class="list-group-item">Price:</li>
-                    <li class="list-group-item">Quality:</li>
-                    <li class="list-group-item">Contact No:</li>
-                    <li class="list-group-item">
-                        <ngb-rating [(rate)]="currentRate"></ngb-rating></li>
-                  </ul>
-                <p><a routerLink="/drone_reg" class="btn btn-primary btn-sm" role="button">View Details</a> </p>
-              </div>
-            </div>
-       </div>
-      </div>
-    </div>
   </div>
-
-
+</div>

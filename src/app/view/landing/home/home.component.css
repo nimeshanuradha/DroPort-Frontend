@@ -12,10 +12,17 @@ h1{
     font-size: 50px;
     text-align: center;
     padding-bottom: 5px;
+    
     /* padding-right: 30px; */
 
 }
 
 .container{
     width: 1000px;
+}
+
+
+h3{
+    color: white;
+    text-shadow: 0 0 20px #000000, 0 0 20px #000000;
 }
