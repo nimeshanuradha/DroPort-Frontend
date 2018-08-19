@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input ,Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { RequestService } from "../../../services/request.service";
 import { DroneService } from '../../../services/drone.service';
@@ -12,6 +12,14 @@ import { Router } from '@angular/router';
 })
 
 export class CusNewReqComponent implements OnInit {
+
+
+  // @Input() video_resolution : Number;
+  // @Input() megapixels : Number;
+  // @Input() max_flight_time: Number;
+  // @Input() district: String; 
+  // @Output() outputToParent = new EventEmitter();  
+
 
   all_drone_arr = []
   dro_id: Number
@@ -53,7 +61,11 @@ export class CusNewReqComponent implements OnInit {
   }
 
   select_drone(){
+    // this.outputToParent.emit();
     this.router.navigate(['/cus_drn_select']);
   }
+
+  
+  
 
 }

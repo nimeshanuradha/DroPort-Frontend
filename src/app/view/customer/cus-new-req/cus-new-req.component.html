@@ -33,43 +33,52 @@
 
               <div class="form-group col-xs-12">
                 <div class="col-xs-2">
-                  <label for="district">District :</label>
+                  <label for="exampleSelect1">District :</label>
                 </div>
                 <div class="col-xs-2">
-                  <select class="form-control" name="district" id="district" [(ngModel)]="district">
-                    <option>Ampara</option>
-                    <option>Anuradhapura</option>
-                    <option>Badulla</option>
-                    <option>Batticaloa</option>
-                    <option selected>Colombo</option>
-                    <option>Galle</option>
-                    <option>Gampaha</option>
-                    <option>Hambantota</option>
-                    <option>Jaffna</option>
-                    <option>Kalutara</option>
-                    <option>Kandy</option>
-                    <option>Kegalle</option>
-                    <option>Kilinochchi</option>
-                    <option>Kurunegala</option>
-                    <option>Mannar</option>
-                    <option>Matale</option>
-                    <option>Matara</option>
-                    <option>Monaragala</option>
-                    <option>Mullaitivu</option>
-                    <option>Nuwaraeliya</option>
-                    <option>Polonnaruwa</option>
-                    <option>Puttalam</option>
-                    <option>Ratnapura</option>
-                    <option>Trincomalee</option>
-                    <option>Vavuniya</option>
+                  <select class="form-control" id="district" name="district" onchange="populate(this.id,'town')"required [(ngModel)]="district">
+                    <option value="Your district">Your district</option>
+                    <option value="Ampara">Ampara</option>
+                    <option value="Anuradhapura">Anuradhapura</option>
+                    <option value="Badulla">Badulla</option>
+                    <option value="Batticaloa">Batticaloa</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Galle">Galle</option>
+                    <option value="Gampaha">Gampaha</option>
+                    <option value="Hambantota">Hambantota</option>
+                    <option value="Jaffna">Jaffna</option>
+                    <option value="Kalutara">Kalutara</option>
+                    <option value="Kandy">Kandy</option>
+                    <option value="Kegalla">Kegalla</option>
+                    <option value="Kilinochchi">Kilinochchi</option>
+                    <option value="Kurunegala">Kurunegala</option>
+                    <option value="Mannar">Mannar</option>
+                    <option value="Matale">Matale</option>
+                    <option value="Matara">Matara</option>
+                    <option value="Moneragala">Moneragala</option>
+                    <option value="Mullaitivu">Mullaitivu</option>
+                    <option value="Nuwara Eliya">Nuwara Eliya</option>
+                    <option value="Polonnaruwa">Polonnaruwa</option>
+                    <option value="Puttalam">Puttalam</option>
+                    <option value="Ratnapura">Ratnapura</option>
+                    <option value="Trincomalee">Trincomalee</option>
+                    <option value="Vavuniya">Vavuniya</option>
                   </select>
                 </div>
+
+
                 <div class="col-xs-2">
-                  <label for="town">Town :</label>
+                  <label for="exampleSelect1">Town :</label>
+                  
                 </div>
                 <div class="col-xs-2">
-                  <input type="text" class="form-control" id="town" name="town" [(ngModel)]="town">
+                    <select class="form-control" id="town" name="town" required [(ngModel)]="town">
+                        <option value="Your town">Your town</option>
+                      </select>
+                  <!-- <input type="text" class="form-control" id="town" name="town" > -->
                 </div>
+
+
                 <div class="col-xs-2">
                   <label for="town">Area :</label>
                 </div>
@@ -104,18 +113,30 @@
               <div class="col-xs-5">
                 <div class="form-group">
                   <div class="col-xs-5">
-                    <label for="quality_category">Quality Category :</label>
+                    <label for="video_resolution"> Video Resolution(p) :</label>
                   </div>
                   <div class="col-xs-5">
-                    <select class="form-control " id="quality_category" name="quality_category" [(ngModel)]="quality_category">
-                      <option>Ultra</option>
-                      <option>High</option>
-                      <option>Medium</option>
-                      <option>Low</option>
+                    <select class="form-control " id="video_resolution" name="video_resolution" [(ngModel)]="video_resolution">
+                      <option >360</option>
+                      <option >480</option>
+                      <option >720</option>
+                      <option >1080</option>
                     </select>
                   </div>
                 </div>
               </div>
+
+
+              <div class="form-group col-xs-12">
+                  <div class="col-xs-2">
+                    <label for="megapixels" class="lable">Megapixels :</label>
+                  </div>
+                  <div class="col-xs-2">
+                    <input type="text" class="form-control" name="megapixels" required="" [(ngModel)]="megapixels">
+                  </div>
+                </div>
+  
+
 
               <div class="col-xs-6">
                 <div class="form-group">
@@ -124,109 +145,20 @@
                   </div>
                   <div class="col-xs-6">
                     <select class="form-control " id="max_flight_time" name="max_flight_time" [(ngModel)]="max_flight_time">
-                      <option value="10">Less 10 min</option>
-                      <option value="30">10 min - 30 min</option>
-                      <option value="60">30 min - 60 min</option>
-                      <option value="00">More than 60 min</option>
+                      <option >10</option>
+                      <option >30</option>
+                      <option >60</option>
+                      <option >90</option>
                     </select>
                   </div>
                 </div>
               </div>
 
-              <!-- <div class="form-group col-md-12">
-                <div class="col-md-2">
-                  <label for="drone" class="lable">Drone :</label>
-                </div>
-                <div class="col-md-2">
-                  <input type='text' class="form-control" name="dro_id" [(ngModel)]="dro_id" readonly>
-                </div>
-              </div> -->
-
+              
               <div class="form-group">
                 <div class="col-xs-12">
                   <!-- <button type='button' class='btn btn-warning' (click)="drone_selected()">{{drone_select? "Confirm Selection":"Select Drone"}}</button> -->
                   <button type='button' class='btn btn-warning'  (click)="select_drone()">Select Drone</button>
-
-                  <!-- Drone Selection Panel -->
-
-                  <!-- <div *ngIf="drone_select">
-                    <div class="panel panel-primary">
-                      <div class="panel-heading">
-                        Results
-                      </div>
-                      <div class="panel-body"> -->
-
-                        <!-- loop for each drone -->
-                        <!-- <div *ngFor="let drone of all_drone_arr">
-                          <div class="col-md-6">
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                {{drone.model}}
-                              </div>
-                              <div class="panel-body">
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>Max speed :</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.max_speed}}
-                                  </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>GPS :</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.gps_positioning}}
-                                  </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>Obstacle sensor :</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.obstacle_sensing_range}}
-                                  </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>Max Storage :</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.max_storage_capacity}}
-                                  </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>Max Continous Fly Time (min):</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.fly_time_category}}
-                                  </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                  <div class="col-md-6">
-                                    <strong>Drone ID:</strong>
-                                  </div>
-                                  <div class="col-md-6">
-                                    {{drone.dro_id}}
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel-footer">
-                                <input type="button" value="Select" class="btn btn-success" (click)="set_drone(drone.dro_id)">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
 
 
 
@@ -249,3 +181,164 @@
     </div>
   </div>
 </div>
+
+<!-- {{!-- Srript for dynamic dropdown menu --}} -->
+  <script>
+function populate(s1,s2){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+	s2.innerHTML = "";
+	if(s1.value == "Ampara"){
+		var optionArray = ["|Select Your Town","Akkarepattu|Akkarepattu","Ampara|Ampara","Kalmunai|Kalmunai",
+    "Sainthamaruthu|Sainthamaruthu","Dehiattakandiya|Dehiattakandiya","Padiyathalawa|Padiyathalawa",
+    "Mahaoya|Mahaoya","Uhana|Uhana","Navithanveli|Navithanveli","Sammanthurai|Sammanthurai"
+    ,"Kalmunai (Tamil)|Kalmunai (Tamil)","Karaitheevu|Karaitheevu","Ninthavur|Ninthavur"
+    ,"Addalaichenai|Addalaichenai","Irakkamam|Irakkamam","Alayadiwembu|Alayadiwembu","Damana|Damana","Thirukkovil|Thirukkovil"
+    ,"Pothuvil|Pothuvil","Lahugala|Lahugala"];
+	} 
+  else if(s1.value == "Anuradhapura"){
+		var optionArray = ["|Select Your Town","Anuradhapura|Anuradhapura","Eppawala|Eppawala","Galenbindunuwewa|Galenbindunuwewa",
+    "Galnewa|Galnewa","Habarana|Habarana","Horowpothana|Horowpothana","Kekirawa|Kekirawa","Medawachchiya|Medawachchiya",
+    "Mihintale|Mihintale","Nochchiyagama|Nochchiyagama","Talawa|Talawa","Ipalogama|Ipalogama","Kahatagasdigiliya|Kahatagasdigiliya"
+    ,"Kebithigollewa|Kebithigollewa","Nachchadoowa|Nachchadoowa","Padaviya|Padaviya","Palagala|Palagala","Palugaswewa|Palugaswewa",
+    "Rajanganaya|Rajanganaya","Rambewa|Rambewa","Thirappane|Thirappane","Tambuttegama|Tambuttegama"];
+	} 
+  else if(s1.value == "Badulla"){
+		var optionArray = ["|Select Your Town","Badulla|Badulla","Bandarawela|Bandarawela","Bandarawela|Bandarawela",
+    "Welimada|Welimada","Mahiyanganaya|Mahiyanganaya","Hali Ela|Hali Ela","Diyatalawa|Diyatalawa","Ella|Ella",
+    "Haputale|Haputale","Passara|Passara","Soranathota|Soranathota","Meegahakivula|Meegahakivula","Kandaketiya|Kandaketiya"
+    ,"Lunugala|Lunugala","Rideemaliyadda|Rideemaliyadda","Haldummulla|Haldummulla"];
+	}
+  else if(s1.value == "Batticaloa"){
+		var optionArray = ["|Select Your Town","Batticaloa|Batticaloa","Eravur Pattu|Eravur Pattu","Eravur Town|Eravur Town","Kattankudy|Kattankudy",
+    "Koralai Pattu|Koralai Pattu","Manmunai|Manmunai","Porativu Pattu|Porativu Pattu"];
+	}
+  else if(s1.value == "Colombo"){
+		var optionArray = ["|Select Your Town","Nugegoda|Nugegoda","Dehiwala|Dehiwala","Piliyandala|Piliyandala",
+    "Maharagama|Maharagama","Kottawa|Kottawa","Angoda|Angoda","Athurugiriya|Athurugiriya","Avissawella|Avissawella",
+    "Battaramulla|Battaramulla","Boralesgamuwa|Boralesgamuwa","Colombo 1|Colombo 1","Colombo 2|Colombo 2",
+    "Colombo 3|Colombo 3","Colombo 4|Colombo 4","Colombo 5|Colombo 5","Colombo 6|Colombo 6","Colombo 7|Colombo 7",
+    "Colombo 8|Colombo 8","Colombo 9|Colombo 9","Colombo 10|Colombo 10","Colombo 11|Colombo 11","Colombo 12|Colombo 12",
+    "Colombo 13|Colombo 13","Colombo 14|Colombo 14","Colombo 15|Colombo 15","Hanwella|Hanwella","Homagama|Homagama",
+    "Kaduwela|Kaduwela","Kesbewa|Kesbewa","Kohuwala|Kohuwala","Kolonnawa|Kolonnawa","Kotte|Kotte",
+    "Malabe|Malabe","Moratuwa|Moratuwa","Mount|Mount","Nawala|Nawala","Padukka|Padukka",
+    "Pannipitiya|Pannipitiya","Rajagiriya|Rajagiriya","Ratmalana|Ratmalana","Talawatugoda|Talawatugoda","Wellampitiya|Wellampitiya"];
+	}
+  else if(s1.value == "Galle"){
+		var optionArray = ["|Select Your Town","Galle|Galle","Ambalangoda|Ambalangoda","Elpitiya|Elpitiya",
+    "Hikkaduwa|Hikkaduwa","Baddegama|Baddegama","Ahangama|Ahangama","Batapola|Batapola","Bentota|Bentota",
+    "Karapitiya|Karapitiya","Akmeemana|Akmeemana","Balapitiya|Balapitiya","Elpitiya|Elpitiya",
+    "Gonapinuwala|Gonapinuwala","Habaraduwa|Habaraduwa","Imaduwa|Imaduwa","Karandeniya|Karandeniya","Nagoda|Nagoda",
+    "Neluwa|Neluwa","Niyagama|Niyagama","Thawalama|Thawalama","Yakkalamulla|Yakkalamulla"];
+	}
+  else if(s1.value == "Gampaha"){
+		var optionArray = ["|Select Your Town","Gampaha|Gampaha","Negombo|Negombo","Kelaniya|Kelaniya",
+    "Kiribathgoda|Kiribathgoda","Kadawatha|Kadawatha","Delgoda|Delgoda","Divulapitiya|Divulapitiya","Ganemulla|Ganemulla",
+    "Ja-Ela|Ja-Ela","Kandana|Kandana","Katunayake|Katunayake","Minuwangoda|Minuwangoda","Mirigama|Mirigama"
+    ,"Nittambuwa|Nittambuwa","Ragama|Ragama","Veyangoda|Veyangoda","Wattala|Wattala","Dompe|Dompe",
+    "Mahara|Mahara"];
+	}
+  else if(s1.value == "Hambantota"){
+		var optionArray = ["|Select Your Town","Hambantota|Hambantota","Tangalla|Tangalla","Beliatta|Beliatta","Ambalantota|Ambalantota",
+    "Tissamaharama|Tissamaharama","Ambalantota|Ambalantota","Angunakolapelessa|Angunakolapelessa","Katuwana|Katuwana",
+    "Lunugamvehera|Lunugamvehera","Okewela|Okewela","Sooriyawewa|Sooriyawewa","Walasmulla|Walasmulla","Weeraketiya|Weeraketiya"];
+	}
+  else if(s1.value == "Jaffna"){
+		var optionArray = ["|Select Your Town","Jaffna|Jaffna","Nallur|Nallur","Chavakachcheri|Chavakachcheri",
+    "Delft|Delft","Karainagar|Karainagar","Maruthnkerny|Maruthnkerny","Point Pedro|Point Pedro","Karaveddy|Karaveddy",
+    "Kopay|Kopay","Tellippalai|Tellippalai","Uduvil|Uduvil","Sandilipay|Sandilipay","Chankanai|Chankanai"];
+	}
+  else if(s1.value == "Kalutara"){
+		var optionArray = ["|Select Your Town","Kalutara|Kalutara","Horana|Horana","Panadura|Panadura",
+    "Bandaragama|Bandaragama","Matugama|Matugama","Alutgama|Alutgama","Beruwala|Beruwala","Ingiriya|Ingiriya",
+    "Wadduwa|Wadduwa","Agalawatta|Agalawatta","Bulathsinhala|Bulathsinhala","Dodangoda|Dodangoda","Madurawela|Madurawela"
+    ,"Millaniya|Millaniya","Palindanuwara|Palindanuwara","Walallavita|Walallavita"];
+	}
+  else if(s1.value == "Kandy"){
+		var optionArray = ["|Select Your Town","Kandy|Kandy","Katugastota|Katugastota","Peradeniya|Peradeniya",
+    "Gampola|Gampola","Kundasale|Kundasale","Akurana|Akurana","Ampitiya|Ampitiya","Digana|Digana",
+    "Galagedara|Galagedara","Gelioya|Gelioya","Kadugannawa|Kadugannawa","Madawala Bazaar|Madawala Bazaar","Nawalapitiya|Nawalapitiya"
+    ,"Pilimatalawa|Pilimatalawa","Wattegama|Wattegama","Harispattuwa|Harispattuwa","Panvila|Panvila","Minipe|Minipe",
+    "Delthota|Delthota","Hatharaliyadda|Hatharaliyadda","Thumpane|Thumpane","Minipe|Minipe"];
+	}
+  else if(s1.value == "Kegalla"){
+		var optionArray = ["|Select Your Town","Kegalle|Kegalle","Mawanella|Mawanella","Warakapola|Warakapola",
+    "Rambukkana|Rambukkana","Ruwanwella|Ruwanwella","Dehiowita|Dehiowita","Deraniyagala|Deraniyagala","Galigamuwa|Galigamuwa",
+    "Kitulgala|Kitulgala","Yatiyantota|Yatiyantota","Aranayaka|Aranayaka","Bulathkohupitiya|Bulathkohupitiya"];
+	}
+  else if(s1.value == "Kilinochchi"){
+		var optionArray = ["|Select Your Town","Kilinochchi|Kilinochchi","Kandavalai|Kandavalai","Karachchi|Karachchi",
+    "Pachchilaipalli|Pachchilaipalli","Poonakary|Poonakary"];
+	}
+  else if(s1.value == "Kurunegala"){
+		var optionArray = ["|Select Your Town","Kurunegala|Kurunegala","Kuliyapitiya|Kuliyapitiya","Pannala|Pannala",
+    "Pannala|Pannala","Narammala|Narammala","Wariyapola|Wariyapola","Alawwa|Alawwa","Bingiriya|Bingiriya",
+    "Galgamuwa|Galgamuwa","Giriulla|Giriulla","Hettipola|Hettipola","Ibbagamuwa|Ibbagamuwa","Mawathagama|Mawathagama"
+    ,"Nikaweratiya|Nikaweratiya","Polgahawela|Polgahawela","Ambanpola|Ambanpola","Bamunakotuwa|Bamunakotuwa","Ganewatta|Ganewatta",
+    "Kobeigane|Kobeigane","Giribawa|Giribawa","Polpithigama|Polpithigama","Weerambugedara|Weerambugedara"];
+	}
+  else if(s1.value == "Mannar"){
+		var optionArray = ["|Select Your Town","Mannar|Mannar","Madhu|Madhu","Manthai|Manthai","Musalai|Musalai",
+    "Nanaddan|Nanaddan"];
+	}
+  else if(s1.value == "Matale"){
+		var optionArray = ["|Select Your Town","Matale|Matale","Dambulla|Dambulla","Galewela|Galewela",
+    "Pallepola|Pallepola","Sigiriya|Sigiriya","Yatawatta|Yatawatta","Rattota|Rattota","Naula|Naula",
+    "Ukuwela|Ukuwela","Wilgamuwa|Wilgamuwa","Palapathwela|Palapathwela"];
+	}
+  else if(s1.value == "Matara"){
+		var optionArray = ["|Select Your Town","Matara|Matara","Akuressa|Akuressa","Weligama|Weligama",
+    "Hakmana|Hakmana","Dikwella|Dikwella","Devinuwara|Devinuwara","Athuraliya|Athuraliya","Kamburupitiya|Kamburupitiya",
+    "Kotapola|Kotapola","Malimbada|Malimbada","Pasgoda|Pasgoda","Pitabeddara|Pitabeddara","Thihagoda|Thihagoda"
+    ,"Welipitiya|Welipitiya"];
+	}
+  else if(s1.value == "Moneragala"){
+		var optionArray = ["|Select Your Town","Moneragala|Moneragala","Bibile|Bibile","Kataragama|Kataragama",
+    "Wellawaya|Wellawaya","Buttala|Buttala","Bibile|Bibile","Badalkumbura|Badalkumbura","Katharagama|Katharagama",
+    "Madulla|Madulla","Medagama|Medagama","Sevanagala|Sevanagala","Siyambalanduwa|Siyambalanduwa","Thanamalvila|Thanamalvila"
+    ,"Wellawaya|Wellawaya"];
+	}
+  else if(s1.value == "Mullaitivu"){
+		var optionArray = ["|Select Your Town","Mullaitivu|Mullaitivu","Pandiyankulam|Pandiyankulam","Maritimepattu|Maritimepattu",
+    "Oddusuddan|Oddusuddan","Puthukudiyiruppu|Puthukudiyiruppu","Thunukkai|Thunukkai","Welioya|Welioya"];
+	}
+  else if(s1.value == "Nuwara Eliya"){
+		var optionArray = ["|Select Your Town","Nuwara Eliya|Nuwara Eliya","Hatton|Hatton","Ginigathena|Ginigathena",
+    "Madulla|Madulla","Walapane|Walapane","Hanguranketha|Hanguranketha","Ambagamuwa|Ambagamuwa"];
+	}
+  else if(s1.value == "Polonnaruwa"){
+		var optionArray = ["|Select Your Town","Polonnaruwa|Polonnaruwa","Kaduruwela|Kaduruwela","Hingurakgoda|Hingurakgoda",
+    "Medirigiriya|Medirigiriya","Dimbulagala|Dimbulagala","Elahera|Elahera","Lankapura|Lankapura","Thamankaduwa|Thamankaduwa",
+    "Welikanda|Welikanda"];
+	}
+  else if(s1.value == "Puttalam"){
+		var optionArray = ["|Select Your Town","Puttalam|Puttalam","Pallama|Pallama","Chilaw|Chilaw","Wennappuwa|Wennappuwa",
+    "Dankotuwa|Dankotuwa","Nattandiya|Nattandiya","Marawila|Marawila","Anamaduwa|Anamaduwa","Arachchikattuwa|Arachchikattuwa",
+    "Kalpitiya|Kalpitiya","Madampe|Madampe","Mahakumbukkadawala|Mahakumbukkadawala","Mahawewa|Mahawewa","Mundalama|Mundalama"
+    ,"Nawagattegama|Nawagattegama","Pallama|Pallama","Vanathavilluwa|Vanathavilluwa"];
+	}
+  else if(s1.value == "Ratnapura"){
+		var optionArray = ["|Select Your Town","Ratnapura|Ratnapura","Embilipitiya|Embilipitiya","Balangoda|Balangoda",
+    "Pelmadulla|Pelmadulla","Eheliyagoda|Eheliyagoda","Kuruwita|Kuruwita","Ayagama|Ayagama","Elapattha|Elapattha",
+    "Godakawela|Godakawela","Imbulpe|Imbulpe","Kahawatta|Kahawatta","Kalawana|Kalawana","Kiriella|Kiriella"
+    ,"Kolonna|Kolonna","Nivithigala|Nivithigala","Opanayaka|Opanayaka","Weligepola|Weligepola"];
+	}
+  else if(s1.value == "Trincomalee"){
+		var optionArray = ["|Select Your Town","Trincomalee|Trincomalee","Gomarankadawala|Gomarankadawala","Kantalai|Kantalai",
+    "Kinniya|Kinniya","Kuchchaveli|Kuchchaveli","Morawewa|Morawewa","Muttur|Muttur","Padavi Sri Pura|Padavi Sri Pura",
+    "Seruvila|Seruvila","Thambalagamuwa|Thambalagamuwa","Verugal (Echchilampattai)|Verugal (Echchilampattai)"];
+	}
+  else if(s1.value == "Vavuniya"){
+		var optionArray = ["|Select Your Town","Vavuniya|Vavuniya","Vengalacheddikulam|Vengalacheddikulam"];
+	}
+
+  
+	for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+}
+</script>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output  } from '@angular/core';
 import { Http } from '@angular/http';
 import {  } from "rxjs";
 import { DroneService } from '../../../services/drone.service';
@@ -11,6 +11,13 @@ import { DroneService } from '../../../services/drone.service';
   styleUrls: ['./cus-drn-select.component.css']
 })
 export class CusDrnSelectComponent implements OnInit {
+
+
+  @Input() video_resolution : Number;
+  @Input() megapixels : Number;
+  @Input() max_flight_time: Number;
+  @Input() district: String; 
+  @Output() outputToParent = new EventEmitter<string>();  
 
   all_drone_arr =[]
 
