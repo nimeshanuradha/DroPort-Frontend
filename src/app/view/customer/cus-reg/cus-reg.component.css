@@ -12,7 +12,8 @@
 .container{
     /* border: 2px solid rgb(11, 8, 212); */
     padding-right: 100px;
-    background-color: rgb(203, 204, 207);
+    /* padding-top: 150px; */
+    background-color: rgb(203, 204, 207, 0.622);
   
 }
 
@@ -25,3 +26,12 @@ h3{
     border-left: 10px;
 }
 
+
+.mybackground{
+    background-image:url(../../../../assets/images/reg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    /* width: 1700px; */
+    background-repeat: no-repeat;
+    background-size: 1650px auto;
+}

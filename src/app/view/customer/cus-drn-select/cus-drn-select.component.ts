@@ -13,11 +13,11 @@ import { DroneService } from '../../../services/drone.service';
 export class CusDrnSelectComponent implements OnInit {
 
 
-  @Input() video_resolution : Number;
-  @Input() megapixels : Number;
-  @Input() max_flight_time: Number;
-  @Input() district: String; 
-  @Output() outputToParent = new EventEmitter<string>();  
+  // @Input() video_resolution : Number;
+  // @Input() megapixels : Number;
+  // @Input() max_flight_time: Number;
+  // @Input() district: String; 
+  // @Output() outputToParent = new EventEmitter<string>();  
 
   all_drone_arr =[]
 

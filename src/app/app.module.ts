@@ -34,7 +34,6 @@ import { PilFlyHistoryComponent } from './view/pilot/pil-fly-history/pil-fly-his
 import { HomeComponent } from './view/landing/home/home.component';
 import { AboutComponent } from './view/landing/about/about.component';
 import { ServicesComponent } from './view/landing/services/services.component';
-import { ContactusComponent } from './view/landing/contactus/contactus.component';
 import { OwnProfComponent } from './view/owner/own-prof/own-prof.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
@@ -60,6 +59,7 @@ import { CusMainPageComponent } from './view/customer/cus-main-page/cus-main-pag
 import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-select.component';
 import { AdminUserViewComponent } from './view/admin/admin-user-view/admin-user-view.component';
 import { CusProfComponent } from './view/customer/cus-prof/cus-prof.component';
+import { AdminMapComponent } from './view/admin/admin-map/admin-map.component';
 
 
 
@@ -76,6 +76,7 @@ const appRoutes: Routes = [
   { path: 'admin_reg_customer', component:AdminRegCustomersComponent},
   { path: 'admin_user_view/:cus_id/:user_type', component:AdminUserViewComponent},
   { path: 'login', component:LoginComponent },
+  { path: 'admin_map', component:AdminMapComponent},
 
   { path: 'cus_new_req', component: CusNewReqComponent },
   { path: 'cus_req_history', component: CusReqHistoryComponent },
@@ -104,9 +105,9 @@ const appRoutes: Routes = [
   { path: 'land_about', component: AboutComponent },
   { path: 'land_home', component: HomeComponent },
   { path: 'land_services', component: ServicesComponent },
-  { path: 'land_contactus', component: ContactusComponent },
   
 ]
+
 
 @NgModule({
   declarations: [
@@ -133,7 +134,6 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ServicesComponent,
-    ContactusComponent,
     FooterComponent,
     SidebarAdminComponent,
     AdminProfileComponent,
@@ -155,7 +155,8 @@ const appRoutes: Routes = [
     CusMainPageComponent,
     CusDrnSelectComponent,
     AdminUserViewComponent,
-    CusProfComponent
+    CusProfComponent,
+    AdminMapComponent
     
  
   ],

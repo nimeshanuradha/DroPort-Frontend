@@ -68,5 +68,16 @@ export class UserService {
     return this.http.post("http://localhost:3000/api/user/own/new",own_data)
   }
 
+  post_NewArea(area_data){
+    console.log("new area called")
+    return this.http.post("http://localhost:3000/api/user/new_area",area_data).map((res:Response)=>res.json())
+  }
+
+
+  get_area(){
+    console.log("getArea called")
+    return this.http.get("http://localhost:3000/api/user/getArea").map((res: Response)=> res.json())
+  }
+
 }
 
