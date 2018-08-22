@@ -61,6 +61,8 @@ import { CusDrnSelectComponent } from './view/customer/cus-drn-select/cus-drn-se
 import { AdminUserViewComponent } from './view/admin/admin-user-view/admin-user-view.component';
 import { CusProfComponent } from './view/customer/cus-prof/cus-prof.component';
 import { AdminMapComponent } from './view/admin/admin-map/admin-map.component';
+import { PilReqActionComponent } from './view/pilot/pil-req-action/pil-req-action.component';
+import { PilScheduleComponent } from './view/pilot/pil-schedule/pil-schedule.component';
 
 
 
@@ -93,7 +95,7 @@ const appRoutes: Routes = [
   { path: 'pil_profile',component:   PilProfileComponent},
   { path: 'pil_reg',component: PilRegComponent },
   { path: 'pil_fly_history', component: PilFlyHistoryComponent},
-  { path: 'req_detail', component: PilReqDetailComponent},
+  { path: 'req_detail/:id', component: PilReqDetailComponent},
 
   { path: 'own_prof',component:   OwnProfComponent},
   { path: 'owner_hist',component:   OwnerHistComponent},
@@ -161,7 +163,9 @@ const appRoutes: Routes = [
     CusDrnSelectComponent,
     AdminUserViewComponent,
     CusProfComponent,
-    AdminMapComponent
+    AdminMapComponent,
+    PilReqActionComponent,
+    PilScheduleComponent
     
  
   ],

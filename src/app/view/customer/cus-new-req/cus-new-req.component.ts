@@ -12,10 +12,10 @@ import { DroneService } from '../../../services/drone.service';
 
 export class CusNewReqComponent implements OnInit {
   ngOnInit(){
-    this.droneService.getAll_Drones().subscribe(res => {
-      console.log(res);
-      this.all_drone_arr = res
-    })
+    // this.droneService.getAll_Drones().subscribe(res => {
+    //   console.log(res);
+    //   this.all_drone_arr = res
+    // })
   }
   
   constructor(
@@ -32,17 +32,22 @@ export class CusNewReqComponent implements OnInit {
   // Getting form data and posting new request
   get_req_data(cus_new_req: NgForm) {
     var req_data = cus_new_req.value
-    this.RequestService.post_NewRequest(req_data).subscribe(res => console.log("Successfully added"))
+    var cus_id = localStorage.getItem("user_id")
+    var new_req_data = Object.assign(req_data,{cus_id:cus_id})
+    console.log(cus_id,new_req_data);
+    
+   
+   this.RequestService.post_NewRequest(req_data).subscribe(res => console.log("Successfully added"))
   }
   // Filtering Drones
   get_drones(video_resolution, megapixels, max_flight_time) {
    
-    let drone_data = [video_resolution, megapixels, max_flight_time]
+    let drone_data = {video_resolution, megapixels, max_flight_time}
     console.log("get drones called",drone_data );
-    // this.droneService.get_Drones_combined(drone_data).subscribe(res => {
-    //   console.log(res);
-    //   this.all_drone_arr = res
-    // })
+    this.droneService.get_Drones_combined(drone_data).subscribe(res => {
+      console.log(res);
+      this.all_drone_arr = res
+    })
   }
   // Set and Confirm Drone Selection
   set_drone(dro_id, dro_brand) {

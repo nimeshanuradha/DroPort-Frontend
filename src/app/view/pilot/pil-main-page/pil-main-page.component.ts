@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService} from "../../../services/user.service";
-import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
+import { RequestService } from '../../../services/request.service';
+
 
 @Component({
   selector: 'app-pil-main-page',
@@ -9,20 +10,24 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./pil-main-page.component.css']
 })
 export class PilMainPageComponent implements OnInit {
-  user_id:number
-  pil_data = []
+  
+  // Variables 
+  all_req_arr = [];
+  pending_req_arr = [];
+  completed_req_arr = []
 
   constructor(
-    router: ActivatedRoute,
-    private UserService : UserService
-  ) {
-    router.params.subscribe(user_id=>this.user_id)
-   }
+    private RequestService:RequestService
+  
+  ) {}
 
   ngOnInit() {
-    console.log("on init  function called")
-    this.UserService.getPilot_byID(this.user_id).subscribe(res=>this.pil_data=res)
-    console.log(this.pil_data)
+    var pil_id = localStorage.getItem("user_id")
+
+    this.RequestService.get_pilot_upcoming_Requests(pil_id).subscribe(res=>this.all_req_arr=res)
+    console.log("printing all")
+    console.log(this.all_req_arr)  
+
   }
 
 }

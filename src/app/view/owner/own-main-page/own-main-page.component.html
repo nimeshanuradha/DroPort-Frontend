@@ -14,6 +14,7 @@
             <tr>
               <th>Req ID</th>
               <th>Town</th>
+              <th>Area</th>
               <th>Customer ID</th>
               <th>Date</th>
               <th>Time</th>
@@ -25,6 +26,7 @@
             <tr *ngFor="let request of all_pending_req_arr ">
               <td> {{ request.req_id}} </td>
               <td> {{ request.town}} </td>
+              <td> {{ request.area}} </td>
               <td> {{ request.cus_id}} </td>
               <td> {{ request.date}} </td>
               <td> {{ request.time}}</td>

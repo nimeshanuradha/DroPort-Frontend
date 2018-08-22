@@ -16,7 +16,8 @@ export class OwnMainPageComponent implements OnInit {
 
   ngOnInit() {
     // Calling request service to get pending requests at the page load
-    this.RequestService.getAll_PendingRequests().subscribe(res => this.all_pending_req_arr = res)
+    var user_id = localStorage.getItem("user_id")
+    this.RequestService.getAll_PendingRequests(user_id).subscribe(res => this.all_pending_req_arr = res)
   }
 
 

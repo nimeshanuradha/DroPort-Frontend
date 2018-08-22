@@ -1,4 +1,3 @@
-
 <div ng-app="">
   <div ng-controller="">
     <div class="row">
@@ -6,9 +5,71 @@
         <app-sidebar-admin></app-sidebar-admin>
       </div>
       <div class="col-xs-10 ">
-        
-        
-        
+
+        <div class="panel panel-primary">
+          <div class="panel-header">
+            Customer Requests
+          </div>
+          <div class="panel-body">
+              <table class="table">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Gender</th>
+                          <th>Mobile</th>
+                          <th>District</th>
+                          <!-- <th>Time</th> -->
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let cus of all_req_arr ">
+                          <td> {{ cus.req_id}} </td>
+                          <td> {{ cus.town}} </td>
+                          <td> {{ cus.own_id}} </td>
+                          <td> {{ cus.own_id}} </td>
+                          <td> {{ cus.date}} </td>
+                          <!-- <td> {{ cus.time}} </td> -->
+                          <td>
+                              <button class="btn btn-success" routerLink="/admin_req_view/{{cus.req_id}}">View More</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+
+          </div>
+          <div class="panel-footer">
+            Owner cuss
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-header">
+            Pilot cus
+          </div>
+          <div class="panel-body">
+
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+
+        <div class="panel panel-primary">
+          <div class="panel-header">
+
+          </div>
+          <div class="panel-body">
+
+          </div>
+          <div class="panel-footer">
+
+          </div>
+        </div>
+
+
+
 
       </div>
     </div>

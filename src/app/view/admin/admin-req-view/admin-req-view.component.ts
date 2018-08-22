@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService  } from "../../../services/request.service";
-import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { JSONPBackend } from '../../../../../node_modules/@angular/http';
+
 
 @Component({
   selector: 'app-admin-req-view',

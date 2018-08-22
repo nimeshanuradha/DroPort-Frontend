@@ -16,9 +16,9 @@ export class RequestService {
     };
 
   //GET All pending Requests
-    getAll_PendingRequests(){
+    getAll_PendingRequests(user_id){
       console.log("getAll_PendingRequests called")
-      return this.http.get("http://localhost:3000/api/req/all_pending").map((res: Response)=> res.json())
+      return this.http.post("http://localhost:3000/api/req/all_pending",{user_id:user_id}).map((res: Response)=> res.json())
     };
 
   //GET All completed Requests
@@ -58,6 +58,11 @@ export class RequestService {
 
   }
 
+
+  get_pilot_upcoming_Requests(pil_id){
+    console.log("get_pilot_upcoming_Requests called")
+    return this.http.post("http://localhost:3000/api/req/pil_upcoming",pil_id).map((res:Response)=>res.json())
+  }
 
   
   

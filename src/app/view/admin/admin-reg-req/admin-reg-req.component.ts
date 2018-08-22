@@ -11,7 +11,7 @@ export class AdminRegReqComponent implements OnInit {
 
   // Sample Data
 
-  reg_req_data = [
+  cus = [
     {"name": "Nimesh",
     "district":"Colombo",
     "age":"25",
