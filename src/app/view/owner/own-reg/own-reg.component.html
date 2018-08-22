@@ -3,162 +3,154 @@
     <div class="container">
       <div class="col-xs-12">
         <!-- <div class="col-xs-3"> -->
-          <!-- <app-sidebar></app-sidebar> -->
+        <!-- <app-sidebar></app-sidebar> -->
         <!-- </div> -->
         <!-- <div class="col-md-9"> -->
-          <div class="row">
-            <div class="col-md-5">
-            <img src="../../../../assets/images/new.png" alt="logo" height="150" width="auto"> 
-          </div>   
-            <div class="page-header col-md-7">
-              <h3>New Owner Registration</h3>
-            </div>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="../../../../assets/images/new.png" alt="logo" height="150" width="auto">
           </div>
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h4><b>Owner Details</b></h4>
-            </div>
-            <div class="panel-body">
-              <fieldset>
+          <div class="page-header col-md-7">
+            <h3>New Owner Registration</h3>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h4>
+              <b>Owner Details</b>
+            </h4>
+          </div>
+          <div class="panel-body">
+            <fieldset>
 
-               <div class="form-group col-xs-12" [class.has-error]="OwnerIdControl.invalid && OwnerIdControl.touched">
-                  <div class="col-xs-2"><label for="own_id" class="control-lable">Owner ID :</label></div>
-                  <div class="col-xs-10">
-                    <input required id="own_id" type="text" class="form-control" id="own_id" name="own_id" [(ngModel)]="own_id" #FirstNameControl="ngModel" placeholder="###">
-                    <span class="help-block" *ngIf="OwnerIdControl.invalid && OwnerIdControl.touched"> ID is Required  </span>
+              <div class="special form-group col-xs-12" [class.has-error]="OwnerIdControl.invalid && OwnerIdControl.touched">
+                <div class="col-xs-2">
+                  <label for="own_id" class="control-lable">Owner ID :</label>
+                </div>
+                <div class="col-xs-10">
+                  <input required id="own_id" type="text" class="form-control" id="own_id" name="own_id" [(ngModel)]="own_id" #FirstNameControl="ngModel"
+                    placeholder="###">
+                  <span class="help-block" *ngIf="OwnerIdControl.invalid && OwnerIdControl.touched"> ID is Required </span>
 
-                  </div>
-                </div>~~
+                </div>
+              </div>
 
               <div class="form-group col-xs-12" [class.has-error]="FirstNameControl.invalid && FirstNameControl.touched">
-                <div class="col-xs-2"><label for="fname" class="control-lable">First Name :</label></div>
+                <div class="col-xs-2">
+                  <label for="fname" class="control-lable">First Name :</label>
+                </div>
                 <div class="col-xs-10">
-                  <input required id="firstName" type="text" class="form-control" id="fname" name="firstname" [(ngModel)]="firstName" #OwnerIdControl="ngModel" placeholder="First Name">
-                <span class="help-block" *ngIf="FirstNameControl.invalid && FirstNameControl.touched"> First Name is Required  </span>
+                  <input required id="firstName" type="text" class="form-control" id="fname" name="f_name" [(ngModel)]="f_name" #OwnerIdControl="ngModel"
+                    placeholder="First Name">
+                  <span class="help-block" *ngIf="FirstNameControl.invalid && FirstNameControl.touched"> First Name is Required </span>
                 </div>
               </div>
 
               <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="lname">Last Name :</label></div>
+                <div class="col-xs-2">
+                  <label for="lname">Last Name :</label>
+                </div>
                 <div class="col-xs-10">
-                  <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname" placeholder="Last Name">
+                  <input type="text" class="form-control" id="lname" name="l_name" [(ngModel)]="l_name" placeholder="Last Name">
                 </div>
               </div>
 
 
               <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="dob">DOB :</label></div>
+                <div class="col-xs-2">
+                  <label for="dob">DOB :</label>
+                </div>
                 <div class="col-xs-10 ">
                   <input type="date" class="form-control" id="dob" name="dob" required="" [(ngModel)]="dob" placeholder="DOB">
                 </div>
               </div>
 
               <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="age">Age :</label></div>
+                <div class="col-xs-2">
+                  <label for="age">Age :</label>
+                </div>
                 <div class="col-xs-10">
                   <input type="text" class="form-control" id="age" name="age" [(ngModel)]="age" placeholder="Age">
                 </div>
               </div>
-              
-              <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="sex">Sex :</label></div>
-                <div class="col-xs-10">
-                    <label class="radio-inline">
-                      <input type="radio" value="male" [(ngModel)]="sex" name="sex">Male
-                    </label>
 
-                    <label class="radio-inline">
-                      <input type="radio" value="female" [(ngModel)]="sex" name="sex">Female
-                    </label>
+              <div class="form-group col-xs-12">
+                <div class="col-xs-2">
+                  <label for="sex">Sex :</label>
+                </div>
+                <div class="col-xs-10">
+                  <label class="radio-inline">
+                    <input type="radio" value="male" [(ngModel)]="sex" name="sex">Male
+                  </label>
+
+                  <label class="radio-inline">
+                    <input type="radio" value="female" [(ngModel)]="sex" name="sex">Female
+                  </label>
                 </div>
               </div>
 
               <div class="form-group col-xs-12" [class.has-error]="NicControl.invalid && NicControl.touched">
-                <div class="col-xs-2"><label for="nic" class="control-lable">NIC :</label></div>
+                <div class="col-xs-2">
+                  <label for="nic" class="control-lable">NIC :</label>
+                </div>
                 <div class="col-xs-10">
                   <input required id="nic" type="text" class="form-control" id="nic" name="nic" [(ngModel)]="nic" #NicControl="ngModel" placeholder="NIC">
-                  <span class="help-block" *ngIf="NicControl.invalid && NicControl.touched"> NIC is Required  </span>
+                  <span class="help-block" *ngIf="NicControl.invalid && NicControl.touched"> NIC is Required </span>
 
                 </div>
               </div>
 
               <div class="form-group col-xs-12" [class.has-error]="MobControl.invalid && MobControl.touched">
-                <div class="col-xs-2"><label for="mobile_no" class="control-lable" >Mobile Number : </label></div>
+                <div class="col-xs-2">
+                  <label for="mobile_no" class="control-lable">Mobile Number : </label>
+                </div>
                 <div class="col-xs-10">
-                  <input  required id="mobile_no" type="text" class="form-control" id="mobile_no" name="mobile_no" [(ngModel)]="mobile_no" #MobControl="ngModel" placeholder="07x xx xxxx">
-                  <span class="help-block" *ngIf="MobControl.invalid && MobControl.touched"> NIC is Required  </span>
+                  <input required id="mobile_no" type="text" class="form-control" id="mobile_no" name="mobile_no" [(ngModel)]="mobile_no" #MobControl="ngModel"
+                    placeholder="07x xx xxxx">
+                  <span class="help-block" *ngIf="MobControl.invalid && MobControl.touched"> NIC is Required </span>
                 </div>
               </div>
 
               <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="fixed_no">Fixed Number : </label></div>
+                <div class="col-xs-2">
+                  <label for="fixed_no">Fixed Number : </label>
+                </div>
                 <div class="col-xs-10">
                   <input type="text" class="form-control" id="fixed_no" name="fixed_no" [(ngModel)]="fixed_no" placeholder="0xx xx xxxx">
                 </div>
               </div>
 
               <div class="form-group col-xs-12">
-                <div class="col-xs-2"><label for="validationemail">Email :</label></div>
+                <div class="col-xs-2">
+                  <label for="validationemail">Email :</label>
+                </div>
                 <div class="col-xs-10">
                   <input type="text" class="form-control is-valid" id="validationemail" name="email" [(ngModel)]="email" placeholder="example@email.com">
                   <div class="invalid-feedback">
-                      Please choose a valid email.
-                    </div>
+                    Please choose a valid email.
+                  </div>
                 </div>
               </div>
 
               <div class="form-group col-xs-12" [class.has-error]="FbControl.invalid && FbControl.touched">
-                <div class="col-xs-2"><label for="fb_link" class="control-lable" >Facebook Link : </label></div>
+                <div class="col-xs-2">
+                  <label for="fb_link" class="control-lable">Facebook Link : </label>
+                </div>
                 <div class="col-xs-10">
-                  <input  required id="fb_link" type="text" class="form-control" id="fb_link" name="fb_link" [(ngModel)]="fb_link" #FbControl="ngModel" placeholder="http://www.facebook.com/yourprofile">
-                  <span class="help-block" *ngIf="FbControl.invalid && FbControl.touched"> Fb Link is Required  </span>
+                  <input required id="fb_link" type="text" class="form-control" id="fb_link" name="fb_link" [(ngModel)]="fb_link" #FbControl="ngModel"
+                    placeholder="http://www.facebook.com/yourprofile">
+                  <span class="help-block" *ngIf="FbControl.invalid && FbControl.touched"> Fb Link is Required </span>
                 </div>
               </div>
 
               <div class="form-group col-xs-12">
                 <div class="form-check">
-                    <div class="col-xs-10">
-                  <input class="form-check-input is-invalid" type="checkbox" value="" name="invalidCheck3" [(ngModel)]="invalidCheck3" required>
-                  <label class="form-check-label" for="invalidCheck3">
-                    Agree to terms and conditions
-                  </label>
-                </div>
-              </div>
-              </div>
-
-          </fieldset>
-          </div>
-         
-          
-
-<!-- cridentials panel -->
-<div class="panel-heading">
-  <h4><b>Owner Registration </b></h4>
-</div>
-<div class="panel-body">
-  <fieldset>
-
-              <div class="form-group col-xs-12" [class.has-error]= "UserControl.invalid && UserControl.touched">
-                <div class="col-xs-2"><label for="username" class="control-lable">Username : </label></div>
-                <div class="col-xs-10">
-                  <input  required id="username" type="text" class="form-control" id="username" name="username" [(ngModel)]="username"  #UserControl="ngModel"  placeholder="">
-                  <span class="help-block" *ngIf="UserControl.invalid && UserControl.touched"> Username is Required  </span>
-                </div>
-              </div>
-
-              <div class="form-group col-xs-12" [class.has-error]= "PassControl.invalid && PassControl.touched">
-                <div class="col-xs-2"><label for="password" class="control-lable">Password :</label></div>
-                <div class="col-xs-10">
-                  <input  required id="password" type="password" class="form-control" id="password" name="password" [(ngModel)]="password"  #PassControl="ngModel"  placeholder="more than 8 digits">
-                  <span class="help-block" *ngIf="PassControl.invalid && PassControl.touched"> Password is Required  </span>
-                </div>
-              </div>
-
-              <div class="form-group col-xs-12" [class.has-error]= "ConPassControl.invalid && ConPassControl.touched">
-                <div class="col-xs-2"><label for="con_password"  class="control-lable">Confirm Password :</label></div>
-                <div class="col-xs-10">
-                  <input  required id="con_password" type="password" class="form-control" id="con_password" name="con_password" [(ngModel)]="con_password" #ConPassControl="ngModel" placeholder="more than 8 digits">
-                  <span class="help-block" *ngIf="ConPassControl.invalid && ConPassControl.touched"> Password is Required  </span>
+                  <div class="col-xs-10">
+                    <input class="form-check-input is-invalid" type="checkbox" value="" name="invalidCheck3" [(ngModel)]="invalidCheck3" required>
+                    <label class="form-check-label" for="invalidCheck3">
+                      Agree to terms and conditions
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -166,15 +158,60 @@
           </div>
 
 
-            </div>
+
+          <!-- cridentials panel -->
+          <div class="panel-heading">
+            <h4>
+              <b>Owner Registration </b>
+            </h4>
+          </div>
+          <div class="panel-body">
+            <fieldset>
+
+              <div class="form-group col-xs-12" [class.has-error]="UserControl.invalid && UserControl.touched">
+                <div class="col-xs-2">
+                  <label for="username" class="control-lable">Username : </label>
+                </div>
+                <div class="col-xs-10">
+                  <input required id="username" type="text" class="form-control" id="username" name="username" [(ngModel)]="username" #UserControl="ngModel"
+                    placeholder="">
+                  <span class="help-block" *ngIf="UserControl.invalid && UserControl.touched"> Username is Required </span>
+                </div>
+              </div>
+
+              <div class="form-group col-xs-12" [class.has-error]="PassControl.invalid && PassControl.touched">
+                <div class="col-xs-2">
+                  <label for="password" class="control-lable">Password :</label>
+                </div>
+                <div class="col-xs-10">
+                  <input required id="password" type="password" class="form-control" id="password" name="password" [(ngModel)]="password" #PassControl="ngModel"
+                    placeholder="more than 8 digits">
+                  <span class="help-block" *ngIf="PassControl.invalid && PassControl.touched"> Password is Required </span>
+                </div>
+              </div>
+
+              <div class="form-group col-xs-12" [class.has-error]="ConPassControl.invalid && ConPassControl.touched">
+                <div class="col-xs-2">
+                  <label for="con_password" class="control-lable">Confirm Password :</label>
+                </div>
+                <div class="col-xs-10">
+                  <input required id="con_password" type="password" class="form-control" id="con_password" name="con_password" [(ngModel)]="con_password"
+                    #ConPassControl="ngModel" placeholder="more than 8 digits">
+                  <span class="help-block" *ngIf="ConPassControl.invalid && ConPassControl.touched"> Password is Required </span>
+                </div>
+              </div>
+
+            </fieldset>
           </div>
 
-          <div class="panel-footer">
-              <a class="btn" type="Submit" role="button">Submit</a>
-            </div>
-        <!-- </div> -->
+
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <input type="submit" class="btn btn-success" value="Submit">
+      </div>
+      <!-- </div> -->
     </div>
   </form>
-
-
 </div>

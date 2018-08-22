@@ -29,11 +29,12 @@ export class OwnRegComponent implements OnInit {
   post_owner_data(own_reg: NgForm){
 
     const form_data = own_reg.value
-    this.UserService.POST_New_own(form_data).subscribe(res=>{
-      console.log("got response",res);
-        this.router.navigate(['/own_main_page']);
+    console.log(form_data);
+      this.UserService.POST_New_own(form_data).subscribe(res=>{
+        console.log("got response",res);
+          this.router.navigate(['/own_main_page']);
 
-    })
+      })
 
   } 
 

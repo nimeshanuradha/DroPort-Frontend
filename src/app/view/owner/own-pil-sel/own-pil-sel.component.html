@@ -4,28 +4,49 @@
   </div>
   <div class="col-md-10">
 
+    
+
     <div class="panel panel-primary col-md-11">
       <div class="panel-heading">Available Drone List</div>
       <div class="panel-body">
+        <div style="padding: 20px;">
+            <strong>Showing Results For : </strong> District : {{district}} , Town : {{town}}
 
-        <div class="col-md-3">
+        </div>
+        <div style="padding: 20px;">
+          <div class="col-md- col-xs-2">
+              <strong>Your Current Selection: </strong> <input class="form-control " type="text" [(ngModel)]="selected_pil">
+          </div>
+        </div>
+        
+
+        <div class="col-md-4" *ngFor="let pilot of pil_data_arr">
           <div class="panel panel-default">
-            <div class="panel-heading"></div>
+            <div class="panel-heading">{{pilot.f_name}} - {{pilot.pil_id}}</div>
             <div class="panel-body">
-              checked 2
+              <div>
+                <div>Name : {{pilot.f_name}}</div>
+                <div>Town : {{pilot.town}}</div>
+                <div>E-mail : {{pilot.email}}</div>
+                <div>Mobile : {{pilot.mobile_no}}</div>
+                <div>Rating : {{pilot.rating}}</div>
+                
+              </div>
+
+
+            </div>
+            <div class="panel-footer">
+              <button class="btn btn-success" (click)="set_pil(pilot.pil_id)">Select</button>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading"></div>
-            <div class="panel-body"></div>
-          </div>
-        </div>
+      
 
       </div>
-      <div class="panel-footer"></div>
+      <div class="panel-footer">
+        <button class="btn btn-success" (click)="conf_pil(selected_pil)">Select Pilot</button>
+      </div>
     </div>
   </div>
 </div>

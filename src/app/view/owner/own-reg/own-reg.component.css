@@ -30,3 +30,7 @@ h3{
     padding-top: 25px;
     border-left: 10px;
 }
+
+.special{
+    display: none;
+}

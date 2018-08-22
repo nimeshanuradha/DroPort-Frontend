@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
+import { Router } from "@angular/router";
+import { UserService } from '../../../services/user.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-own-pil-sel',
@@ -7,17 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OwnPilSelComponent implements OnInit {
 
-  constructor() { }
+  pil_data_arr = []
+  selected_pil= ""
 
-  ngOnInit() {
+
+  district = localStorage.getItem('drn_sel_district')
+  town = localStorage.getItem('drn_sel_town')
+
+  constructor(
+    private UserService: UserService,
+    private router:Router,
+    private location:Location
+  ) { 
+    
   }
 
-  //#############################
+  ngOnInit() {
+    
 
-  
-  pil_data_1 =  [1000, 'Ravindu', 'Perera', '1995-12-29', '953640465v', 22, 724788122, 112578629, 'male', 'ravinduperera1229@gmail.com']
-  pil_data_2 =  [1001, 'Nimesh', 'Anuradha', '1993-03-03', '930911227v', 25, 713462038, 112467461, 'male', 'nimedhanurada1500@gmail.com']
-  pil_data_3 =  [1002, 'Kaushalya', 'Prasadini', '1994-04-30', '941227984v', 24, 766598222, 113556814, 'female', 'kaushalyaprasadini94@gmail.com']
+    this.UserService.getPilot_byDistrictTown(this.district,this.town).subscribe(res=>{
+      console.log("got response",res);
+      this.pil_data_arr = res
+      
+    })
+
+
+  }
+
+  set_pil(pil_id){
+    this.selected_pil = pil_id
+  }
+
+  conf_pil(selected_pil){
+    localStorage.setItem("selected_pil",selected_pil)
+    this.location.back()
+
+  }
+
+
+
+
   
 
   

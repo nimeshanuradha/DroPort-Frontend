@@ -12,6 +12,7 @@ import { UserService } from "./services/user.service";
 import { RequestService } from "./services/request.service";
 import { DroneService} from "./services/drone.service";
 import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -64,6 +65,7 @@ import { CusProfComponent } from './view/customer/cus-prof/cus-prof.component';
 
 
 
+
 const appRoutes: Routes = [
   { path: '',component: HomeComponent  },
   { path: 'home', component: HomeComponent },
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
   { path: 'cus_reg',component:CusRegComponent},
   { path: 'cus_drn_select', component:CusDrnSelectComponent},
   { path: 'cus_prof', component:CusProfComponent},
-
+  { path: 'cus_main_page', component:CusMainPageComponent},
+  
   { path: 'pil_main_page', component: PilMainPageComponent },
   { path: 'pil_hist_detail',component:  PilFlyHistDetailComponent},
   { path: 'pil_profile',component:   PilProfileComponent},
@@ -100,6 +103,8 @@ const appRoutes: Routes = [
   { path: 'own_drn_sel', component: OwnDrnSelComponent },
   { path: 'drone_reg',component:   DroneRegComponent},
   { path: 'my_drones',component:   MyDronesComponent},
+  { path: 'own_pil_sel',component:   OwnPilSelComponent},
+
 
   { path: 'land_about', component: AboutComponent },
   { path: 'land_home', component: HomeComponent },
@@ -176,7 +181,7 @@ const appRoutes: Routes = [
     
     
   ],
-  providers: [UserService,RequestService,DroneService,AuthService],
+  providers: [UserService,RequestService,DroneService,AuthService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

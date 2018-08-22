@@ -17,6 +17,11 @@ export class DroneService {
     return this.http.get('http://localhost:3000/api/drn/all').map(res=>res.json())
   }
 
+  get_Drones_combined(drone_data){
+    return this.http.post("http://localhost:3000/api/drn/combined",drone_data).map((res:Response)=>res.json())
+
+  }
+
 
     //POST New Drone
   post_NewDrone(drone_data){

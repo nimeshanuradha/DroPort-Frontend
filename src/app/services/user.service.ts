@@ -42,6 +42,11 @@ export class UserService {
     return this.http.get("http://localhost:3000/api/user/pil/:id").map((res: Response)=>res.json())
   };
 
+  getPilot_byDistrictTown(district:any,town:any){
+    console.log("getPilot_byID called")
+    return this.http.post("http://localhost:3000/api/user/pil/combined",{district:district,town:town}).map((res: Response)=>res.json())
+  };
+
   getOwner_byID(id:any){
     console.log("getCustomer_byID called")
     return this.http.get("http://localhost:3000/api/user/own/:id").map((res: Response)=>res.json())
@@ -64,7 +69,7 @@ export class UserService {
   }
 
   POST_New_own(own_data){
-    console.log("POST_New_cus called",own_data)
+    console.log("POST_New_cus called")
     return this.http.post("http://localhost:3000/api/user/own/new",own_data)
   }
 
