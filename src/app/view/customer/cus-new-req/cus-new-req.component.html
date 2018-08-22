@@ -16,27 +16,34 @@
             <div class="panel-heading">Flying Request Description</div>
             <div class="panel-body">
 
-              <div class="form-group col-xs-12">
+                <div class="form-group col-xs-12">
+                    <div class="col-xs-2"><label for="lname" style="color: red"> * required</label></div> 
+                  </div>
+
+              <div class="form-group col-xs-12" [class.has-error]="ReqTypeControl.invalid && ReqTypeControl.touched">
                 <div class="col-xs-2">
-                  <label for="req_type">Request Type :</label>
+                  <label for="req_type" class="control-lable"><div class="col-xs-1" style="color: red">* </div> Request Type :</label>
                 </div>
                 <div class="col-xs-5">
-                  <select class="form-control " id="req_type" name="req_type" [(ngModel)]="req_type">
+                  <select class="form-control " required id="req_type" name="req_type" [(ngModel)]="firstName" #ReqTypeControl="ngModel" id="req_type">
+                    <option> </option>
                     <option>Wedding</option>
                     <option>Media</option>
                     <option>Arial Photo</option>
                     <option>Research</option>
                     <option>Other</option>
                   </select>
+                  <span class="help-block" *ngIf="ReqTypeControl.invalid && ReqTypeControl.touched"> *Request Type is Required  </span>
                 </div>
               </div>
 
-              <div class="form-group col-xs-12">
+              <div class="form-group col-xs-12" [class.has-error]="DistrictControl.invalid && DistrictControl.touched">
                 <div class="col-xs-2">
-                  <label for="exampleSelect1">District :</label>
+                  <label for="exampleSelect1"><div class="col-xs-1" style="color: red">* </div>District :</label>
                 </div>
                 <div class="col-xs-2">
-                  <select class="form-control" id="district" name="district" onchange="populate(this.id,'town')" required [(ngModel)]="district">
+                  <select class="form-control"  required #district ="ngModel" name="district" [(ngModel)]="firstName" #DistrictControl="ngModel" id="district" name="district" onchange="populate(this.id,'town')">
+                    
                     <option value="Your district">Your district</option>
                     <option value="Ampara">Ampara</option>
                     <option value="Anuradhapura">Anuradhapura</option>
@@ -64,6 +71,8 @@
                     <option value="Trincomalee">Trincomalee</option>
                     <option value="Vavuniya">Vavuniya</option>
                   </select>
+                 
+                  <span class="help-block" *ngIf="DistrictControl.invalid && DistrictControl.touched"> *District is Required  </span>
                 </div>
 
 
@@ -79,60 +88,68 @@
                 </div>
 
 
-                <div class="col-xs-2">
-                  <label for="town">Area :</label>
+                <div class="col-xs-2"[class.has-error]="AreaControl.invalid && AreaControl.touched">
+                  <label for="town"  class="control-lable"><div class="col-xs-1" style="color: red">* </div>Area :</label>
                 </div>
                 <div class="col-xs-2">
-                  <input type="text" class="form-control" id="area" name="area" [(ngModel)]="area">
+
+                  <input type="text" class="form-control"  required id="area" id="area" name="area"  [(ngModel)]="area" #AreaControl="ngModel" placeholder="Area">
+                  <span class="help-block" *ngIf="AreaControl.invalid && AreaControl.touched"> *Location Required  </span>
                 </div>
               </div>
 
-              <div class="form-group col-xs-12">
+              <div class="form-group col-xs-12" [class.has-error]="DateControl.invalid && DateControl.touched">
                 <div class="col-xs-2">
-                  <label for="date" class="lable">Date :</label>
+                  <label for="date" class="control-lable" class="lable"><div class="col-xs-1" style="color: red">* </div>Date :</label>
                 </div>
                 <div class="col-xs-2">
-                  <input type="date" class="form-control" name="date" required="" [(ngModel)]="date">
+                  <input type="date"  required id="date"  [(ngModel)]="date" #DateControl="ngModel"   class="form-control" name="date">
+                  <span class="help-block" *ngIf="DateControl.invalid && DateControl.touched"> *Date is Required  </span>
                 </div>
               </div>
 
-              <div class="form-group col-xs-12">
+              <div class="form-group col-xs-12"  [class.has-error]="TimeControl.invalid && TimeControl.touched">
                 <div class="col-xs-2">
-                  <label for="time">Time </label>
+                  <label for="time"  class="control-lable"><div class="col-xs-1" style="color: red">* </div>Time </label>
                 </div>
                 <div class="form-group col-xs-2">
                   <label for="time_from">From :</label>
-                  <input type="time" class="form-control" id="time_from" name="time_from" [(ngModel)]="time_from">
+                  <input  required id="time_from"   type="time" class="form-control" id="time_from" name="time_from"  [(ngModel)]="time_from" #TimeControl="ngModel" >
                 </div>
                 <div class=" form-group col-xs-2">
                   <label for="time_to">To :</label>
-                  <input type="time" class="form-control" id="time_to" name="time_to" [(ngModel)]="time_to">
+                  <input  required id="time_to"  type="time" class="form-control" id="time_to" name="time_to" [(ngModel)]="time_to" #TimeControl="ngModel">
                 </div>
+                  <span class="help-block" *ngIf="TimeControl.invalid && TimeControl.touched"> *Time is Required  </span>
               </div>
 
               <div class="col-xs-5">
                 <div class="form-group">
-                  <div class="col-xs-5">
-                    <label for="video_resolution"> Video Resolution(p) :</label>
+                  <div class="col-xs-5" [class.has-error]="videoControl.invalid && videoControl.touched">
+                    <label for="video_resolution"><div class="col-xs-1" style="color: red">* </div> Video Resolution(p) :</label>
+                    <input  required id="video_resolution"  class="form-control" id="video_resolution" name="video_resolution" [(ngModel)]="video_resolution" #video_resolutionControl="ngModel">
                   </div>
+
                   <div class="col-xs-5">
-                    <select class="form-control " id="video_resolution" name="video_resolution" [(ngModel)]="video_resolution">
+                    <select class="form-control "  required id="video_resolution" id="video_resolution" name="video_resolution" [(ngModel)]="video_resolution" #VideoControl="ngModel">
                       <option>360</option>
                       <option>480</option>
                       <option>720</option>
                       <option>1080</option>
                     </select>
+                    <span class="help-block" *ngIf="videoControl.invalid && videoControl.touched"> *Video Resolution is Required  </span>
                   </div>
                 </div>
               </div>
 
               <div class="col-xs-5">
                 <div class="form-group ">
-                  <div class="col-xs-5">
-                    <label for="megapixels" class="lable">Megapixels :</label>
+                  <div class="col-xs-5" [class.has-error]="MegapixelsControl.invalid && MegapixelsControl.touched">
+                    <label for="megapixels"  class="control-lable" class="lable"><div class="col-xs-1" style="color: red">* </div>Megapixels :</label>
                   </div>
                   <div class="col-xs-5">
-                    <input type="text" class="form-control" name="megapixels" required="" [(ngModel)]="megapixels">
+                    <input type="text"  required id="megapixels" class="form-control" name="megapixels" [(ngModel)]="megapixels" #MegapixelsControl="ngModel">
+                    <span class="help-block" *ngIf="MegapixelsControl.invalid && MegapixelsControl.touched"> *Megapixels Required  </span>
                   </div>
                 </div>
               </div>
@@ -142,7 +159,7 @@
               <div class="col-xs-6">
                 <div class="form-group">
                   <div class="col-xs-6">
-                    <label for="quality_category">Max Flight Time (In minutes) :</label>
+                    <label for="quality_category"><div class="col-xs-1" style="color: red">* </div>Max Flight Time (In minutes) :</label>
                   </div>
                   <div class="col-xs-6">
                     <select class="form-control " id="max_flight_time" name="max_flight_time" [(ngModel)]="max_flight_time">

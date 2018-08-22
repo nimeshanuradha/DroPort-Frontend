@@ -38,7 +38,7 @@
               </div>
 
               <div class="form-group col-xs-12" [class.has-error]="LastNameControl.invalid && LastNameControl.touched">
-                <div class="col-xs-3"><label for="lname"><div class="col-xs-1" style="color: red">*</div> Last Name :</label></div> 
+                <div class="col-xs-3"><label for="lname" class="control-lable"><div class="col-xs-1" style="color: red">*</div> Last Name :</label></div> 
                 <div class="col-xs-9">
                   <input  required id="lastName"  type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lastname" #LastNameControl="ngModel" placeholder="Last Name">
                   <span class="help-block" *ngIf="LastNameControl.invalid && LastNameControl.touched"> *Last Name is Required  </span>
@@ -85,7 +85,7 @@
               <div class="form-group col-xs-12" [class.has-error]="MobControl.invalid && MobControl.touched">
                 <div class="col-xs-3"><label for="mobile_no" class="control-lable" ><div class="col-xs-1" style="color: red">* </div> Mobile Number: </label></div>
                 <div class="col-xs-9">
-                  <input  required id="mobile_no" type="text" class="form-control" id="mobile_no" name="mobile_no" [(ngModel)]="mobile_no" #MobControl="ngModel" placeholder="07x xx xxxx">
+                  <input  required id="mobile_no" type="int" class="form-control" id="mobile_no" name="mobile_no" [(ngModel)]="mobile_no" #MobControl="ngModel" placeholder="07x xx xxxx">
                   <span class="help-block" *ngIf="MobControl.invalid && MobControl.touched"> *Mobile Number is Required  </span>
                 </div>
               </div>
