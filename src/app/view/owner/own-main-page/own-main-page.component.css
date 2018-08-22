@@ -1,0 +1,22 @@
+.mybackground{
+    background-image:url(../../../../assets/images/reg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    /* width: 1700px; */
+    background-repeat: no-repeat;
+    background-size: 1650px auto;
+}
+
+.container{
+    background-color: white; 
+}
+.btn {
+    background-color: rgb(104, 241, 109); 
+    color: black; 
+    border: 2px solid rgb(44, 153, 47);
+}
+
+.btn:hover {
+    background-color: rgb(44, 153, 47);
+    color: white;
+}

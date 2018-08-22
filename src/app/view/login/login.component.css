@@ -1,9 +1,30 @@
 .panel{
     height: 60%;
     width: 50%;
-    margin-top: 25%
+    margin-top: 10%;
+    margin-bottom: 15%;
 }
 .panelContent{
     padding: 10%;
   
+}
+
+.btn {
+    background-color: rgb(104, 241, 109); 
+    color: black; 
+    border: 2px solid rgb(44, 153, 47);
+}
+
+.btn:hover {
+    background-color: rgb(44, 153, 47);
+    color: white;
+}
+
+.mybackground{
+    background-image:url(../../../assets/images/login.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    /* width: 1700px; */
+    background-repeat: no-repeat;
+    background-size: 1650px auto;
 }

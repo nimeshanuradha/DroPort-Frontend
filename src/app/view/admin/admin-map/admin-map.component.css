@@ -1,0 +1,51 @@
+.container-fluid{
+    width: 1200px;
+}
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    margin-left: 50px;
+}
+
+.col-75 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+
+.btn {
+    background-color: rgb(104, 241, 109); 
+    color: black; 
+    border: 2px solid rgb(44, 153, 47);
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: rgb(44, 153, 47);
+    color: white;
+    border-radius: 8px;
+}
+
+.btn2 {
+    background-color: rgb(233, 115, 121); 
+    color: white; 
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 8px;
+}
+
+.btn2:hover {
+    background-color: rgb(233, 10, 10);
+    color: white;
+    border-radius: 8px;
+}
+
+.table{
+ width: 500px;
+ /* text-align: center; */
+}
+
+.panel-body{
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
